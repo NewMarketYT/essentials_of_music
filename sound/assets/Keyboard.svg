@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="2103"
+   height="527"
+   viewBox="-0.7304688 -0.4624023 2103 527"
+   xml:space="preserve"
+   version="1.1"
+   id="svg264"
+   sodipodi:docname="Keyboard.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"><metadata
+   id="metadata268"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1017"
+   id="namedview266"
+   showgrid="false"
+   inkscape:zoom="0.49548264"
+   inkscape:cx="1051.5"
+   inkscape:cy="263.5"
+   inkscape:window-x="1912"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg264" />
+	<defs
+   id="defs140">
+	</defs>
+	<g
+   id="g262">
+		<polyline
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   points="701.3896484,463.871582 2,463.871582     2,2 701.3896484,2 "
+   id="polyline142" />
+		
+			<line
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   x1="701.3896484"
+   y1="2"
+   x2="701.3896484"
+   y2="463.871582"
+   id="line144" />
+		
+			<line
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   x1="601.5078125"
+   y1="2"
+   x2="601.5078125"
+   y2="463.871582"
+   id="line146" />
+		
+			<line
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   x1="501.6308594"
+   y1="2"
+   x2="501.6308594"
+   y2="463.871582"
+   id="line148" />
+		
+			<line
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   x1="401.5273438"
+   y1="2"
+   x2="401.5273438"
+   y2="463.871582"
+   id="line150" />
+		
+			<line
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   x1="301.6445313"
+   y1="2"
+   x2="301.6445313"
+   y2="463.871582"
+   id="line152" />
+		
+			<line
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   x1="201.7651367"
+   y1="2"
+   x2="201.7651367"
+   y2="463.871582"
+   id="line154" />
+		
+			<line
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   x1="101.8823242"
+   y1="2"
+   x2="101.8823242"
+   y2="463.871582"
+   id="line156" />
+		<rect
+   x="72.7202148"
+   y="2"
+   stroke="#000000"
+   stroke-miterlimit="1"
+   width="62.0385742"
+   height="281.9633789"
+   id="rect158" /> 
+		<rect
+   x="171.2246094"
+   y="2"
+   stroke="#000000"
+   stroke-miterlimit="1"
+   width="62.0385742"
+   height="281.9633789"
+   id="rect160" /> 
+		<rect
+   x="370.5078125"
+   y="2"
+   stroke="#000000"
+   stroke-miterlimit="1"
+   width="62.0385742"
+   height="281.9633789"
+   id="rect162" /> 
+		<rect
+   x="470.6118164"
+   y="2"
+   stroke="#000000"
+   stroke-miterlimit="1"
+   width="62.0385742"
+   height="281.9633789"
+   id="rect164" /> 
+		<rect
+   x="570.4882813"
+   y="2"
+   stroke="#000000"
+   stroke-miterlimit="1"
+   width="62.0380859"
+   height="281.9633789"
+   id="rect166" /> 
+		<polyline
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   points="1400.7753906,463.871582     701.3896484,463.871582 701.3896484,2 1400.7753906,2 "
+   id="polyline168" />
+		
+			<line
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   x1="1400.7753906"
+   y1="2"
+   x2="1400.7753906"
+   y2="463.871582"
+   id="line170" />
+		
+			<line
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   x1="1300.8925781"
+   y1="2"
+   x2="1300.8925781"
+   y2="463.871582"
+   id="line172" />
+		
+			<line
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   x1="1201.015625"
+   y1="2"
+   x2="1201.015625"
+   y2="463.871582"
+   id="line174" />
+		
+			<line
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   x1="1100.9121094"
+   y1="2"
+   x2="1100.9121094"
+   y2="463.871582"
+   id="line176" />
+		
+			<line
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   x1="1001.0292969"
+   y1="2"
+   x2="1001.0292969"
+   y2="463.871582"
+   id="line178" />
+		
+			<line
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   x1="901.1503906"
+   y1="2"
+   x2="901.1503906"
+   y2="463.871582"
+   id="line180" />
+		
+			<line
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   x1="801.2675781"
+   y1="2"
+   x2="801.2675781"
+   y2="463.871582"
+   id="line182" />
+		<rect
+   x="772.0351563"
+   y="2"
+   stroke="#000000"
+   stroke-miterlimit="1"
+   width="62.0341797"
+   height="281.9633789"
+   id="rect184" /> 
+		<rect
+   x="870.5351563"
+   y="2"
+   stroke="#000000"
+   stroke-miterlimit="1"
+   width="62.0380859"
+   height="281.9633789"
+   id="rect186" /> 
+		<rect
+   x="1069.8183594"
+   y="2"
+   stroke="#000000"
+   stroke-miterlimit="1"
+   width="62.0380859"
+   height="281.9633789"
+   id="rect188" /> 
+		<rect
+   x="1169.9228516"
+   y="2"
+   stroke="#000000"
+   stroke-miterlimit="1"
+   width="62.0380859"
+   height="281.9633789"
+   id="rect190" /> 
+		<rect
+   x="1269.7988281"
+   y="2"
+   stroke="#000000"
+   stroke-miterlimit="1"
+   width="62.0380859"
+   height="281.9633789"
+   id="rect192" /> 
+		<polyline
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   points="2100.1611328,463.871582     1400.7753906,463.871582 1400.7753906,2 2100.1611328,2 "
+   id="polyline194" />
+		
+			<line
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   x1="2100.1611328"
+   y1="2"
+   x2="2100.1611328"
+   y2="463.871582"
+   id="line196" />
+		
+			<line
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   x1="2000.2783203"
+   y1="2"
+   x2="2000.2783203"
+   y2="463.871582"
+   id="line198" />
+		
+			<line
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   x1="1900.4013672"
+   y1="2"
+   x2="1900.4013672"
+   y2="463.871582"
+   id="line200" />
+		
+			<line
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   x1="1800.2978516"
+   y1="2"
+   x2="1800.2978516"
+   y2="463.871582"
+   id="line202" />
+		
+			<line
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   x1="1700.4150391"
+   y1="2"
+   x2="1700.4150391"
+   y2="463.871582"
+   id="line204" />
+		
+			<line
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   x1="1600.5361328"
+   y1="2"
+   x2="1600.5361328"
+   y2="463.871582"
+   id="line206" />
+		
+			<line
+   fill="#FFFFFF"
+   stroke="#000000"
+   stroke-width="4"
+   stroke-miterlimit="1"
+   x1="1500.6533203"
+   y1="2"
+   x2="1500.6533203"
+   y2="463.871582"
+   id="line208" />
+		<rect
+   x="1471.4208984"
+   y="2"
+   stroke="#000000"
+   stroke-miterlimit="1"
+   width="62.0341797"
+   height="281.9633789"
+   id="rect210" /> 
+		<rect
+   x="1569.9208984"
+   y="2"
+   stroke="#000000"
+   stroke-miterlimit="1"
+   width="62.0380859"
+   height="281.9633789"
+   id="rect212" /> 
+		<rect
+   x="1769.2041016"
+   y="2"
+   stroke="#000000"
+   stroke-miterlimit="1"
+   width="62.0380859"
+   height="281.9633789"
+   id="rect214" /> 
+		<rect
+   x="1869.3085938"
+   y="2"
+   stroke="#000000"
+   stroke-miterlimit="1"
+   width="62.0380859"
+   height="281.9633789"
+   id="rect216" /> 
+		<rect
+   x="1969.1845703"
+   y="2"
+   stroke="#000000"
+   stroke-miterlimit="1"
+   width="62.0380859"
+   height="281.9633789"
+   id="rect218" /> 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</g>
+</svg>

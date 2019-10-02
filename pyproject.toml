@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "sound"
+version = "0.1.0"
+description = "A series on sound and music for the NewMarket YT channel's."
+license = "MIT"
+authors = ["jsonV <a@jsonvillanueva.com>"]
+repository="https://gitlab.com/musictheoryvideos/sound"
+classifiers= [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Multimedia :: Graphics",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Natural Language :: English",
+    ]
+
+[tool.poetry.dependencies]
+python = "^3.6.2"
+
+
+[build-system]
+requires = ["poetry_core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

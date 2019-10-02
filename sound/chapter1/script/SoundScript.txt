@@ -1,0 +1,295 @@
+﻿“If I were not a physicist, I would probably be a musician. I often think in
+music. I live my daydreams in music. I see my life in terms of music.” ― Albert
+Einstein
+
+Hey New Merchants, Jason here. This is the first video of a planned five part
+series on the essentials of music. I've geared this series towards the
+scientist, engineer, and foremost the musician in you... so whether you've never
+picked up an instrument or have ten-thousandth time; there's should be
+something to learn and/or review.
+
+Now, the objective with this series is to give you both a conceptual and practical
+understanding of music; however, since music encompasses a variety of genres
+and sounds, this can mean different things to different cultures.
+
+Specifically I mean that:
+Music has a lot of ideas that are often presented to aspiring musicians as
+things to practice and commit to memory. Ideas like rhythm and time
+signatures, intervals, scales and keys, chord progressions and musical circles,
+among other things... to understand the building blocks that allow you to
+express yourself with ease and freedom.
+
+My goal is to empower you to rediscover music. That is, unmask the mysteries of
+music with a perspective that clarifies their origin and makes you feel like you
+can create much of the musical systems in place today.
+
+I am a firm believer in learning by doing, or mind and hand. This series is
+not a replacement for practice, but the expectation is that few hours of
+practice with your instrument with this knowledge will be more fruitful than
+many hours without it. I encourage you to apply the lessons learned and treat
+this experience as though you were first discovering it.
+
+Without further ado, let's introduce the defining characteristic of music:
+sound. In order to understand the music we create today, we must first
+understand physically what sound is and how it may be produced and manipulated.
+Let's start off by discussing how we perceive sound:
+
+############### Human physiology/perception of sound and digital/analog/neurological conversions: ###############
+
+What our human brains ultimately interpret as sound is the vibration of the
+hair cells in our inner-ears, called stereocilia. There are two types of
+stereocilia, inner hair and outer hair cells, and while they have different
+functions in sensing sound, they both create electrical signals that are passed
+through the auditory nerve, and to the brain. Removing ourselves from the
+listener, the source of any sound is an oscillation that produces pressure waves
+which travel through matter (such as solids, liquids, gasses, and plasmas) as a
+transmission medium until it reaches the ear. Air is often this transmission
+medium, but it is entirely possible for these pressure waves to transmit
+through a variety of mediums (as one would listen to a conversation through
+the air in a cup held to a door separated a sizeable distance from the true
+speaker). Once the waves arrive at the external ear, they hit the eardrum and
+are mecahnically transferred by small bones in the ear to the cochlea, an organ
+containing the two types of stereocilia. As the stereocilia are bent and
+sheared against the tectorial membrane, they convert sound into neuralogical
+signals in the basilar membrane, through the auditory nerve, which is left to
+the brain to interpret.
+
+You are currently listening to this video through a sound source, or
+speaker. This speaker, known scientifically as an electroacoustic transducer
+because it transduces, or converts, one form of energy into another, may be
+externally visible as a pair of headphones, or earphones, but can also be
+enclosed within your monitor, laptop, or mobile device. At heart, a speaker
+converts an electrical audio signal into an analog sound wave, and that same
+sound wave is later converted into a neuralogical signal for your brain. This
+process of converting digital audio signals (as in the audio tied to this
+video) into physical sounds is known as digital to analog conversion
+because it converts a discrete digital signal (meaning defined by distinct
+points in time), to a continuous analog signal (meaning with infinite points of
+time between any two points in the signal) that we can hear with our
+stereocilia.
+
+I personally enjoy viewing this relationship of digital to analog audio as our
+human brains converting the digital mind's thoughts into voice. That is, what
+is spoken is first a thought processed by the brain's electrical impulses and
+secondly a sound mechanically created by transferring these electrical impulses
+to the muscles surrounding the vocal chords and mouth.
+
+The reverse of this process is analog to digital conversion and we've already
+discussed the human analogy. The analog signal would be any audible sound wave
+vibrating our stereocilia and then our digtal mind processing and perceiving
+these vibrations as sound.
+
+In much the same way that our stereocilia vibrate due to pressure waves, a
+condenser microphone's (also called a capacitor microphone) diaphram also
+vibrates due to pressure waves (note there many types of microphones that
+function a bit differently). The diaphragm in a microphone acts as one of the
+two plates of a capacitor and stores a relatively constant electric charge;
+when vibrations move the diaphragm, the distance between the diaphragm and
+other plate in the capacitor changes which ultimately results in changes to
+capacitance and voltage in the circuit.
+
+From the laws surrounding electromagnetism, this displacement of charge in an
+electric field acts as an instantaneous change in voltage with closer distances
+equating to negative voltage change, and further distances being more positive.
+It is this voltage which changes with time that we are measuring when recording
+audio signals. When we talk about other electrical instruments, the
+voltage is ultimately still being measured with time, but sometimes in a
+different manner. For instance, an electric bass doesn't use a diaphragm and
+capacitance to measure voltage; but instead relies on magnetism and
+inductance to generate alternating current. This current relates to voltage
+through Ohm's law, where a majority of the resitance comes from the variable
+resistance in the potentiometer, or volume knob. As the volume knob is turned
+up, so too does the voltage in the circuit; and as the amplitude of the string
+vibration increase with stronger strums, the current increases as with the
+voltage. This allows us to consistently use voltages to represent audio signal
+which is helpful when storing the signal's information for playback.
+
+The voltage information present in audio signals can be sent to other analog
+devices, or converted to a digital representation of the signal through an
+audio interface. In contrast to analog signals, digital signals do not retain
+as much of the information within an audio signal as they sample voltages from
+the continous version of the signal at a set rate. The faster the sampling rate
+of the signal, the more accurate the digital copy can represent its analog
+counterpart, but it isn't all sampling rate. The bit depth is the quality of
+information stored at each sample; with low bit depth, the digital signal
+produces a noisy copy of the analog signal and with higher bit depths the noise
+added to signal decreases. The true signal may be best represented when it is
+visualized directly from the source, but as soon as we attempt to store this
+information with analog physical copies like: vinyl discs, or even digital
+copies like: WAV or MP3 files, we lose definition in the audio source. One
+might imagine that like biological cells performing mitosis over a lifetime and
+undergoing mutations that eventually lead to nonfunctional cells, or
+photocopying an original document again and again until it's no longer
+readable; so too does constant resampling and conversion of an audio signal
+result in indiscernible noise.
+
+On the subject of sampling, isn't a wonder why we've established a minimum
+sampling rate of 44.1 kHz? It is worth briefly mentioning that human hearing is
+only capable of hearing frequencies between roughly 20Hz and 20000Hz. If we
+undersampled the audio signal, we would experience aliasing ----------- Something about nyquist rate
+
+################ The physics and properties of sound as it relates to hearing audio: ###############
+
+Now that we've established some of the central ideas to how we perceive, record and
+playback sound, let's investigate the physical properties of sound.
+
+A sound wave, like all plane waves, travel through space and time in a direction,
+with an amplitude, frequency, and wavelength. The frequency and wavelength of a
+sound, together determine the speed of the sound; however, knowing any two of
+these properties allow us to determine the third. 
+
+Sound propogates through all states of matter in two specific types of wave forms:
+Longitudinal waves and transverse waves (put up animations next to eachother)
+In longitudinal, or compression waves, sound may be transferred through all
+states of matter and is best described as waves formed by regions of compression
+and rarefaction.
+(solo diagram pointing out the regions of compression and rarefaction in 2D -- and 3D case if possible).
+Transverse waves on the other hand are only possible in solid mediums and are
+described as waves of alternating shear forces.
+(solo diagram pointout out the shear forces in 2D -- and 3D if possible)
+
+Sound waves, as with electromagnetic waves like light, can be reflected,
+refracted, or attenuated by the medium. Just as a varying wavelengths of light
+can reflect off a mirror, change angle when going in and out of different
+mediums, or be absorbed in solar panels; sound can bounce off of hard surfaces
+producing echoes, change direction as it propogates through air and then water,
+or be dampened as the sounds energy is absorbed. The attenuation in many media,
+such as water and air, is negligible; but is still an interesting phenomenon
+nonetheless depending on the viscocity of the medium.
+
+Also relevant to sound and electromagnetic waves are that they travel with varying speed. In
+electromagnetic waves, the speed limit is a universal limit, which follows as a
+consequence of Einstein's theory of relativity. Nothing with matter can travel
+faster than the speed of light in a vaccuum... but as the medium that light
+travels through changes, so does the speed of light. The speed of sound is no
+different in that the properties of the medium it travels through determine its
+speed since the propogation of sound ultimately boils down to atoms bouncing
+into each other and produce this wave effect; but it's quite opposite from
+electromagnetic waves.
+The biggest difference is that light is fastest in a vacuum whereas sound is
+slowest, or doesn't propogate at all, in a vacuum. The takeaway here, is that
+sound requires matter to propagate its waves.
+
+Now there exists a couple of complex relationships governing the speed of sound
+in a medium; namely its pressure, density, heat capacity ratio, temperature,
+and motion. For the sake of simplicity, we won't deal with general relativity
+and sound, but I will leave resources in the description for the more curious
+among you. The Newton-Laplace equation (show equation) deals with first four
+relationships. It states that the speed of sound in a medium is proportional to
+the square root of the heat capacity ratio and pressure whiles inversely
+proptional to the square root of its density. Here, the heat capacity is a
+measure of how much heat must be supplied to a given mass of a material to
+raise its temperature by a unit; and the ratio involves the heat capactiy at
+constant pressure divided by the heat capacity at constant volume. With the
+ideal gas law, the assumption is that this ratio doesn't change; however, in a
+real gas, both heat capacities increase and continue to differ from each other
+by a fixed constant. This fixed difference results in a ratio that decreases
+with increasing temperatures.
+
+In the case of a moving medium, the speed of sound changes depending on the
+direction of speed, or velocity, relative to a listener. In the case of a tweeting bird
+flying in the wind, it's apparent velocity relative to a stationary
+listener is the speed of sound as calculated with the Newton-Laplace equation,
+in addition to the velocity of the bird and velocity of the wind. (Give animation of a few sample cases)
+
+The speed of a sound is a very important trait when dealing with nuances like
+tuning all of the instruments in a band after traveling to a different
+elevation above sea-level, listening to a siren coming down a street, or the
+classic comedic example of inhaling gasses of varying densities from balloons.
+
+When someone inhales inert gasses like helium, or sulphur-hexafluoride, the
+density term in the Newton-Laplace equation changes. If the density is less
+than air, as is the case with helium, the speed of sound increases; conversely,
+SF6 is more dense than air and slows the speed of sound. The affect on the
+listener are interesting changes to the quality of the sound produced. Let's
+breakdown the case of inhaling helium and discover why it changes the quality
+of sound. Since we've established that the sound waves in the vocal tract
+filled with helium is faster than a vocal tract filled with air, and we've also
+established that speed of a plane wave is proportional to its frequency and
+wavelength, we can conclude that either the frequency, or wavelength, of the
+wave changed in order for the speed of sound to have increased. The fundamental
+wavelength of the sound depends only on the shape of the vocal tract, and thus
+we can reason that the frequency of the sound wave increased. Note, it is
+important to distinguish that what's changed here is not the rate at which the
+vocal cords are vibrating, but rather the resonant frequency of the vocal
+tract. Take a minute to try and reason about gasses with lower densities like
+sulfur-hexafluoride producing lower resonant frequencies.
+
+Beyond the physical properties of sound lay the characteristics, or
+qualities, that allow listeners to distinguish a variety of sounds. These
+include the pitch, timbre, duration, dynamics, texture, and spatial location of
+a sound. When dealing with:
+########### Characteristics/qualities of sound: ########################################
+Pitch:
+
+Pitch, or the fundamental frequency, this stems directly from the vibrating source
+of a sound wave. For instance, a string oscillating at a frequency of
+110 Hz (times per second) has a fundamental pitch of 110 Hz, just as a vocal
+tract, oboe, or bongo, vibrating at 110 Hz also has a fundamental pitch of
+110Hz. The key factor that allows a trained listener to differentiate between
+the instrument is called its timbre.
+
+Timbre/ADSR:
+In the previous example with the balloons, the primary characteristic of sound
+that changed was the resonant frequencies of the vocal tract producing the
+sound and not the fundamental pitch of the vocal tract itself. This quality is
+known in a musical context as timbre, color, or tone, and deals with the varying
+degree to which natural harmonics of the instrument are heard. Natural
+harmonics are whole number multiples of the fundamental frequency, and the
+geometry of the instrument, as well as ambient conditions like the speed of
+sound in the vessel creating the sound, define which harmonics are heard the
+most. Additionally, the attack, decay, sustain and release of a sound source
+help to identify it timbre. For instance, a piano hammer striking a string
+produces a distinct attack pattern that is characteristic of a percussive
+sound, but short decay and long sustain of amplitude in the wave format allows
+listeners to easily differentiate a piano from drum.
+(Demonstrate different instruments playing the same fundamental)
+
+Duration:
+Duration is the perception of how short, or long, a sound is. Most of the time
+this is the time that the sound is first produced to the moment it stops; but
+this is not always the case as you might guess that the gaps in my voice are
+audible, yet disconnected and do not add up to the full length of audio.
+
+Dynamics:
+Dynamics, is simply how quiet, or loud, sound produced by the instrument is
+perceived, and is related to the total number of auditory nerve stimulations
+from the stereocilia. In short time periods (under 200 ms), a very short sound
+can sound softer than a longer sound at when played at the same amplitude,
+though this effect is not apparent at longer time intervals. Also in line with
+this human illusion, is that the complexity of the audio signal triggers more
+nerver stimulation resulting the perception of louder sounds. Compare this
+simple sine wave to a saw-tooth wave at the same wave amplitude.
+
+
+Texture/Spatial location:
+When dealing with sonic textures, we begin to move on from single instrument
+sound sources to many instruments sound sources and focus on the interactions
+and differences between the instruments. I use the term instrument loosely
+speaking here, as texture can also refer to sounds generated in the environment
+that under conventional thought are not considered instruments such as wind,
+static, and rain. Within sonic textures, spatial location comes into play once
+we begin to think about where the sound source is coming from. The
+aformentioned characteristics of sound, such as timbre, can help to place the
+sound of an alto saxophone in the orchestra and determine with certainty the
+distance from the source as well as its placement vertically and horizontally
+from the listener.
+
+Conclusion:
+This video is only an introduction to sound and its properties which allow
+music to exist, and what follows are the details for scales, harmony, rhythm,
+and more. Remember, I encourage you to apply what you've learned as if you had
+first discovered it... and perhaps the next time you hear the humming of a
+refrigerator, the screech of a tire burning rubber, or whatever soundscape you
+come across in life, you'll think about what is producing the timbre and pitch of
+the sound you're hearing, among its other characteristics, and choose to
+perceive what may normally be considered noise as music.
+
+In the next video, we'll jump into detail about the frequency range of human
+hearing and discuss how this frequency range is used by different cultures to
+produce a variety of scales.
+
+If you enjoyed this video, consider liking, subscribing, or even supporting the
+channel on patreon.
+
+Until next time, thanks for watching.
