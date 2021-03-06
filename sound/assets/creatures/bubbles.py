@@ -3,27 +3,28 @@ from manim import *
 __all__ = ["SpeechBubble", "ThoughtBubble"]
 
 MEDIA_DIR = "../assets/creatures/svg_images/"
-class Bubble(SVGMobject):
 
+
+class Bubble(SVGMobject):
     def __init__(self, file_name, **kwargs):
-        self.direction= LEFT
-        self.center_point= ORIGIN
-        self.content_scale_factor= 0.75
-        height= 5
-        width= 8
-        self.bubble_center_adjustment_factor= 1. / 8
-        self.file_name= file_name
-        self.fill_color= BLACK
-        self.fill_opacity= 0.8
-        self.stroke_color= WHITE
-        self.stroke_width= 3
+        self.direction = LEFT
+        self.center_point = ORIGIN
+        self.content_scale_factor = 0.75
+        self.bubble_center_adjustment_factor = 1.0 / 8
+        self.file_name = file_name
+        self.fill_color = BLACK
+        self.fill_opacity = 0.8
+        self.stroke_color = WHITE
+        self.stroke_width = 3
         SVGMobject.__init__(self, **kwargs)
+        self.set(height=4)
+        self.set(width=7)
         self.center()
         self.stretch_to_fit_height(self.height)
         self.stretch_to_fit_width(self.width)
         if self.direction[0] > 0:
             self.flip()
-        self.direction_was_specified = ("direction" in kwargs)
+        self.direction_was_specified = "direction" in kwargs
         self.content = Mobject()
 
     def get_tip(self):
@@ -61,9 +62,7 @@ class Bubble(SVGMobject):
         scaled_width = self.content_scale_factor * self.get_width()
         if mobject.get_width() > scaled_width:
             mobject.set_width(scaled_width)
-        mobject.shift(
-            self.get_bubble_center() - mobject.get_center()
-        )
+        mobject.shift(self.get_bubble_center() - mobject.get_center())
         return mobject
 
     def add_content(self, mobject):
@@ -90,11 +89,12 @@ class Bubble(SVGMobject):
         self.add_content(VMobject())
         return self
 
+
 class SpeechBubble(Bubble):
     def __init__(self):
-        super().__init__(MEDIA_DIR+"Bubbles_speech.svg")
+        super().__init__(MEDIA_DIR + "Bubbles_speech.svg")
 
 
 class ThoughtBubble(Bubble):
     def __init__(self):
-        super().__init__(MEDIA_DIR+"Bubbles_thought.svg")
+        super().__init__(MEDIA_DIR + "Bubbles_thought.svg")

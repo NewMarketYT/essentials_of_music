@@ -152,6 +152,9 @@ class Chapter1Opening(Scene):
 
 
 class Introduction(MusicScene):
+    def __init__(self):
+        super().__init__(GREY_BROWN)
+
     def construct(self):
         self.show_series()
         # self.show_many_facts()
@@ -165,7 +168,7 @@ class Introduction(MusicScene):
         this_video.save_state()
         this_video.set_fill(opacity=0)
         this_video.center()
-        this_video.set_height(config.frame_height)
+        this_video.set(height=config.frame_height)
         self.this_video = this_video
 
         words = Tex("Welcome to \\\\", "Essentials of Music")
@@ -173,7 +176,7 @@ class Introduction(MusicScene):
 
         self.teacher.change_mode("happy")
         self.play(
-            FadeIn(series, lag_ratio=0.5, run_time=2),
+            FadeIn(series, run_time=2),
             Blink(self.get_teacher()),
         )
         self.teacher_says(words, target_mode="hooray")
@@ -188,7 +191,7 @@ class Introduction(MusicScene):
             *[
                 ApplyMethod(
                     video.shift,
-                    0.5 * video.get_height() * DOWN,
+                    0.5 * video.height * DOWN,
                     run_time=3,
                     rate_func=squish_rate_func(there_and_back, alpha, alpha + 0.3),
                 )

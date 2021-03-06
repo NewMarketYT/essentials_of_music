@@ -8,4 +8,3 @@ class Creature(SVGMobject):
         VGroup.__init__(self, **kwargs)
         width = 3
         height = 2
-

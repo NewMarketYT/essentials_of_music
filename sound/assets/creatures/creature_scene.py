@@ -219,25 +219,26 @@ class ClassScene(CreatureScene):
         self.seconds_to_blink = (seconds_to_blink,)
         self.screen_height = screen_height
         self.student_colors = [BLUE_A, BLUE_B, BLUE_C, RED_A]
-        self.student_scale_factor = 0.3
+        self.student_scale_factor = .75
         super().__init__(**kwargs)
 
     def setup(self):
         super().setup()
         self.screen = ScreenRectangle(height=self.screen_height)
         self.screen.to_corner(UP + LEFT)
-        self.hold_up_spot = self.teacher.get_corner(UP + LEFT) + MED_LARGE_BUFF * UP
+        self.hold_up_spot = self.teacher.get_corner(UL) + MED_LARGE_BUFF * UP
 
     def create_creatures(self):
         self.teacher = Json(color=self.teacher_color)
-        self.teacher.to_corner(DOWN + LEFT)
-        self.teacher.look(DOWN + RIGHT)
+        self.teacher.to_corner(DL).shift(DOWN * 0.25)
+        self.teacher.look(DR)
         self.students = VGroup(
             *[Rest(color=GREY)] + [Quarter(color=c) for c in self.student_colors]
         )
-        self.students.arrange(7 * LEFT)
+        self.students.arrange(6 * LEFT)
         self.students.scale(self.student_scale_factor)
-        self.students.to_corner(DOWN + RIGHT)
+        self.students.to_edge(RIGHT).shift(DOWN*1.05)
+        self.students[0].shift(UP*.125)
         self.teacher.look_at(self.students[-1].eyes)
         for student in self.students:
             student.look_at(self.teacher.eyes)
@@ -298,5 +299,28 @@ class ClassScene(CreatureScene):
 
 
 class MusicScene(ClassScene):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, teacher_color=GREY_BROWN):
+        super().__init__(teacher_color=teacher_color)
+
+    def setup(self):
+        l1 = Line(LEFT * frame.frame_width / 2, RIGHT * frame.frame_width / 2)
+        l2 = Line(LEFT * frame.frame_width / 2, RIGHT * frame.frame_width / 2).next_to(
+            l1, 3 * DOWN
+        )
+        l3 = Line(LEFT * frame.frame_width / 2, RIGHT * frame.frame_width / 2).next_to(
+            l2, 3 * DOWN
+        )
+        l4 = Line(LEFT * frame.frame_width / 2, RIGHT * frame.frame_width / 2).next_to(
+            l3, 3 * DOWN
+        )
+        l5 = Line(LEFT * frame.frame_width / 2, RIGHT * frame.frame_width / 2).next_to(
+            l4, 3 * DOWN
+        )
+        staff = (
+            VGroup(*[l1, l2, l3, l4, l5])
+            .move_to(ORIGIN)
+            .shift(DOWN)
+            .set_color(DARK_GREY)
+        )
+        self.add(*staff)
+        super().setup()

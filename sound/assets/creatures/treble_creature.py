@@ -20,12 +20,12 @@ MOUTH_INDEX = 6
 
 class TrebleCreature(SVGMobject):
     def __init__(self, mode="plain", **kwargs):
+        self.file_name_prefix = "TrebleCreature"
+        self.mode = mode
         self.color = GREY_BROWN
-        self.file_name_prefix = "QuarterCreature"
         self.stroke_width = 0
         self.stroke_color = BLACK
         self.fill_opacity = 1.0
-        height = 4
         self.corner_scale_factor = 0.75
         self.flip_at_start = False
         self.is_looking_direction_purposeful = False
@@ -34,7 +34,6 @@ class TrebleCreature(SVGMobject):
         self.left_arm_range = [0.34, 0.462]
         self.pupil_to_eye_width_ratio = 0.4
         self.pupil_dot_to_pupil_width_ratio = 0.3
-        self.mode = mode
         self.parts_named = False
         try:
             svg_file = os.path.join(CREATURE_DIR, f"{self.file_name_prefix}_{mode}")
@@ -42,6 +41,7 @@ class TrebleCreature(SVGMobject):
         except Exception:
             SVGMobject.__init__(self, mode="plain", file_name=svg_file, **kwargs)
 
+        self.set(height=6)
         if self.flip_at_start:
             self.flip()
         if self.start_corner is not None:
@@ -56,7 +56,9 @@ class TrebleCreature(SVGMobject):
 
     def name_parts(self):
         self.mouth = self.submobjects[MOUTH_INDEX]
-        self.body = self.submobjects[BODY_INDEX]
+        self.body = VGroup(
+            *[self.submobjects[BODY_INDEX], self.submobjects[TAIL_INDEX]]
+        )
         self.pupils = VGroup(
             *[self.submobjects[LEFT_PUPIL_INDEX], self.submobjects[RIGHT_PUPIL_INDEX]]
         )
@@ -68,19 +70,14 @@ class TrebleCreature(SVGMobject):
 
     def init_colors(self):
         SVGMobject.init_colors(self)
-        if not self.parts_named:
-            self.name_parts()
+        self.name_parts()
         self.mouth.set_fill(BLACK, opacity=1)
-        self.body.set_fill(self.color, opacity=1)
+        self.body.set_color(self.color)
         self.eyes.set_fill(WHITE, opacity=1)
         self.init_pupils()
         return self
 
     def init_pupils(self):
-        # Instead of what is drawn, make new circles.
-        # This is mostly because the paths associated
-        # with the eyes in all the drawings got slightly
-        # messed up.
         for eye, pupil in zip(self.eyes, self.pupils):
             pupil_r = eye.get_width() / 2
             pupil_r *= self.pupil_to_eye_width_ratio
@@ -188,7 +185,7 @@ class TrebleCreature(SVGMobject):
             SVGMobject.to_corner(self, vect, **kwargs)
         else:
             self.scale(self.corner_scale_factor)
-            self.to_corner(DOWN + LEFT, **kwargs)
+            self.to_corner(DL, **kwargs)
         return self
 
     def get_bubble(self, *content, **kwargs):
@@ -241,7 +238,7 @@ def get_all_creature_modes():
 
 
 class Json(TrebleCreature):
-    pass  # Nothing more than an alternative name
+    pass
 
 
 class Nsoj(TrebleCreature):
@@ -254,7 +251,7 @@ class Eyes(VMobject):
         VMobject.__init__(self, **kwargs)
         height = 0.3
         self.thing_to_look_at = None
-        self.mode="plain"
+        self.mode = "plain"
         self.body = body
         eyes = self.create_eyes()
         self.become(eyes, copy_submobjects=False)
@@ -343,4 +340,6 @@ class TrebleCreatureSays(CreatureBubbleIntroduction):
 
 class Blink(ApplyMethod):
     def __init__(self, creature, **kwargs):
-        ApplyMethod.__init__(self, creature.blink, rate_func= squish_rate_func(there_and_back), **kwargs)
+        ApplyMethod.__init__(
+            self, creature.blink, rate_func=squish_rate_func(there_and_back), **kwargs
+        )

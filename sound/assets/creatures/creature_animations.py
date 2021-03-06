@@ -54,10 +54,8 @@ class CreatureBubbleIntroduction(AnimationGroup):
 
 
 class CreatureSays(CreatureBubbleIntroduction):
-    CONFIG = {
-        "target_mode": "speaking",
-        "bubble_class": SpeechBubble,
-    }
+    def __init__(self):
+        super().__init__()
 
 
 class RemoveCreatureBubble(AnimationGroup):

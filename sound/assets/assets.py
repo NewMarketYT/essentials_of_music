@@ -9,10 +9,11 @@ class Video(SVGMobject):
         src = "video_icon.svg"
         SVGMobject(src)
         self.center()
-        self.set(width = 5, stroke_color=WHITE, stroke_width=0, fill_color=WHITE)
+        self.set(width=5, stroke_color=WHITE, stroke_width=0, fill_color=WHITE)
+
 
 class VideoSeries(VGroup):
-    def __init__(self, num_videos = 11, gradient_colors = [RED, RED_B], **kwargs):
+    def __init__(self, num_videos=11, gradient_colors=[RED, RED_B], **kwargs):
         videos = [Video() for x in range(self.num_videos)]
         super().__init__(self, *videos, **kwargs)
         self.arrange()

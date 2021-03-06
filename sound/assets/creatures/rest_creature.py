@@ -22,11 +22,10 @@ BOUNDINGBOX = 6
 class RestCreature(SVGMobject):
     def __init__(self, mode="plain", **kwargs):
         self.color = GREY_BROWN
-        self.file_name_prefix = "QuarterCreature"
+        self.file_name_prefix = "RestCreature"
         self.stroke_width = 0
         self.stroke_color = BLACK
         self.fill_opacity = 1.0
-        height = 4
         self.corner_scale_factor = 0.75
         self.flip_at_start = False
         self.is_looking_direction_purposeful = False
@@ -43,7 +42,7 @@ class RestCreature(SVGMobject):
         except Exception:
             SVGMobject.__init__(self, mode="plain", file_name=svg_file, **kwargs)
 
-
+        self.set(height=3)
         if self.flip_at_start:
             self.flip()
         if self.start_corner is not None:
@@ -60,22 +59,20 @@ class RestCreature(SVGMobject):
         self.boundingbox = self.submobjects[BOUNDINGBOX]
         self.mouth = self.submobjects[MOUTH_INDEX]
         self.body = self.submobjects[BODY_INDEX]
-        self.pupils = VGroup(*[
-            self.submobjects[LEFT_PUPIL_INDEX],
-            self.submobjects[RIGHT_PUPIL_INDEX]
-        ])
-        self.eyes = VGroup(*[
-            self.submobjects[LEFT_EYE_INDEX],
-            self.submobjects[RIGHT_EYE_INDEX]
-        ])
+        self.pupils = VGroup(
+            *[self.submobjects[LEFT_PUPIL_INDEX], self.submobjects[RIGHT_PUPIL_INDEX]]
+        )
+        self.eyes = VGroup(
+            *[self.submobjects[LEFT_EYE_INDEX], self.submobjects[RIGHT_EYE_INDEX]]
+        )
         self.eye_parts = VGroup(self.eyes, self.pupils)
         self.parts_named = True
 
     def init_colors(self):
-        SVGMobject.init_colors(self)
+        super().init_colors()
         if not self.parts_named:
             self.name_parts()
-        self.boundingbox.set_fill(WHITE, opacity=0) 
+        self.boundingbox.set_fill(WHITE, opacity=0)
         self.mouth.set_fill(BLACK, opacity=1)
         self.body.set_fill(self.color, opacity=1)
         self.eyes.set_fill(WHITE, opacity=1)
@@ -107,10 +104,7 @@ class RestCreature(SVGMobject):
             )
             new_pupil.move_to(pupil)
             pupil.become(new_pupil)
-            dot.shift(
-                new_pupil.get_boundary_point(UL) -
-                dot.get_boundary_point(UL)
-            )
+            dot.shift(new_pupil.get_boundary_point(UL) - dot.get_boundary_point(UL))
             pupil.add(dot)
 
     def copy(self):
@@ -181,15 +175,15 @@ class RestCreature(SVGMobject):
         return self.eyes.get_center() + self.get_looking_direction()
 
     def is_flipped(self):
-        return self.eyes.submobjects[0].get_center()[0] > \
-            self.eyes.submobjects[1].get_center()[0]
+        return (
+            self.eyes.submobjects[0].get_center()[0]
+            > self.eyes.submobjects[1].get_center()[0]
+        )
 
     def blink(self):
         eye_parts = self.eye_parts
         eye_bottom_y = eye_parts.get_bottom()[1]
-        eye_parts.apply_function(
-            lambda p: [p[0], eye_bottom_y, p[2]]
-        )
+        eye_parts.apply_function(lambda p: [p[0], eye_bottom_y, p[2]])
         return self
 
     def to_corner(self, vect=None, **kwargs):
@@ -224,17 +218,19 @@ class RestCreature(SVGMobject):
         self.change_mode("shruggie")
         top_mouth_point, bottom_mouth_point = [
             self.mouth.points[np.argmax(self.mouth.points[:, 1])],
-            self.mouth.points[np.argmin(self.mouth.points[:, 1])]
+            self.mouth.points[np.argmin(self.mouth.points[:, 1])],
         ]
         self.look(top_mouth_point - bottom_mouth_point)
         return self
 
     def get_arm_copies(self):
         body = self.body
-        return VGroup(*[
-            body.copy().pointwise_become_partial(body, *alpha_range)
-            for alpha_range in (self.right_arm_range, self.left_arm_range)
-        ])
+        return VGroup(
+            *[
+                body.copy().pointwise_become_partial(body, *alpha_range)
+                for alpha_range in (self.right_arm_range, self.left_arm_range)
+            ]
+        )
 
 
 def get_all_creature_modes():
@@ -243,14 +239,12 @@ def get_all_creature_modes():
     suffix = ".svg"
     for file in os.listdir(CREATURE_DIR):
         if file.startswith(prefix) and file.endswith(suffix):
-            result.append(
-                file[len(prefix):-len(suffix)]
-            )
+            result.append(file[len(prefix) : -len(suffix)])
     return result
 
 
 class Rest(RestCreature):
-    pass 
+    pass
 
 
 class Eyes(VMobject):
@@ -258,7 +252,7 @@ class Eyes(VMobject):
         VMobject.__init__(self, **kwargs)
         height = 0.3
         self.thing_to_look_at = None
-        self.mode="plain"
+        self.mode = "plain"
         self.body = body
         eyes = self.create_eyes()
         self.become(eyes, copy_submobjects=False)
@@ -292,27 +286,20 @@ class Eyes(VMobject):
         return eyes
 
     def change_mode(self, mode, thing_to_look_at=None):
-        new_eyes = self.create_eyes(
-            mode=mode,
-            thing_to_look_at=thing_to_look_at
-        )
+        new_eyes = self.create_eyes(mode=mode, thing_to_look_at=thing_to_look_at)
         self.become(new_eyes, copy_submobjects=False)
         return self
 
     def look_at(self, thing_to_look_at):
-        self.change_mode(
-            self.mode,
-            thing_to_look_at=thing_to_look_at
-        )
+        self.change_mode(self.mode, thing_to_look_at=thing_to_look_at)
         return self
 
     def blink(self, **kwargs):  # TODO, change Blink
         bottom_y = self.get_bottom()[1]
         for submob in self:
-            submob.apply_function(
-                lambda p: [p[0], bottom_y, p[2]]
-            )
+            submob.apply_function(lambda p: [p[0], bottom_y, p[2]])
         return self
+
 
 class CreatureBubbleIntroduction(AnimationGroup):
     def __init__(self, creature, *content, **kwargs):
@@ -343,15 +330,17 @@ class CreatureBubbleIntroduction(AnimationGroup):
             bubble.content, **self.content_introduction_kwargs
         )
         AnimationGroup.__init__(
-            self, change_mode, bubble_creation, content_introduction,
-            **kwargs
+            self, change_mode, bubble_creation, content_introduction, **kwargs
         )
+
 
 class RestCreatureSays(CreatureBubbleIntroduction):
     def __init__(self):
         super().__init__(self)
 
+
 class Blink(ApplyMethod):
     def __init__(self, creature, **kwargs):
-        ApplyMethod.__init__(self, creature.blink, rate_func= squish_rate_func(there_and_back), **kwargs)
-
+        ApplyMethod.__init__(
+            self, creature.blink, rate_func=squish_rate_func(there_and_back), **kwargs
+        )
