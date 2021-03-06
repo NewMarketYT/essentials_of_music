@@ -193,7 +193,7 @@ class TrebleCreature(SVGMobject):
         bubble = bubble_class(**kwargs)
         if len(content) > 0:
             if isinstance(content[0], str):
-                content_mob = TextMobject(*content)
+                content_mob = Tex(*content)
             else:
                 content_mob = content[0]
             bubble.add_content(content_mob)

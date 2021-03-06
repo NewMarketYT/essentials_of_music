@@ -161,6 +161,23 @@ class Introduction(MusicScene):
         # self.create_music()
 
     def show_series(self):
+        words = Tex("Welcome to \\\\", "Essentials of Music")
+        words.set_color_by_tex("Essentials of Music", YELLOW)
+        self.teacher.change_mode("happy")
+        self.play(
+            Blink(self.get_teacher()),
+        )
+        self.teacher_says(words, target_mode="hooray")
+        essence_words = words.get_part_by_tex("Essentials").copy()
+        self.play(
+            AnimationGroup(
+                FadeOut(self.teacher.bubble),
+                FadeOut(self.teacher.bubble.content),
+                essence_words.animate.move_to(ORIGIN+UP),
+                lag_ratio=.2
+            )
+        )
+
         series = VideoSeries(num_videos=5)
         series.to_edge(UP)
         this_video = series[0]
@@ -170,16 +187,9 @@ class Introduction(MusicScene):
         this_video.center()
         this_video.set(height=config.frame_height)
         self.this_video = this_video
-
-        words = Tex("Welcome to \\\\", "Essentials of Music")
-        words.set_color_by_tex("Essentials of Music", YELLOW)
-
-        self.teacher.change_mode("happy")
         self.play(
             FadeIn(series, run_time=2),
-            Blink(self.get_teacher()),
         )
-        self.teacher_says(words, target_mode="hooray")
         self.change_student_modes(
             *["hooray"] * 4,
             look_at_arg=series[1].get_left(),
@@ -197,17 +207,9 @@ class Introduction(MusicScene):
                 )
                 for video, alpha in zip(series, np.linspace(0, 0.7, len(series)))
             ]
-            + [
-                Animation(self.teacher.bubble),
-                Animation(self.teacher.bubble.content),
-            ]
         )
 
-        essence_words = words.get_part_by_tex("Essentials").copy()
         self.play(
-            FadeOut(self.teacher.bubble),
-            FadeOut(self.teacher.bubble.content),
-            essence_words.animate.next_to(series, DOWN),
             *[ApplyMethod(pi.change_mode, "pondering") for pi in self.get_creatures()]
         )
         self.wait()

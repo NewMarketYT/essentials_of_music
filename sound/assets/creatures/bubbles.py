@@ -17,8 +17,8 @@ class Bubble(SVGMobject):
         self.stroke_color = WHITE
         self.stroke_width = 3
         SVGMobject.__init__(self, **kwargs)
-        self.set(height=4)
-        self.set(width=7)
+        self.set(height=3)
+        self.set(width=6)
         self.center()
         self.stretch_to_fit_height(self.height)
         self.stretch_to_fit_width(self.width)
@@ -55,7 +55,7 @@ class Bubble(SVGMobject):
             self.flip()
         boundary_point = mobject.get_critical_point(UP - self.direction)
         vector_from_center = 1.0 * (boundary_point - mob_center)
-        self.move_tip_to(mob_center + vector_from_center)
+        self.move_tip_to((mob_center + vector_from_center)*.95)
         return self
 
     def position_mobject_inside(self, mobject):
@@ -78,7 +78,7 @@ class Bubble(SVGMobject):
         target_width = self.content.get_width()
         target_width += max(MED_LARGE_BUFF, 2)
         target_height = self.content.get_height()
-        target_height += 2.5 * LARGE_BUFF
+        target_height += 2.5 *MED_LARGE_BUFF 
         tip_point = self.get_tip()
         self.stretch_to_fit_width(target_width)
         self.stretch_to_fit_height(target_height)

@@ -1,7 +1,7 @@
 from manim.animation.animation import Animation
 from manim.animation.composition import AnimationGroup
 from manim.animation.fading import FadeOut
-from manim.animation.creation import ShowCreation
+from manim.animation.creation import DrawBorderThenFill, ShowCreation
 from manim.animation.creation import Write
 from manim.animation.transform import ApplyMethod
 from manim.animation.transform import MoveToTarget
@@ -28,7 +28,7 @@ class CreatureBubbleIntroduction(AnimationGroup):
         self.bubble_creation_class = ShowCreation
         self.bubble_creation_kwargs = {}
         self.bubble_kwargs = {}
-        self.content_introduction_class = Write
+        self.content_introduction_class = DrawBorderThenFill
         self.content_introduction_kwargs = {}
         self.look_at_arg = None
         bubble = creature.get_bubble(
