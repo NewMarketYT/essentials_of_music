@@ -18,7 +18,7 @@ class NewMarketLogo(GraphScene, MovingCameraScene):
         self.graph_origin = np.array([0, 0, 0])
         self.x_axis_label = ""
         self.y_axis_label = ""
-        self.camera_frame.save_state()
+        self.camera.frame.save_state()
         self.setup_axes(animate=False)
 
         def stock_curve(x):
@@ -56,13 +56,13 @@ class NewMarketLogo(GraphScene, MovingCameraScene):
         sticks.pop(2)
         moving_dot = Dot(fill_opacity=0).move_to(dolly.points[0])
         self.add(moving_dot)
-        self.camera_frame.scale(0.5).move_to(moving_dot)
-        self.add(self.camera_frame)
+        self.camera.frame.scale(0.5).move_to(moving_dot)
+        self.add(self.camera.frame)
 
         def update_curve(mob):
             mob.move_to(moving_dot.get_center())
 
-        self.camera_frame.add_updater(update_curve)
+        self.camera.frame.add_updater(update_curve)
         candles = VGroup(*sticks)
         logo = SVGMobject("newmarket.svg").scale(0.5).move_to(0.5 * UP)
         logo.submobjects[0].set(stroke_width=0)
@@ -75,7 +75,7 @@ class NewMarketLogo(GraphScene, MovingCameraScene):
             ),
             Write(logo, run_time=3, rate_func=rush_into),
         )
-        self.camera_frame.remove_updater(update_curve)
+        self.camera.frame.remove_updater(update_curve)
 
         self.play(
             AnimationGroup(
@@ -84,7 +84,7 @@ class NewMarketLogo(GraphScene, MovingCameraScene):
                 logo.animate.shift(0.15 * DOWN),
                 logo.submobjects[2].animate.set_fill(BLACK).shift(0.15 * DOWN),
             ),
-            self.camera_frame.animate.scale(0.005),
+            self.camera.frame.animate.scale(0.005),
         )
         self.wait()
 
