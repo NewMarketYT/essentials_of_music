@@ -320,7 +320,7 @@ class MusicScene(ClassScene):
             VGroup(*[l1, l2, l3, l4, l5])
             .move_to(ORIGIN)
             .shift(DOWN)
-            .set_color(DARK_GREY)
+            .set_color(WHITE)
         )
         self.add(*staff)
         super().setup()

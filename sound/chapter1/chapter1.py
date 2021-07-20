@@ -1,4 +1,5 @@
 from manim import *
+from manim.utils.rate_functions import ease_in_out_circ
 from sound import *
 
 
@@ -70,7 +71,7 @@ class NewMarketLogo(GraphScene, MovingCameraScene):
         self.play(
             AnimationGroup(
                 MoveAlongPath(moving_dot, dolly, rate_func=smooth, run_time=3),
-                Write(graph, run_time=2.5, rate_func=rush_into),
+                Write(graph, run_time=2.5, rate_func=ease_in_out_circ),
                 Write(candles, run_time=4),
             ),
             Write(logo, run_time=3, rate_func=rush_into),
@@ -151,14 +152,19 @@ class Chapter1Opening(Scene):
         self.play(colored_words.animate.set(width=frame.frame_width).shift(DOWN))
 
 
+class Test(Scene):
+    def construct(self):
+        teacher = Json(color=BLUE)
+        self.add(teacher)
+
 class Introduction(MusicScene):
     def __init__(self):
         super().__init__(GREY_BROWN)
 
     def construct(self):
         self.show_series()
-        # self.show_many_facts()
-        # self.create_music()
+        #self.show_many_facts()
+        #self.create_music()
 
     def show_series(self):
         words = Tex("Welcome to \\\\", "Essentials of Music")
@@ -302,7 +308,7 @@ class Introduction(MusicScene):
     #     )
     #     arrow = Arrow(music, student)
     #     arrow.set_color(color=YELLOW_C)
-    #     self.play(ShowCreation(arrow))
+    #     self.play(Create(arrow))
     #     self.wait(2)
 
 
