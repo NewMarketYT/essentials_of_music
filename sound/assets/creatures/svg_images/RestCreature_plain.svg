@@ -9,7 +9,7 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    id="Layer_1"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
    sodipodi:docname="RestCreature_plain.svg"
    x="0px"
    y="0px"
@@ -46,7 +46,7 @@
    inkscape:cy="171.9622"
    id="namedview17"
    inkscape:zoom="3.959798"
-   inkscape:cx="239.04102"
+   inkscape:cx="209.7466"
    bordercolor="#666666"
    objecttolerance="10"
    borderopacity="1"
@@ -75,7 +75,7 @@
    inkscape:document-rotation="0" />
 
   <circle
-   style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#ddc7a6;fill-opacity:1;fill-rule:evenodd;stroke-width:0.6561;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+   style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd"
    id="path21"
    cx="172.92114"
    cy="351.50443"
@@ -91,14 +91,14 @@
    d="m 170.88931,253.37101 c 8.47211,9.03692 73.42498,88.67478 73.42498,88.67478 0,0 -36.14768,34.45326 -36.14768,70.60094 0,42.36057 48.57344,80.76748 48.57344,80.76748 l -5.08327,6.21288 c -18.63864,-10.73134 -50.26787,-11.86096 -64.38805,4.51846 -17.50904,20.33307 22.02749,51.39749 22.02749,51.39749 l -4.51846,6.21288 c -13.55538,-10.16654 -71.16575,-64.38806 -46.87902,-90.93401 14.68499,-16.37942 32.75883,-21.46269 58.17517,-7.90731 L 147.7322,392.31366 c 39.53653,-48.57344 46.31422,-62.69363 46.31422,-75.68421 0,-27.11076 -19.20346,-46.31421 -28.80519,-58.73998 -3.38884,-5.08327 -9.60172,-9.03692 -5.64807,-12.42577 3.95365,-2.82404 6.21288,1.69442 11.29615,7.90731 z"
    id="quarter_rest"
    inkscape:connector-curvature="0"
-   style="stroke-width:5.6480751" />
+   style="stroke-width:5.6480751;fill:#0000ff" />
 
   <circle
    r="12.321428"
    cy="350.24173"
    cx="195.1445"
    id="circle23"
-   style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#ddc7a6;fill-opacity:1;fill-rule:evenodd;stroke-width:0.6561;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1" />
+   style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd" />
 
   <path
    id="path10"

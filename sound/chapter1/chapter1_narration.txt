@@ -3,35 +3,31 @@ music. I live my daydreams in music. I see my life in terms of music.” ― Alb
 Einstein
 
 Hey New Merchants. Welcome to the first video in a series on the essentials of
-music. I've created this series with scientists and engineers in mind, but
-foremost the musician in you... whether you've never picked up a musical
-instrument before or have practiced ten thousand hours; there should be
-something to learn and/or review for you.
+music. I'm creating this five-part series with scientists and engineers in mind,
+but foremost the musician in you... whether you're just picking up a musical
+instrument or have already put in ten thousand hours; there should be something
+in store for you.
 
-Now, our objective with this series is to offer a conceptual and practical
-understanding of music; however, since music encompasses an infinite variety
-of sounds, this naturally encourages different cultures to find different
-sounds when creating music, ultimately leading to different genres.
+Now, my objective with this series is to empower you to rediscover and create
+music by offering a conceptual and practical understanding of its fundamentals;
+however, since music encompasses an infinite variety of sounds with different
+cultures creating vastly different musical genres, there's a lot of things that
+can mean. 
 
 Music has a lot of ideas that are usually presented to developing musicians as
 things to simply practice and commit to muscle memory. Ideas like rhythm and time
 signatures; intervals, scales, keys and tuning systems; chord progressions and musical circles,
 among other ideas... while incredibly useful, are often discussed without enough
-context to allow these musicians to understand when, or how, to take advantage
-of artistic liberties.
-
-My goal is to empower you to rediscover music and the ideas tethered to sound.
-In doing so, you'll gain a perspective that clarifies how our ancestors may have
-stumbled upon them long ago and made use of them in the music we hear today.
+context to allow these musicians to take artistic liberties. 
 
 I am a firm believer in mind and hand, or in learning by doing. This series is
-supplemental material to practice, but the expectation is that few hours with
-this knowledge and your instrument will be more fruitful than many hours without
-it.
+largely meant to supplement your practice, the expectation being that a few
+hours with this knowledge and your instrument will be more meaningful than many
+hours without it.
 
 Without further ado, let's introduce the defining characteristic of music:
-sound. In order to understand the music we create today, we must first
-understand physically what sound is and how it may be produced and manipulated.
+sound. In order to understand music, we must first
+understand physically what sound is and how it is produced and manipulated.
 Let's start off by discussing how we perceive sound:
 
 ############### Human physiology/perception of sound and digital/analog/neurological conversions: ###############

@@ -13,7 +13,7 @@
    y="0px"
    x="0px"
    sodipodi:docname="QuarterCreature_happy.svg"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
    id="Layer_1"
    version="1.1">
   <metadata
@@ -63,20 +63,20 @@
    borderopacity="1"
    objecttolerance="10"
    bordercolor="#666666"
-   inkscape:cx="173.31074"
-   inkscape:zoom="1"
+   inkscape:cx="238.08472"
+   inkscape:zoom="5.5073052"
    id="namedview17"
-   inkscape:cy="258.42604"
+   inkscape:cy="297.56755"
    inkscape:snap-grids="true" />
   <ellipse
    cy="433.14999"
    cx="181.5"
    id="path83"
-   style="opacity:1;vector-effect:none;fill:#ddc7a6;fill-opacity:1;fill-rule:evenodd;stroke-width:0.65609998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd"
    rx="13"
    ry="10.525126" />
   <ellipse
-   style="opacity:1;vector-effect:none;fill:#ddc7a6;fill-opacity:1;fill-rule:evenodd;stroke-width:0.65609998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd"
    id="circle85"
    cx="208.25"
    cy="432.39999"
@@ -94,24 +94,28 @@
    id="path10" />
   <g
    transform="translate(107.29919,196.70864)"
-   id="page2">
+   id="page2"
+   style="fill:#0000ff">
     <g
    transform="matrix(4.0989647,0,0,4.0989647,-84.44567,0)"
-   id="a_quarter_note">
+   id="a_quarter_note"
+   style="fill:#0000ff">
       <path
    inkscape:connector-curvature="0"
    d="M 50.164948,0 H 53.30378 L 52.7,31.476913 V 66 H 51.2 V 31.304404 Z"
    id="path1314"
-   sodipodi:nodetypes="ccsccsc" />
+   sodipodi:nodetypes="ccsccsc"
+   style="fill:#0000ff" />
       <path
    inkscape:connector-curvature="0"
    d="M 28.3,76.1 C 25.5,71.3 28.5,64.4 34.9,60.7 41.3,57 48.8,57.7 51.6,62.5 54.4,67.3 51.4,74.2 45,78 38.6,81.7 31.1,80.9 28.3,76.1 Z"
-   id="path1316" />
+   id="path1316"
+   style="fill:#0000ff" />
     </g>
   </g>
   <path
    style="fill:#ffffff"
-   d="m 164.78173,469.53354 c 4.4,0 1.85355,3.98909 11.25355,3.88909 8.3,-0.1 9.64645,-3.98909 12.24645,-4.18909 l -0.2,-3.9 c -3,0.1 -7.5,0.3 -11.8,0.3 h -11.8"
+   d="m 164.78173,469.53354 c 0.76846,2.72366 1.85355,3.98909 11.25355,3.88909 8.3,-0.1 9.82803,-5.07855 12.42803,-5.27855 l -0.38158,-2.81054 c -3,0.1 -7.5,0.3 -11.8,0.3 h -11.8"
    class="st0"
    inkscape:connector-curvature="0"
    id="path14"

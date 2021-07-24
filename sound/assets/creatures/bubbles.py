@@ -55,7 +55,7 @@ class Bubble(SVGMobject):
             self.flip()
         boundary_point = mobject.get_critical_point(UP - self.direction)
         vector_from_center = 1.0 * (boundary_point - mob_center)
-        self.move_tip_to((mob_center + vector_from_center)*.95)
+        self.move_tip_to((mob_center + vector_from_center) * 0.95)
         return self
 
     def position_mobject_inside(self, mobject):
@@ -71,14 +71,14 @@ class Bubble(SVGMobject):
         return self.content
 
     def write(self, *text):
-        self.add_content(TextMobject(*text))
+        self.add_content(Text(*text))
         return self
 
     def resize_to_content(self):
         target_width = self.content.get_width()
         target_width += max(MED_LARGE_BUFF, 2)
         target_height = self.content.get_height()
-        target_height += 2.5 *MED_LARGE_BUFF 
+        target_height += 2.5 * MED_LARGE_BUFF
         tip_point = self.get_tip()
         self.stretch_to_fit_width(target_width)
         self.stretch_to_fit_height(target_height)

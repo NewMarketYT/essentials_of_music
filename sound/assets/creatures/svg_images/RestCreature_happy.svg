@@ -9,7 +9,7 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    id="Layer_1"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
    sodipodi:docname="RestCreature_happy.svg"
    x="0px"
    y="0px"
@@ -26,7 +26,7 @@
         <dc:type
    rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
 
-      <dc:title></dc:title></cc:Work>
+      <dc:title /></cc:Work>
 
     </rdf:RDF>
 
@@ -46,7 +46,7 @@
    inkscape:cy="171.9622"
    id="namedview17"
    inkscape:zoom="3.959798"
-   inkscape:cx="239.04102"
+   inkscape:cx="180.83098"
    bordercolor="#666666"
    objecttolerance="10"
    borderopacity="1"
@@ -75,7 +75,7 @@
    inkscape:document-rotation="0" />
 
   <circle
-   style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#ddc7a6;fill-opacity:1;fill-rule:evenodd;stroke-width:0.6561;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+   style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd"
    id="path21"
    cx="172.92114"
    cy="351.50443"
@@ -91,7 +91,7 @@
    d="m 177.32903,262.71492 c 8.47211,9.03692 66.98526,79.33087 66.98526,79.33087 0,0 -36.14768,34.45326 -36.14768,70.60094 0,42.36057 48.57344,80.76748 48.57344,80.76748 l -5.08327,6.21288 c -18.63864,-10.73134 -50.52041,-20.69979 -64.64059,-4.32037 -17.50904,20.33307 28.34095,37.25535 28.34095,37.25535 l -10.57938,29.19385 c -13.55538,-10.16654 -71.16575,-64.38806 -46.87902,-90.93401 14.68499,-16.37942 32.75883,-21.46269 58.17517,-7.90731 L 147.7322,392.31366 c 39.53653,-48.57344 46.31422,-62.69363 46.31422,-75.68421 0,-27.11076 -14.1527,-40.37956 -23.75443,-52.80533 -3.38884,-5.08327 -6.19245,-16.73934 -1.22865,-17.60281 5.21634,-1.18254 3.18242,10.28072 8.26569,16.49361 z"
    id="quarter_rest"
    inkscape:connector-curvature="0"
-   style="stroke-width:5.6480751"
+   style="stroke-width:5.6480751;fill:#0000ff"
    sodipodi:nodetypes="ccsccccccccsccc" />
 
   <circle
@@ -99,7 +99,7 @@
    cy="350.24173"
    cx="195.1445"
    id="circle23"
-   style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#ddc7a6;fill-opacity:1;fill-rule:evenodd;stroke-width:0.6561;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1" />
+   style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd" />
 
   <path
    id="path10"

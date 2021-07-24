@@ -77,10 +77,10 @@
    borderopacity="1"
    objecttolerance="10"
    bordercolor="#666666"
-   inkscape:cx="258.87086"
-   inkscape:zoom="8.0000002"
+   inkscape:cx="58.567614"
+   inkscape:zoom="1.9471264"
    id="namedview17"
-   inkscape:cy="80.546694" />
+   inkscape:cy="227.39713" />
 
 
   <g
@@ -123,21 +123,19 @@
 
   <circle
    r="12.374369"
-   style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.6561;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+   style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stop-color:#000000;stop-opacity:1"
    id="circle150"
    cx="202.68495"
    cy="247.18607" />
 
 
   <path
-   style="stroke-width:0.651"
    d="m 185.0082,239.72345 c 0.0983,-0.84979 -0.42051,-1.61904 -1.25774,-1.78177 -0.83728,-0.16276 -1.68344,0.40799 -1.84619,1.24523 -0.16281,0.83726 0.40799,1.68342 1.24527,1.84619 0.83722,0.16281 1.68339,-0.40801 1.85866,-1.30965 v 0 l 0.28099,1.9929 c -0.53831,2.76941 -3.23064,4.5854 -6.00004,4.04708 -2.70501,-0.52579 -4.5854,-3.23062 -4.04707,-6.00002 0.53836,-2.7694 3.23061,-4.5854 6.00002,-4.04709 2.705,0.5258 4.58539,3.23064 4.04709,6.00003"
    inkscape:connector-curvature="0"
    id="path8" />
 
 
   <path
-   style="stroke-width:0.6561"
    d="m 210.51554,239.68621 c 0.0164,-0.85529 -0.57375,-1.57127 -1.42275,-1.65298 -0.84905,-0.0812 -1.63658,0.5674 -1.71833,1.41642 -0.0812,0.84908 0.56748,1.63655 1.41645,1.71837 0.84909,0.0812 1.6366,-0.56753 1.72463,-1.48181 v 0 l 0.47071,1.95681 c -0.27036,2.80825 -2.77627,4.87394 -5.58452,4.60354 -2.74295,-0.26409 -4.87392,-2.77631 -4.60352,-5.58454 0.27045,-2.80822 2.77628,-4.87393 5.58452,-4.6035 2.74294,0.26408 4.87396,2.77627 4.60352,5.5845"
    inkscape:connector-curvature="0"
    id="path10" />
@@ -152,4 +150,10 @@
    id="path14" />
 
 
-</svg>
+<rect
+   style="fill:#000000;fill-opacity:0.0001"
+   id="rect1181"
+   width="154"
+   height="424"
+   x="91"
+   y="234" /></svg>

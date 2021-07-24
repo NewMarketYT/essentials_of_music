@@ -9,7 +9,7 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    id="Layer_1"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
    sodipodi:docname="RestCreature_hooray.svg"
    x="0px"
    y="0px"
@@ -26,7 +26,7 @@
         <dc:type
    rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
 
-      <dc:title></dc:title></cc:Work>
+      <dc:title /></cc:Work>
 
     </rdf:RDF>
 
@@ -46,7 +46,7 @@
    inkscape:cy="226.46564"
    id="namedview17"
    inkscape:zoom="1.979899"
-   inkscape:cx="157.77893"
+   inkscape:cx="94.13932"
    bordercolor="#666666"
    objecttolerance="10"
    borderopacity="1"
@@ -75,7 +75,7 @@
    inkscape:document-rotation="0" />
 
   <circle
-   style="opacity:1;vector-effect:none;fill:#ddc7a6;fill-opacity:1;fill-rule:evenodd;stroke-width:0.65609998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd"
    id="path21"
    cx="172.92114"
    cy="351.50443"
@@ -91,12 +91,12 @@
    d="m 197.53208,277.86721 c 8.47211,9.03692 51.06792,63.10715 51.06792,63.10715 0,0 -40.43339,35.52469 -40.43339,71.67237 0,42.36057 44.64487,52.19605 44.64487,52.19605 l -3.29756,22.10574 c -18.63864,-10.73134 -48.37755,-8.02122 -62.49773,8.3582 -17.50904,20.33307 36.34077,26.58837 36.34077,26.58837 l -14.53859,36.83037 c -13.55538,-10.16654 -77.73174,-74.48958 -53.44501,-101.03553 14.68499,-16.37942 35.28421,-8.33071 60.70055,5.22467 L 147.7322,392.31366 c 39.53653,-48.57344 46.31422,-62.69363 46.31422,-75.68421 0,-27.11076 -4.55625,-32.80342 -14.15798,-45.22919 -2.88376,-12.15433 0.37354,-23.8104 5.33734,-24.67387 5.21634,-1.18254 7.22303,24.92793 12.3063,31.14082 z"
    id="quarter_rest"
    inkscape:connector-curvature="0"
-   style="stroke-width:5.6480751"
+   style="stroke-width:5.6480751;fill:#0000ff"
    sodipodi:nodetypes="ccsccccccccsccc" />
 
   <circle
    id="circle23"
-   style="opacity:1;vector-effect:none;fill:#ddc7a6;fill-opacity:1;fill-rule:evenodd;stroke-width:0.65609998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd"
    r="13.928572"
    cy="350.24173"
    cx="195.1445" />

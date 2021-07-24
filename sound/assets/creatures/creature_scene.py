@@ -218,8 +218,8 @@ class ClassScene(CreatureScene):
         self.teacher_color = teacher_color
         self.seconds_to_blink = (seconds_to_blink,)
         self.screen_height = screen_height
-        self.student_colors = [BLUE_A, BLUE_B, BLUE_C, RED_A]
-        self.student_scale_factor = .75
+        self.student_colors = [BLUE, BLUE_B, PINK, BLUE_A]
+        self.student_scale_factor = 0.75
         super().__init__(**kwargs)
 
     def setup(self):
@@ -231,14 +231,16 @@ class ClassScene(CreatureScene):
     def create_creatures(self):
         self.teacher = Json(color=self.teacher_color)
         self.teacher.to_corner(DL).shift(DOWN * 0.25)
-        self.teacher.look(DR)
+        self.teacher.look(DR) 
         self.students = VGroup(
-            *[Rest(color=GREY)] + [Quarter(color=c) for c in self.student_colors]
+            *[Quarter(color=self.student_colors[-1])]
+            + [Rest(color=GREY)]
+            + [Quarter(color=c) for c in self.student_colors[:-1]]
         )
-        self.students.arrange(6 * LEFT)
+        self.students.arrange(LEFT, buff=1.5)
         self.students.scale(self.student_scale_factor)
-        self.students.to_edge(RIGHT).shift(DOWN*1.05)
-        self.students[0].shift(UP*.125)
+        self.students.to_edge(RIGHT).shift(DOWN * 1.05)
+        self.students[0].shift(UP * .3)
         self.teacher.look_at(self.students[-1].eyes)
         for student in self.students:
             student.look_at(self.teacher.eyes)
@@ -293,7 +295,7 @@ class ClassScene(CreatureScene):
         anims = [Transform(s, t) for s, t in zip(start, target)]
         return LaggedStart(
             *anims,
-            lag_ratio=kwargs.get("lag_ratio", 0.5),
+            lag_ratio=kwargs.get("lag_ratio", 0.25),
             run_time=1,
         )
 
@@ -316,11 +318,6 @@ class MusicScene(ClassScene):
         l5 = Line(LEFT * frame.frame_width / 2, RIGHT * frame.frame_width / 2).next_to(
             l4, 3 * DOWN
         )
-        staff = (
-            VGroup(*[l1, l2, l3, l4, l5])
-            .move_to(ORIGIN)
-            .shift(DOWN)
-            .set_color(WHITE)
-        )
-        self.add(*staff)
+        self.staff = VGroup(*[l1, l2, l3, l4, l5]).move_to(ORIGIN).shift(DOWN).set_color(DARK_GREY)
+        self.add(self.staff)
         super().setup()

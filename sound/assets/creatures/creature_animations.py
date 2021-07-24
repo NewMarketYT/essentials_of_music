@@ -15,9 +15,8 @@ from .creature import *
 
 
 class Blink(ApplyMethod):
-    def __init__(self, creature, **kwargs):
-        self.rate_func = squish_rate_func(there_and_back)
-        ApplyMethod.__init__(self, creature.blink, **kwargs)
+    def __init__(self, creature, rate_func=squish_rate_func(there_and_back), **kwargs):
+        ApplyMethod.__init__(self, creature.blink, rate_func=rate_func, **kwargs)
 
 
 class CreatureBubbleIntroduction(AnimationGroup):

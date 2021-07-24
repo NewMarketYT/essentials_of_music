@@ -13,7 +13,7 @@
    y="0px"
    x="0px"
    sodipodi:docname="QuarterCreature_hooray.svg"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
    id="Layer_1"
    version="1.1">
   <metadata
@@ -24,7 +24,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
    rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -63,20 +63,20 @@
    borderopacity="1"
    objecttolerance="10"
    bordercolor="#666666"
-   inkscape:cx="173.31074"
-   inkscape:zoom="1"
+   inkscape:cx="203.8554"
+   inkscape:zoom="5.5073052"
    id="namedview17"
-   inkscape:cy="258.42604"
+   inkscape:cy="251.31238"
    inkscape:snap-grids="true" />
   <ellipse
    cy="433.14999"
    cx="181.5"
    id="path83"
-   style="opacity:1;vector-effect:none;fill:#ddc7a6;fill-opacity:1;fill-rule:evenodd;stroke-width:0.65609998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd"
    rx="13"
    ry="13.707107" />
   <ellipse
-   style="opacity:1;vector-effect:none;fill:#ddc7a6;fill-opacity:1;fill-rule:evenodd;stroke-width:0.65609998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd"
    id="circle85"
    cx="208.25"
    cy="432.39999"
@@ -94,19 +94,23 @@
    id="path10" />
   <g
    transform="translate(107.29919,196.70864)"
-   id="page2">
+   id="page2"
+   style="fill:#0000ff">
     <g
    transform="matrix(4.0989647,0,0,4.0989647,-84.44567,0)"
-   id="a_quarter_note">
+   id="a_quarter_note"
+   style="fill:#0000ff">
       <path
    inkscape:connector-curvature="0"
    d="m 48.698625,15.267013 5.381444,0.08625 c 0,0 -1.380069,10.775878 -1.380069,16.123645 V 66 H 51.2 V 31.304404 c 0,-2.932647 -2.501375,-16.037391 -2.501375,-16.037391 z"
    id="path1314"
-   sodipodi:nodetypes="ccsccsc" />
+   sodipodi:nodetypes="ccsccsc"
+   style="fill:#0000ff" />
       <path
    inkscape:connector-curvature="0"
    d="M 28.3,76.1 C 25.5,71.3 28.5,64.4 34.9,60.7 41.3,57 48.8,57.7 51.6,62.5 54.4,67.3 51.4,74.2 45,78 38.6,81.7 31.1,80.9 28.3,76.1 Z"
-   id="path1316" />
+   id="path1316"
+   style="fill:#0000ff" />
     </g>
   </g>
   <path

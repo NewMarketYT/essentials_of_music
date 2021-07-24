@@ -13,7 +13,7 @@
    y="0px"
    x="0px"
    sodipodi:docname="QuarterCreature_pondering.svg"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
    id="Layer_1"
    version="1.1">
   <metadata
@@ -63,18 +63,18 @@
    borderopacity="1"
    objecttolerance="10"
    bordercolor="#666666"
-   inkscape:cx="225.04666"
+   inkscape:cx="168.12457"
    inkscape:zoom="2.8284272"
    id="namedview17"
    inkscape:cy="326.54541" />
   <path
-   style="opacity:1;vector-effect:none;fill:#ddc7a6;fill-opacity:1;fill-rule:evenodd;stroke-width:0.65609998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd"
    d="m 194.5,433.14999 c 0,7.1797 -5.8203,13 -13,13 -7.1797,0 -13,-5.8203 -13,-13 0,-7.1797 5.4986,-15.59435 11.97119,-10.6446 5.7032,4.36137 14.02881,3.4649 14.02881,10.6446 z"
    id="path83"
    inkscape:connector-curvature="0"
    sodipodi:nodetypes="sssss" />
   <path
-   style="opacity:1;vector-effect:none;fill:#ddc7a6;fill-opacity:1;fill-rule:evenodd;stroke-width:0.65609998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd"
    d="m 221.25,432.39999 c 0,7.1797 -5.8203,13 -13,13 -7.1797,0 -13,-5.8203 -13,-13 0,-7.1797 4.18335,-10.04993 11.80362,-6.94822 10.27192,2.92492 14.19638,-0.23148 14.19638,6.94822 z"
    id="circle85"
    inkscape:connector-curvature="0"
@@ -91,19 +91,23 @@
    id="path10" />
   <g
    transform="translate(107.29919,196.70864)"
-   id="page2">
+   id="page2"
+   style="fill:#0000ff">
     <g
    transform="matrix(4.0989647,0,0,4.0989647,-84.44567,0)"
-   id="a_quarter_note">
+   id="a_quarter_note"
+   style="fill:#0000ff">
       <path
    inkscape:connector-curvature="0"
    d="m 39.038142,52.787639 -2.89897,-2.156358 c 0,0 11.482039,-6.675039 12.851893,-4.059863 C 49.939862,48.382758 52.7,66 52.7,66 h -1.5 c 0,0 -1.811341,-13.477035 -3.363918,-17.185971 -1.284059,-3.067473 -8.79794,3.97361 -8.79794,3.97361 z"
    id="path1314"
-   sodipodi:nodetypes="ccsccsc" />
+   sodipodi:nodetypes="ccsccsc"
+   style="fill:#0000ff" />
       <path
    inkscape:connector-curvature="0"
    d="M 28.3,76.1 C 25.5,71.3 28.5,64.4 34.9,60.7 41.3,57 48.8,57.7 51.6,62.5 54.4,67.3 51.4,74.2 45,78 38.6,81.7 31.1,80.9 28.3,76.1 Z"
-   id="path1316" />
+   id="path1316"
+   style="fill:#0000ff" />
     </g>
   </g>
   <path
