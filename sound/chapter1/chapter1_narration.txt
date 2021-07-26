@@ -33,63 +33,60 @@ Let's start off by discussing how we perceive sound:
 ############### Human physiology/perception of sound and digital/analog/neurological conversions: ###############
 
 What our human brains ultimately interpret as sound is the vibration of the
-hair cells in our inner-ears, called stereocilia. There are two types of
-stereocilia, inner hair and outer hair cells, and while they have different
-functions in sensing sound, they both create electrical signals that are passed
-through the auditory nerve, and to the brain. Removing ourselves from the
-listener, the source of any sound is an oscillation that produces pressure waves
-which travel through matter (such as solids, liquids, gasses, and plasmas) as a
-transmission medium until it reaches the ear. Air is often this transmission
-medium, but it is entirely possible for these pressure waves to transmit
-through a variety of mediums (as one would listen to a conversation through
-the air in a cup held to a door separated a sizeable distance from the true
-speaker). Once the waves arrive at the external ear, they hit the eardrum and
-are mecahnically transferred by small bones in the ear to the cochlea, an organ
-containing the two types of stereocilia. As the stereocilia are bent and
-sheared against the tectorial membrane, they convert sound into neuralogical
-signals in the basilar membrane, through the auditory nerve, which is left to
-the brain to interpret.
+stereocilia in our inner ears. These stereocilia sit atop inner and outer hair
+cells inside a fluid with free floating cations and when the fluid is moved
+alongside the tectorial membrane, the stereocilia are sheared due to fluid
+coupling allowing the flow of cations into the hair cells. This releases
+neurotransmitters which bind to receptors at the neuron termianls and trigger
+action potentials which send an electrical signal to the cochlear nerve. These
+electrical signals are what our brains interpret as sound.
 
-You are currently listening to this video through a sound source, or
-speaker. This speaker, known scientifically as an electroacoustic transducer
-because it transduces, or converts, one form of energy into another, may be
-externally visible as a pair of headphones, or earphones, but can also be
-enclosed within your monitor, laptop, or mobile device. At heart, a speaker
-converts an electrical audio signal into an analog sound wave, and that same
-sound wave is later converted into a neuralogical signal for your brain. This
-process of converting digital audio signals (as in the audio tied to this
-video) into physical sounds is known as digital to analog conversion
-because it converts a discrete digital signal (meaning defined by distinct
-points in time), to a continuous analog signal (meaning with infinite points of
-time between any two points in the signal) that we can hear with our
-stereocilia.
+Moving the stereocilia is made possible by the middle and outer ear.
+Stepping beyond the inner ear, the middle ear attaches to the oval window
+of the cochlea, or the swirly snail part of the inner ear, via a set of three
+small bones: the malleus, incus, and stapes. These bones transfer sound
+mechanically and are moved by the ear drum which gathers sound energy from
+pressure differentials in the environment. Fun fact, when you swallow the
+pressure in the middle ear approaches the pressure of the outer ear and
+separates the middle ear from the outer ear through the eustachian tube.
 
-I personally enjoy viewing this relationship of digital to analog audio as our
-human brains converting the digital mind's thoughts into voice. That is, what
-is spoken is first a thought processed by the brain's electrical impulses and
-secondly a sound mechanically created by transferring these electrical impulses
-to the muscles surrounding the vocal chords and mouth.
+Removing ourselves from the listener's perspective, a sound source is then any
+vibration that causes pressure differences in the ambient environment loud
+enough to travel through matter as a transmission medium such as a solid,
+liquid, or gas and sometimes the vibrations reach the listener.
 
-The reverse of this process is analog to digital conversion and we've already
-discussed the human analogy. The analog signal would be any audible sound wave
-vibrating our stereocilia and then our digtal mind processing and perceiving
-these vibrations as sound.
+You are currently listening to this video through a sound source, or speaker.
+This speaker, or electroacoustic transducer, converts an electric audio signal
+into sound waves by vibrating a diaphragm and those same sound waves are
+translated back into an electrical signal after reaching your ears. This process
+of converting one form of energy into another is called transduction and just as
+electrical signals can be converted to and from sound waves, so too can
+optical and digital signals as in the audio tied to this video.
+
+From what is first a thought processed by my brain's electrical impulses and
+then mechanically sounded by the muscles in my vocal cords and mouth, to the
+electrical audio signal received by my microphone digitized by its
+analog-digital converter for this video and back to your ears; I personally find
+these many stages of conversion that go in to sharing knowledge through video highly 
+inspiring. We are, albeit with a few steps, bridging our minds digitally.
+
+# Break? Deeper dive follow-up video?
 
 In much the same way that our stereocilia vibrate due to pressure waves, a
 condenser microphone's (also called a capacitor microphone) diaphram also
 vibrates due to pressure waves (note there many types of microphones that
 function a bit differently). The diaphragm in a microphone acts as one of the
-two plates of a capacitor and stores a relatively constant electric charge;
-when vibrations move the diaphragm, the distance between the diaphragm and
-other plate in the capacitor changes which ultimately results in changes to
+two plates of a capacitor and stores a relatively constant electric charge; when
+vibrations move the diaphragm, the distance between the diaphragm and other
+plate in the capacitor changes which ultimately results in changes to
 capacitance and voltage in the circuit.
 
 From the laws surrounding electromagnetism, this displacement of charge in an
 electric field acts as an instantaneous change in voltage with closer distances
 equating to negative voltage change, and further distances being more positive.
 It is this voltage which changes with time that we are measuring when recording
-audio signals. When we talk about other electrical instruments, the
-voltage is ultimately still being measured with time, but sometimes in a
+audio signals. When we talk about other electrical instruments, the voltage is
+ultimately still being measured with time, but sometimes in a
 different manner. For instance, an electric bass doesn't use a diaphragm and
 capacitance to measure voltage; but instead relies on magnetism and
 inductance to generate alternating current. This current relates to voltage
@@ -126,10 +123,10 @@ undersampled the audio signal, we would experience aliasing ----------- Somethin
 
 ################ The physics and properties of sound as it relates to hearing audio: ###############
 
-Now that we've established some of the central ideas to how we perceive, record and
-playback sound, let's investigate the physical properties of sound.
+Now that we've established some of the core ideas to our perception of sound,
+let's investigate their physical properties.
 
-A sound wave, like all plane waves, travel through space and time in a direction,
+A sound wave, like all plane waves, travel through space and time in all directions,
 with an amplitude, frequency, and wavelength. The frequency and wavelength of a
 sound, together determine the speed of the sound; however, knowing any two of
 these properties allow us to determine the third. 
@@ -278,14 +275,12 @@ and more. Remember, I encourage you to apply what you've learned as if you had
 first discovered it... and perhaps the next time you hear the humming of a
 refrigerator, the screech of a tire burning rubber, or whatever soundscape you
 come across in life, you'll think about what is producing the timbre and pitch of
-the sound you're hearing, among its other characteristics, and choose to
-perceive what may normally be considered noise as music.
+the sound you're hearing, among its other characteristics, and perceive the
+musical qualities in what would normally just be considered noise.
 
 In the next video, we'll jump into detail about the frequency range of human
 hearing and discuss how this frequency range is used by different cultures to
 produce a variety of scales.
 
-If you enjoyed this video, consider liking, subscribing, or even supporting the
-channel on patreon.
-
-Until next time, thanks for watching.
+If you enjoyed this video, consider liking, subscribing, and sharing the
+video with others. Until next time, thanks for watching.
