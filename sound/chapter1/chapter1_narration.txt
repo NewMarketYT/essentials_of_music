@@ -3,7 +3,7 @@ music. I live my daydreams in music. I see my life in terms of music.” ― Alb
 Einstein
 
 Hey New Merchants. Welcome to the first video in a series on the essentials of
-music. I'm creating this five-part series with scientists and engineers in mind,
+music. I'm creating this series with scientists and engineers in mind,
 but foremost the musician in you... whether you're just picking up a musical
 instrument or have already put in ten thousand hours; there should be something
 in store for you.
@@ -26,11 +26,26 @@ hours with this knowledge and your instrument will be more meaningful than many
 hours without it.
 
 Without further ado, let's introduce the defining characteristic of music:
-sound. In order to understand music, we must first
-understand physically what sound is and how it is produced and manipulated.
-Let's start off by discussing how we perceive sound:
+sound. 
 
 ############### Human physiology/perception of sound and digital/analog/neurological conversions: ###############
+
+Sound is a vibration that travels in a wave through matter like solids, liquids,
+and gasses, but typically the medium is air. These acoustic waves transmit energy
+without transmitting the matter itself; as such, the organized disturbances
+propogate via regions of compression and rarefaction.
+
+Assuming you can hear the audio from this video, you're currently listening
+in on a loudspeaker, the most common being the dynamic loudspeaker. This type of
+speaker has a voice coil attached to a diaphragm and a permamagnet at the base. This
+speaker converts electrical audio signals into sound waves via alternating 
+electrical current. The resulting oscillations vibrate a
+thin-membrane called a diaphragm which replicates my voice. This conversion of
+one form of energy into another is called transduction and in the world of
+signal processing, tranducers exists in many forms to convert between
+electrical and digital signals, and sound. Perhaps, the less often thought of
+transducer is your psychoacoustic transducer, or brain, which converts sound
+waves to perception.
 
 What our human brains ultimately interpret as sound is the vibration of the
 stereocilia in our inner ears. These stereocilia sit atop inner and outer hair
@@ -50,19 +65,6 @@ pressure differentials in the environment. Fun fact, when you swallow the
 pressure in the middle ear approaches the pressure of the outer ear and
 separates the middle ear from the outer ear through the eustachian tube.
 
-Removing ourselves from the listener's perspective, a sound source is then any
-vibration that causes pressure differences in the ambient environment loud
-enough to travel through matter as a transmission medium such as a solid,
-liquid, or gas and sometimes the vibrations reach the listener.
-
-You are currently listening to this video through a sound source, or speaker.
-This speaker, or electroacoustic transducer, converts an electric audio signal
-into sound waves by vibrating a diaphragm and those same sound waves are
-translated back into an electrical signal after reaching your ears. This process
-of converting one form of energy into another is called transduction and just as
-electrical signals can be converted to and from sound waves, so too can
-optical and digital signals as in the audio tied to this video.
-
 From what is first a thought processed by my brain's electrical impulses and
 then mechanically sounded by the muscles in my vocal cords and mouth, to the
 electrical audio signal received by my microphone digitized by its
@@ -70,63 +72,13 @@ analog-digital converter for this video and back to your ears; I personally find
 these many stages of conversion that go in to sharing knowledge through video highly 
 inspiring. We are, albeit with a few steps, bridging our minds digitally.
 
-# Break? Deeper dive follow-up video?
-
-In much the same way that our stereocilia vibrate due to pressure waves, a
-condenser microphone's (also called a capacitor microphone) diaphram also
-vibrates due to pressure waves (note there many types of microphones that
-function a bit differently). The diaphragm in a microphone acts as one of the
-two plates of a capacitor and stores a relatively constant electric charge; when
-vibrations move the diaphragm, the distance between the diaphragm and other
-plate in the capacitor changes which ultimately results in changes to
-capacitance and voltage in the circuit.
-
-From the laws surrounding electromagnetism, this displacement of charge in an
-electric field acts as an instantaneous change in voltage with closer distances
-equating to negative voltage change, and further distances being more positive.
-It is this voltage which changes with time that we are measuring when recording
-audio signals. When we talk about other electrical instruments, the voltage is
-ultimately still being measured with time, but sometimes in a
-different manner. For instance, an electric bass doesn't use a diaphragm and
-capacitance to measure voltage; but instead relies on magnetism and
-inductance to generate alternating current. This current relates to voltage
-through Ohm's law, where a majority of the resitance comes from the variable
-resistance in the potentiometer, or volume knob. As the volume knob is turned
-up, so too does the voltage in the circuit; and as the amplitude of the string
-vibration increase with stronger strums, the current increases as with the
-voltage. This allows us to consistently use voltages to represent audio signal
-which is helpful when storing the signal's information for playback.
-
-The voltage information present in audio signals can be sent to other analog
-devices, or converted to a digital representation of the signal through an
-audio interface. In contrast to analog signals, digital signals do not retain
-as much of the information within an audio signal as they sample voltages from
-the continous version of the signal at a set rate. The faster the sampling rate
-of the signal, the more accurate the digital copy can represent its analog
-counterpart, but it isn't all sampling rate. The bit depth is the quality of
-information stored at each sample; with low bit depth, the digital signal
-produces a noisy copy of the analog signal and with higher bit depths the noise
-added to signal decreases. The true signal may be best represented when it is
-visualized directly from the source, but as soon as we attempt to store this
-information with analog physical copies like: vinyl discs, or even digital
-copies like: WAV or MP3 files, we lose definition in the audio source. One
-might imagine that like biological cells performing mitosis over a lifetime and
-undergoing mutations that eventually lead to nonfunctional cells, or
-photocopying an original document again and again until it's no longer
-readable; so too does constant resampling and conversion of an audio signal
-result in indiscernible noise.
-
-On the subject of sampling, isn't a wonder why we've established a minimum
-sampling rate of 44.1 kHz? It is worth briefly mentioning that human hearing is
-only capable of hearing frequencies between roughly 20Hz and 20000Hz. If we
-undersampled the audio signal, we would experience aliasing ----------- Something about nyquist rate
 
 ################ The physics and properties of sound as it relates to hearing audio: ###############
 
 Now that we've established some of the core ideas to our perception of sound,
-let's investigate their physical properties.
+let's investigate their geometrical properties.
 
-A sound wave, like all plane waves, travel through space and time in all directions,
+A sound wave travel through space and time in all directions,
 with an amplitude, frequency, and wavelength. The frequency and wavelength of a
 sound, together determine the speed of the sound; however, knowing any two of
 these properties allow us to determine the third. 
@@ -284,3 +236,53 @@ produce a variety of scales.
 
 If you enjoyed this video, consider liking, subscribing, and sharing the
 video with others. Until next time, thanks for watching.
+
+
+In much the same way that our stereocilia vibrate due to pressure waves, a
+condenser microphone's (also called a capacitor microphone) diaphram also
+vibrates due to pressure waves (note there many types of microphones that
+function a bit differently). The diaphragm in a microphone acts as one of the
+two plates of a capacitor and stores a relatively constant electric charge; when
+vibrations move the diaphragm, the distance between the diaphragm and other
+plate in the capacitor changes which ultimately results in changes to
+capacitance and voltage in the circuit.
+
+From the laws surrounding electromagnetism, this displacement of charge in an
+electric field acts as an instantaneous change in voltage with closer distances
+equating to negative voltage change, and further distances being more positive.
+It is this voltage which changes with time that we are measuring when recording
+audio signals. When we talk about other electrical instruments, the voltage is
+ultimately still being measured with time, but sometimes in a
+different manner. For instance, an electric bass doesn't use a diaphragm and
+capacitance to measure voltage; but instead relies on magnetism and
+inductance to generate alternating current. This current relates to voltage
+through Ohm's law, where a majority of the resitance comes from the variable
+resistance in the potentiometer, or volume knob. As the volume knob is turned
+up, so too does the voltage in the circuit; and as the amplitude of the string
+vibration increase with stronger strums, the current increases as with the
+voltage. This allows us to consistently use voltages to represent audio signal
+which is helpful when storing the signal's information for playback.
+
+The voltage information present in audio signals can be sent to other analog
+devices, or converted to a digital representation of the signal through an
+audio interface. In contrast to analog signals, digital signals do not retain
+as much of the information within an audio signal as they sample voltages from
+the continous version of the signal at a set rate. The faster the sampling rate
+of the signal, the more accurate the digital copy can represent its analog
+counterpart, but it isn't all sampling rate. The bit depth is the quality of
+information stored at each sample; with low bit depth, the digital signal
+produces a noisy copy of the analog signal and with higher bit depths the noise
+added to signal decreases. The true signal may be best represented when it is
+visualized directly from the source, but as soon as we attempt to store this
+information with analog physical copies like: vinyl discs, or even digital
+copies like: WAV or MP3 files, we lose definition in the audio source. One
+might imagine that like biological cells performing mitosis over a lifetime and
+undergoing mutations that eventually lead to nonfunctional cells, or
+photocopying an original document again and again until it's no longer
+readable; so too does constant resampling and conversion of an audio signal
+result in indiscernible noise.
+
+On the subject of sampling, isn't a wonder why we've established a minimum
+sampling rate of 44.1 kHz? It is worth briefly mentioning that human hearing is
+only capable of hearing frequencies between roughly 20Hz and 20000Hz. If we
+undersampled the audio signal, we would experience aliasing ----------- Something about nyquist rate

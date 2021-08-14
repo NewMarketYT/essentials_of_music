@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="microphone.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#000000"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="303.7434"
+     inkscape:cy="375.65471"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1267"
+     inkscape:window-height="1040"
+     inkscape:window-x="1946"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path832"
+       style="fill:#ffffff;stroke-width:0.999999"
+       d="M 410 154.28516 C 339.7197 154.28516 300.14175 180.38756 300.51562 270.74414 C 300.53622 275.72 300.52811 279.54732 300.52539 283.57227 L 444.28516 283.57227 L 444.28516 310 L 300.37305 310 C 300.28985 317.66922 300.19466 325.58239 300.11914 336.42773 L 444.28516 336.42773 L 444.28516 362.85742 L 300.01562 362.85742 C 300.0094 366.59986 300 370.00132 300 374.28516 C 300 379.58537 300.00372 384.23664 300.00391 389.28516 L 444.28516 389.28516 L 444.28516 415.71484 L 300.02148 415.71484 C 300.32969 580.10972 305.47744 593.60482 388.84766 594.28516 L 384.28516 594.28516 L 384.28516 727.85742 L 267.14258 727.85742 L 267.14258 775.71484 L 548.57227 775.71484 L 548.57227 727.85742 L 429.28516 727.85742 L 429.28516 594.28516 L 410 594.28516 C 519.13031 593.75886 519.28571 592.93063 520 374.28516 C 520.19846 313.53417 520.79724 305.55628 520.70312 265.74414 C 520.50439 181.70825 483.13741 154.28516 410 154.28516 z "
+       transform="scale(0.26458333)" />
+  </g>
+</svg>

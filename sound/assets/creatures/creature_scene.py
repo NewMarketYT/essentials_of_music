@@ -42,9 +42,12 @@ class CreatureScene(Scene):
         return VGroup(self.create_creature())
 
     def create_creature(self):
-        creature = TrebleCreature(**self.default_creature_kwargs)
-        creature.to_corner(self.default_creature_start_corner)
+        creature = TrebleCreature()
+        creature.to_corner(DL)
         return creature
+
+    def add_creature(self, creature):
+        self.add(creature)
 
     def get_creatures(self):
         return self.creatures
