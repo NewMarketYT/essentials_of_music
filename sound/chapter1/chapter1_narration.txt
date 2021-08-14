@@ -48,7 +48,9 @@ transducer is your psychoacoustic transducer, or brain, which converts sound
 waves to perception.
 
 What our human brains ultimately interpret as sound is the vibration of the
-stereocilia in our inner ears. These stereocilia sit atop inner and outer hair
+stereocilia in our inner ears. But we're getting ahead of ourselves. As sound waves propagate and reach our o
+
+These stereocilia sit atop inner and outer hair
 cells inside a fluid with free floating cations and when the fluid is moved
 alongside the tectorial membrane, the stereocilia are sheared due to fluid
 coupling allowing the flow of cations into the hair cells. This releases

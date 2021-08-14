@@ -671,13 +671,183 @@ class IntroduceSound(Scene):
 
 class Stereocilia(Scene):
     def construct(self):
+        self.show_image()
+        self.show_ear()
+        self.show_corti()
+        self.wait()
+
+    def show_image(self):
         image = ImageMobject("stereocilia.jpg")
         tag = Text("Stereocilia")
         stereocilia = Group(image, tag).arrange(DOWN)
         self.play(FadeIn(image), Write(tag))
-        self.wait()
         self.play(FadeOut(image), Unwrite(tag, reverse=False))
+        self.clear()
 
+    def show_ear(self):
+        ear = SVGMobject("human_ear.svg", height=config.frame_height).shift(RIGHT * 2.5)
+        ear.save_state()
+        self.play(ear.animate.restore())
+        inner_ear = VGroup(ear[3:15], ear[52:54])
+        middle_ear = VGroup(
+            ear[15:17],
+            ear[21:23],
+            ear[25:27], #malles
+            ear[41:42],
+            ear[42:45], # incus/stapes
+            ear[49:52],
+        )
+        outer_ear = VGroup(ear[18:21], ear[22:23], ear[27:28], ear[31:41], ear[48:50])
+        extraneous_parts = VGroup(
+            ear[0:3], ear[17:18], ear[23:25], ear[27:31], ear[45:48], ear[54:]
+        )
+        inner_ear.save_state()
+        middle_ear.save_state()
+        outer_ear.save_state()
+
+        self.play(
+            Uncreate(extraneous_parts),
+            inner_ear.animate.save_state(),
+            middle_ear.animate.save_state(),
+            outer_ear.animate.save_state(),
+        )
+        self.remove(extraneous_parts)
+
+        # Outer ear
+        outer_ear_label = BraceLabel(
+            outer_ear, "Outer ear", 2 * LEFT, label_constructor=Tex
+        )
+        self.wait()
+        self.play(Indicate(outer_ear), FadeIn(outer_ear_label))
+        self.play(FadeOut(outer_ear_label))
+        self.remove(outer_ear_label)
+        pinna = Tex("Pinna", color="#e9c6af").to_corner(UL)
+        pinna_arrow = Arrow(pinna.get_bottom(), UL * 2)
+        tympanic_m = (
+            Tex("Typmanic Membrane", color="#4e9a06").to_edge(DOWN).shift(RIGHT * 2)
+        )
+        tympanic_m_arrow = Arrow(tympanic_m.get_top(), ear[27].get_center() + DR * 0.25)
+        self.play(
+            Write(tympanic_m),
+            Create(tympanic_m_arrow),
+            Write(pinna),
+            Create(pinna_arrow),
+        )
+        self.play(
+            Unwrite(tympanic_m, reverse=False),
+            Uncreate(tympanic_m_arrow),
+            Unwrite(pinna, reverse=False),
+            Uncreate(pinna_arrow),
+        )
+        self.remove(tympanic_m, tympanic_m_arrow, pinna_arrow, pinna)
+        self.play(Uncreate(outer_ear))
+        self.remove(outer_ear)
+        self.wait()
+
+        # Middle ear
+
+        self.play(middle_ear.animate.shift(LEFT * 3))
+        middle_ear_label = BraceLabel(
+            middle_ear, "Middle ear", 2*LEFT, label_constructor=Tex
+        )
+        self.play(Indicate(middle_ear), FadeIn(middle_ear_label))
+        self.play(FadeOut(middle_ear_label))
+        self.remove(middle_ear_label)
+
+        eustachian_tube = Tex("Eustachian tube", color="#ff8080").to_edge(DOWN)
+        eustachian_arrow = Arrow(eustachian_tube.get_top(), middle_ear[0].get_corner(DR)+UP*.1+UL*.5)
+        self.play(Write(eustachian_tube), Create(eustachian_arrow))
+        self.play(Unwrite(eustachian_tube, reverse=False), Uncreate(eustachian_arrow))
+
+        malleus = Tex("Malleus", color="#e6e6e6").to_corner(UL)
+        malleus_arrow = Arrow(malleus.get_bottom(), middle_ear[2][0].get_bottom(), buff=.02)
+
+        incus = Tex("Inucs", color="#e6e6e6").to_edge(UP)
+        incus_arrow = Arrow(incus.get_bottom(), middle_ear[4][2].get_top()+LEFT*.2, buff=.02)
+
+        stapes = Tex("Stapes", color="#e6e6e6").to_corner(UR)
+        stapes_arrow = Arrow(stapes.get_bottom(), middle_ear[4][0].get_top(), buff=.02)
+        self.play(
+            Write(stapes),
+            Create(stapes_arrow),
+            Write(incus),
+            Create(incus_arrow),
+            Write(malleus),
+            Create(malleus_arrow),
+        )
+        self.play(
+            Unwrite(malleus, reverse=False),
+            Uncreate(malleus_arrow),
+            Unwrite(incus, reverse=False),
+            Uncreate(incus_arrow),
+            Unwrite(stapes, reverse=False),
+            Uncreate(stapes_arrow),
+        )
+
+        self.play(Uncreate(middle_ear))
+        self.remove(middle_ear)
+
+        # Inner ear
+
+        self.play(inner_ear.animate.shift(LEFT * 5))
+
+        inner_ear_label = BraceLabel(inner_ear, "Inner ear", label_constructor=Tex)
+        self.play(
+            Create(inner_ear_label),
+        )
+        self.play(
+            Unwrite(inner_ear_label)
+        )
+
+        cochlea = Tex("Cochlea", color="#ad7fa8").to_corner(DL)
+        cochlea_arrow = Arrow(cochlea.get_top(), inner_ear[0][10])
+        cochlear_nerve = Tex("Cochlear nerve", color=YELLOW).to_corner(UR)
+        cochlear_arrow = Arrow(cochlear_nerve.get_bottom(), inner_ear.get_right())
+        self.play(
+            Write(cochlea),
+            Create(cochlea_arrow),
+            Write(cochlear_nerve),
+            Create(cochlear_arrow)
+        )
+        self.play(
+            Unwrite(cochlea),
+            Uncreate(cochlea_arrow),
+            Unwrite(cochlear_nerve),
+            Uncreate(cochlear_arrow)
+        )
+
+        oval_window = Tex("Oval window", color="#743dda").to_edge(LEFT).shift(UP)
+        oval_window_arrow = Arrow(oval_window.get_right(), inner_ear[0][9],buff=.02)
+
+        round_window = Tex("Round window", color="#ad7fa8").to_edge(LEFT).shift(DOWN)
+        round_window_arrow = Arrow(round_window.get_right(), inner_ear[0][10],buff=.02)
+        
+        helicotrema = Tex("Helicotrema", color="#ad7fa8").to_corner(DR)
+        helicotrema_arrow = Arrow(helicotrema.get_left(), inner_ear[0][8].get_center()+LEFT*.05)
+
+        self.play(
+            Write(oval_window),
+            Write(round_window),
+            Write(helicotrema),
+            Create(oval_window_arrow),
+            Create(round_window_arrow),
+            Create(helicotrema_arrow),
+        )
+
+        self.play(
+            Unwrite(oval_window),
+            Unwrite(round_window),
+            Unwrite(helicotrema),
+            Uncreate(oval_window_arrow),
+            Uncreate(round_window_arrow),
+            Uncreate(helicotrema_arrow),
+        )
+
+        self.play(Uncreate(inner_ear))
+        self.remove(inner_ear)
+        self.clear()
+
+    def show_corti(self):
         corti = SVGMobject("Organ_of_corti.svg")
         corti.set(width=config.frame_width)
         # inner_outter_hair_cells = corti[1:24] + corti[39:42]
@@ -765,70 +935,6 @@ class Stereocilia(Scene):
         )
         self.clear()
         self.wait()
-
-        ear = SVGMobject("human_ear.svg")
-        ear.set(height=config.frame_height)
-        ear.shift(RIGHT * 2.5)
-        inner_ear = VGroup(ear[3:15], ear[52:54])
-        middle_ear = VGroup(
-            ear[15:17],
-            ear[22:23],
-            ear[25:27],
-            ear[41:45],
-            ear[48:52],
-        )
-        outer_ear = VGroup(
-            ear[1], ear[18:21], ear[22:25], ear[29:41], ear[45:48], ear[54:]
-        )
-        inner_ear.save_state()
-        middle_ear.save_state()
-        outer_ear.save_state()
-        ear.shift(LEFT * 2.5)
-
-        inner_ear_label = BraceLabel(inner_ear, "Inner ear", label_constructor=Tex)
-        cochlear_nerve = cochlear_nerve.to_corner(UR)
-        cochlear_arrow = Arrow(cochlear_nerve.get_bottom(), inner_ear.get_right())
-        self.play(
-            Write(VGroup(*inner_ear)),
-            Create(inner_ear_label),
-            Write(cochlear_nerve),
-            Create(cochlear_arrow),
-        )
-        self.wait()
-        self.play(
-            Uncreate(inner_ear_label), Unwrite(cochlear_nerve), Uncreate(cochlear_arrow)
-        )
-        self.play(inner_ear.animate.restore())
-        self.wait()
-        middle_ear_label = BraceLabel(
-            middle_ear, "Middle ear", LEFT, label_constructor=Tex
-        )
-        self.play(Create(middle_ear), FadeIn(middle_ear_label))
-        self.wait()
-        self.play(FadeOut(middle_ear_label))
-        self.play(middle_ear.animate.restore())
-        outer_ear = outer_ear.restore()
-        outer_ear_label = BraceLabel(
-            outer_ear, "Outer ear", LEFT, label_constructor=Tex
-        )
-
-        self.play(Create(outer_ear), FadeIn(outer_ear_label))
-        self.wait()
-        self.play(FadeOut(outer_ear_label))
-        self.wait()
-        eustachian_tube = Tex("Eustachian tube", color=YELLOW).to_corner(UR)
-        eustachian_arrow = Arrow(eustachian_tube.get_bottom(), DR * 2 + 3 * RIGHT)
-        self.play(Write(eustachian_tube), Create(eustachian_arrow))
-        self.wait()
-        self.play(Unwrite(eustachian_tube, reverse=False), Uncreate(eustachian_arrow))
-        self.play(
-            inner_ear.animate.shift(RIGHT * 10),
-            middle_ear.animate.shift(RIGHT * 10),
-            outer_ear.animate.shift(RIGHT * 10),
-            run_time=2,
-        )
-        self.wait()
-
 
 class RadialWaveExampleScene(ThreeDScene):
     def construct(self):
@@ -1019,9 +1125,6 @@ class Speaker(Scene):
 
         moving_parts.add_updater(lambda mob: get_y(mob))
         self.add(moving_parts)
-        self.camera.model_matrix = opengl.x_rotation_matrix(
-            opengl.x_rotation_matrix(PI / 2)
-        )
         self.play(self.t.animate.set_value(4), run_time=1, rate_func=linear)
         self.play(
             FadeIn(magnet), self.t.animate.set_value(8), run_time=1, rate_func=linear
@@ -2446,3 +2549,9 @@ class RecallWaveSpeed(Scene):
         self.wait()
         self.play(student.animate.blink(), rate_func=there_and_back)
         self.wait()
+
+
+class Test(Scene):
+    def construct(self):
+        ear = SVGMobject("human_ear.svg", height=config.frame_height)
+        self.add(*ear[49:50])
