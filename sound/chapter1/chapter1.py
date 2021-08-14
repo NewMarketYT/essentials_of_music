@@ -692,9 +692,9 @@ class Stereocilia(Scene):
         middle_ear = VGroup(
             ear[15:17],
             ear[21:23],
-            ear[25:27], #malles
+            ear[25:27],  # malles
             ear[41:42],
-            ear[42:45], # incus/stapes
+            ear[42:45],  # incus/stapes
             ear[49:52],
         )
         outer_ear = VGroup(ear[18:21], ear[22:23], ear[27:28], ear[31:41], ear[48:50])
@@ -707,11 +707,7 @@ class Stereocilia(Scene):
 
         self.play(
             Uncreate(extraneous_parts),
-            inner_ear.animate.save_state(),
-            middle_ear.animate.save_state(),
-            outer_ear.animate.save_state(),
         )
-        self.remove(extraneous_parts)
 
         # Outer ear
         outer_ear_label = BraceLabel(
@@ -748,25 +744,32 @@ class Stereocilia(Scene):
 
         self.play(middle_ear.animate.shift(LEFT * 3))
         middle_ear_label = BraceLabel(
-            middle_ear, "Middle ear", 2*LEFT, label_constructor=Tex
+            middle_ear, "Middle ear", 2 * LEFT, label_constructor=Tex
         )
         self.play(Indicate(middle_ear), FadeIn(middle_ear_label))
         self.play(FadeOut(middle_ear_label))
         self.remove(middle_ear_label)
 
         eustachian_tube = Tex("Eustachian tube", color="#ff8080").to_edge(DOWN)
-        eustachian_arrow = Arrow(eustachian_tube.get_top(), middle_ear[0].get_corner(DR)+UP*.1+UL*.5)
+        eustachian_arrow = Arrow(
+            eustachian_tube.get_top(),
+            middle_ear[0].get_corner(DR) + UP * 0.1 + UL * 0.5,
+        )
         self.play(Write(eustachian_tube), Create(eustachian_arrow))
         self.play(Unwrite(eustachian_tube, reverse=False), Uncreate(eustachian_arrow))
 
         malleus = Tex("Malleus", color="#e6e6e6").to_corner(UL)
-        malleus_arrow = Arrow(malleus.get_bottom(), middle_ear[2][0].get_bottom(), buff=.02)
+        malleus_arrow = Arrow(
+            malleus.get_bottom(), middle_ear[2][0].get_bottom(), buff=0.02
+        )
 
         incus = Tex("Inucs", color="#e6e6e6").to_edge(UP)
-        incus_arrow = Arrow(incus.get_bottom(), middle_ear[4][2].get_top()+LEFT*.2, buff=.02)
+        incus_arrow = Arrow(
+            incus.get_bottom(), middle_ear[4][2].get_top() + LEFT * 0.2, buff=0.02
+        )
 
         stapes = Tex("Stapes", color="#e6e6e6").to_corner(UR)
-        stapes_arrow = Arrow(stapes.get_bottom(), middle_ear[4][0].get_top(), buff=.02)
+        stapes_arrow = Arrow(stapes.get_bottom(), middle_ear[4][0].get_top(), buff=0.02)
         self.play(
             Write(stapes),
             Create(stapes_arrow),
@@ -795,9 +798,7 @@ class Stereocilia(Scene):
         self.play(
             Create(inner_ear_label),
         )
-        self.play(
-            Unwrite(inner_ear_label)
-        )
+        self.play(Unwrite(inner_ear_label, reverse=False))
 
         cochlea = Tex("Cochlea", color="#ad7fa8").to_corner(DL)
         cochlea_arrow = Arrow(cochlea.get_top(), inner_ear[0][10])
@@ -807,23 +808,27 @@ class Stereocilia(Scene):
             Write(cochlea),
             Create(cochlea_arrow),
             Write(cochlear_nerve),
-            Create(cochlear_arrow)
+            Create(cochlear_arrow),
         )
         self.play(
-            Unwrite(cochlea),
+            Unwrite(cochlea, reverse=False),
             Uncreate(cochlea_arrow),
-            Unwrite(cochlear_nerve),
-            Uncreate(cochlear_arrow)
+            Unwrite(cochlear_nerve, reverse=False),
+            Uncreate(cochlear_arrow),
         )
 
         oval_window = Tex("Oval window", color="#743dda").to_edge(LEFT).shift(UP)
-        oval_window_arrow = Arrow(oval_window.get_right(), inner_ear[0][9],buff=.02)
+        oval_window_arrow = Arrow(oval_window.get_right(), inner_ear[0][9], buff=0.02)
 
         round_window = Tex("Round window", color="#ad7fa8").to_edge(LEFT).shift(DOWN)
-        round_window_arrow = Arrow(round_window.get_right(), inner_ear[0][10],buff=.02)
-        
+        round_window_arrow = Arrow(
+            round_window.get_right(), inner_ear[0][10], buff=0.02
+        )
+
         helicotrema = Tex("Helicotrema", color="#ad7fa8").to_corner(DR)
-        helicotrema_arrow = Arrow(helicotrema.get_left(), inner_ear[0][8].get_center()+LEFT*.05)
+        helicotrema_arrow = Arrow(
+            helicotrema.get_left(), inner_ear[0][8].get_center() + LEFT * 0.05
+        )
 
         self.play(
             Write(oval_window),
@@ -835,9 +840,9 @@ class Stereocilia(Scene):
         )
 
         self.play(
-            Unwrite(oval_window),
-            Unwrite(round_window),
-            Unwrite(helicotrema),
+            Unwrite(oval_window, reverse=False),
+            Unwrite(round_window, reverse=False),
+            Unwrite(helicotrema, reverse=False),
             Uncreate(oval_window_arrow),
             Uncreate(round_window_arrow),
             Uncreate(helicotrema_arrow),
@@ -855,8 +860,8 @@ class Stereocilia(Scene):
         outer_hair_cell = VGroup(corti[17:25])
         inner_hair_cells = VGroup(corti[6:8], corti[34:40])
         basilar_membrane = corti[4:6]
-        inner_hair_label = Text("Inner hair cell", color=YELLOW).to_corner(UR)
-        outer_hair_label = Text("Outer hair cell", color=YELLOW).to_corner(UL)
+        inner_hair_label = Text("Inner hair cell", color="#803300").to_corner(UR)
+        outer_hair_label = Text("Outer hair cell", color="#ff6600").to_corner(UL)
         inner_arrow = Arrow(
             inner_hair_label, inner_hair_cells.get_corner(UL) + DR * 0.3
         )
@@ -887,11 +892,16 @@ class Stereocilia(Scene):
         self.mobjects.insert(0, cations)
         self.play(FadeIn(cations))
         self.wait()
+        self.add(index_labels(corti))
 
         tectorial_membrane = corti[0:3]
         tectorial_membrane.set(opacity=0)
-        tectorial_label = Text("Tectorial Membrane", color=YELLOW).to_edge(UP)
-        tectorial_arrow = Arrow(tectorial_label, tectorial_label.get_bottom() + DOWN)
+        tectorial_label = Text("Tectorial membrane", color="#d45500").to_edge(UP)
+        tectorial_arrow = Arrow(
+            tectorial_label.get_bottom(), tectorial_label.get_bottom() + DOWN, buff=0.02
+        )
+        basilar_label = Text("Basilar membrane", color="#ff9955").to_edge(DOWN)
+        basilar_arrow = Arrow(basilar_label.get_top(), corti[31])
         other_inner_cells = VGroup(corti[3:6], corti[8:17], corti[40:70])
         self.mobjects.insert(1, other_inner_cells)
         self.mobjects.insert(1, tectorial_membrane)
@@ -899,7 +909,7 @@ class Stereocilia(Scene):
         self.play(
             AnimationGroup(
                 Unwrite(inner_hair_label, reverse=False),
-                Unwrite(outer_hair_label),
+                Unwrite(outer_hair_label, reverse=False),
                 FadeOut(inner_arrow),
                 FadeOut(outer_arrow),
             ),
@@ -907,34 +917,84 @@ class Stereocilia(Scene):
             lag_ratio=0.5,
             run_time=2,
         )
+
+        # Cochlear nerve
+        cochlear_nerve = Text("Cochlear nerve", color=YELLOW).to_edge(DOWN)
+        cochlear_arrow = Arrow(cochlear_nerve, DR * 3 + RIGHT)
+        self.play(
+            Write(cochlear_nerve, run_time=2),
+            FadeIn(cochlear_arrow, run_time=2),
+        )
+        self.play(
+            Unwrite(cochlear_nerve, run_time=2),
+            FadeOut(cochlear_arrow, run_time=2),
+        )
+
+        # Membranes
         self.play(
             tectorial_membrane.animate.set_opactiy(1),
             Write(tectorial_label),
             FadeIn(tectorial_arrow),
+            Write(basilar_label, reverse=False),
+            FadeIn(basilar_arrow),
         )
-        self.wait()
+        self.play(
+            Unwrite(tectorial_label),
+            FadeOut(tectorial_arrow),
+            Unwrite(basilar_label, reverse=False),
+            FadeOut(basilar_arrow),
+        )
         self.play(Wiggle(stereocilia))
 
-        path = Polygon(
-            [-0.6, 1.8, 0],
-            [-1.2, 0.2, 0],
-            [2.3, -1, 0],
-            [2.8, -1.8, 0],
-            [4, -3, 0],
-            [14, -5, 0],
+        scala_tympani = Rectangle(
+            color=BLUE_B, fill_opacity=0, width=15, height=4
+        ).shift(3 * DOWN)
+        scala_media = Rectangle(color=BLUE_D, fill_opacity=0, width=15, height=6).shift(
+            1.5 * UP
         )
-        path.points = np.delete(path.points, [-1, -2, -3], axis=0)
-        dots = [MoveAlongPath(Dot(color=YELLOW, radius=0.05), path) for _ in range(30)]
+        self.mobjects.insert(0, scala_media)
+        self.mobjects.insert(0, scala_tympani)
+        self.play(
+            self.mobjects[0].animate.set_opacity(1),
+            self.mobjects[1].animate.set_opacity(1),
+        )
 
-        cochlear_nerve = Text("Cochlear nerve", color=YELLOW).to_edge(DOWN)
-        cochlear_arrow = Arrow(cochlear_nerve, DR * 3 + RIGHT)
+        scala_t_label = Tex("Scala tympani", color=BLUE_D).to_edge(DOWN)
+        scala_m_label = Tex("Scala media", color = BLUE_B).to_edge(UP)
+        self.play(
+            Write(scala_t_label),
+            Write(scala_m_label),
+        )
+
+        self.play(
+            Unwrite(scala_t_label, revere=False),
+            Unwrite(scala_m_label, revere=False),
+        )
+
+        path = VMobject().set_points_as_corners(
+            [
+                [-0.6, 1.8, 0],
+                [-1.2, 0.2, 0],
+                [2.3, -1, 0],
+                [2.8, -1.8, 0],
+                [4, -3, 0],
+                [14, -5, 0],
+            ]
+        )
+        path2 = VMobject().set_points_as_corners(
+            [[1.2, 1.3, 0], [2.3, -1, 0], [2.8, -1.8, 0], [4, -3, 0], [14, -5, 0]]
+        )
+        dots = [MoveAlongPath(Dot(color=YELLOW, radius=0.05), path) for _ in range(30)]
+        dots2 = [
+            MoveAlongPath(Dot(color=YELLOW, radius=0.05), path2) for _ in range(30)
+        ]
         self.play(
             AnimationGroup(*dots, lag_ratio=0.125, run_time=8),
-            Write(cochlear_nerve, run_time=2),
-            FadeIn(cochlear_arrow, run_time=2),
+            AnimationGroup(*dots2, lag_ratio=0.125, run_time=8),
         )
         self.clear()
         self.wait()
+
 
 class RadialWaveExampleScene(ThreeDScene):
     def construct(self):
@@ -1057,6 +1117,22 @@ class ShowSpeaker(Scene):
         d_arrow = Arrow(diaphragm, loudspeaker[7], color="#ff00ff")
         magnet = Tex("Magnet", color="#ff0000").to_corner(UL)
         m_arrow = Arrow(magnet, loudspeaker[9], color="#ff0000")
+        self.play(
+            Write(voice_coil),
+            Write(diaphragm),
+            Write(magnet),
+            Create(vc_arrow),
+            Create(d_arrow),
+            Create(m_arrow),
+        )
+        self.play(
+            Unwrite(voice_coil),
+            Unwrite(diaphragm),
+            Unwrite(magnet),
+            Uncreate(vc_arrow, reverse=False),
+            Uncreate(d_arrow, reverse=False),
+            Uncreate(m_arrow, reverse=False),
+        )
         self.add(voice_coil, vc_arrow, diaphragm, d_arrow, magnet, m_arrow)
         self.wait()
 
