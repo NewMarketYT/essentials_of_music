@@ -1,6 +1,7 @@
 from math import cos
 from operator import index, sub
 from typing_extensions import runtime
+from PIL.Image import Image
 from manim import *
 from manim.mobject.geometry import ArrowTriangleFilledTip
 from manim.opengl import *
@@ -892,7 +893,6 @@ class Stereocilia(Scene):
         self.mobjects.insert(0, cations)
         self.play(FadeIn(cations))
         self.wait()
-        self.add(index_labels(corti))
 
         tectorial_membrane = corti[0:3]
         tectorial_membrane.set(opacity=0)
@@ -1111,12 +1111,12 @@ class ShowSpeaker(Scene):
         loudspeaker = SVGMobject("loudspeaker.svg").scale(1.5).rotate(-PI / 2)
         loudspeaker.to_edge(LEFT).shift(RIGHT * 1.1)
         self.play(FadeIn(loudspeaker))
-        voice_coil = Tex("Voice coil", color="#00ff00").to_corner(DL)
-        vc_arrow = Arrow(voice_coil, loudspeaker[0], color="#00ff00", buff=0.02)
-        diaphragm = Tex("Diaphragm", color="#ff00ff").to_edge(DOWN)
-        d_arrow = Arrow(diaphragm, loudspeaker[7], color="#ff00ff")
+        voice_coil = Tex("Voice coil", color=YELLOW).to_corner(DL)
+        vc_arrow = Arrow(voice_coil.get_top(), loudspeaker[0].get_center()+DL*.9+RIGHT*.1, color=YELLOW, buff=0.02)
+        diaphragm = Tex("Diaphragm", color="#ff00ff").next_to(voice_coil)
+        d_arrow = Arrow(diaphragm.get_top(), loudspeaker[7], color="#ff00ff")
         magnet = Tex("Magnet", color="#ff0000").to_corner(UL)
-        m_arrow = Arrow(magnet, loudspeaker[9], color="#ff0000")
+        m_arrow = Arrow(magnet, loudspeaker[9].get_center(), color="#ff0000")
         self.play(
             Write(voice_coil),
             Write(diaphragm),
@@ -1133,7 +1133,6 @@ class ShowSpeaker(Scene):
             Uncreate(d_arrow, reverse=False),
             Uncreate(m_arrow, reverse=False),
         )
-        self.add(voice_coil, vc_arrow, diaphragm, d_arrow, magnet, m_arrow)
         self.wait()
 
 
@@ -1867,7 +1866,7 @@ class Transmission(Scene):
         self.t = ValueTracker(0)
         self.amp = ValueTracker(0.5)
         self.kappa = ValueTracker(1)
-        self.omega = ValueTracker(2)
+        self.omega = ValueTracker(PI)
         self.opacity = ValueTracker(0)
         num_dots = 800
         self.pf_phase = always_redraw(
@@ -1929,11 +1928,11 @@ class Transmission(Scene):
         dots.add_updater(lambda mob: get_y(mob))
 
         self.add(dots)
-
+        self.t.set_value(-2)
         self.play(
             self.t.animate.set_value(2),
             self.opacity.animate.set_value(1),
-            run_time=self.run_time,
+            run_time=2*self.run_time,
             rate_func=linear,
         )
 
@@ -2011,7 +2010,7 @@ class Transmission(Scene):
         )
         self.play(
             self.kappa.animate.set_value(2),
-            self.omega.animate.set_value(4),
+            self.omega.animate.set_value(TAU),
             run_time=self.run_time,
             rate_func=linear,
         )
@@ -2028,6 +2027,76 @@ class Transmission(Scene):
             run_time=self.run_time,
             rate_func=linear,
         )
+
+class MaxwellEquations(Scene):
+    def construct(self):
+        maxwell = ImageMobject("James_Clerk_Maxwell.png").scale(2)
+        label = Text("James C. Maxwell",gradient=(YELLOW, YELLOW, YELLOW,YELLOW,WHITE,BLUE,BLUE, BLUE,RED))
+        photo = Group(maxwell, label).arrange(DOWN)
+
+        eq1 = MathTex(r"\nabla \cdot \mathbf{E} = \frac {\rho} {\varepsilon_0}")
+        eq1[0][2].set_color(YELLOW)
+        eq2 = MathTex(r"\nabla \cdot \mathbf{B} = 0")
+        eq2[0][2].set_color([RED,BLUE])
+        eq3 = MathTex(r"\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}} {\partial t}")
+        eq3[0][2].set_color(YELLOW)
+        eq3[0][6].set_color([RED,BLUE])
+        eq4 = MathTex(r"\nabla \times \mathbf{B} = \mu_0\left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}} {\partial t})")
+        eq4[0][2].set_color([RED,BLUE])
+        eq4[0][7].set_color(YELLOW_B)
+        eq4[0][12].set_color(YELLOW)
+        equations = VGroup(eq1,eq2,eq3,eq4).arrange(DOWN)
+    
+        group_of_groups = Group(equations, photo).arrange(RIGHT)
+
+        self.play(FadeIn(maxwell), Write(label))
+        self.play(Write(equations))
+        self.play(
+            FadeOut(eq1),
+            FadeOut(eq2),
+            FadeOut(photo),
+            eq3.animate.move_to(ORIGIN+UP*.5),
+            eq4.animate.move_to(ORIGIN+DOWN*.5)
+        )
+
+        magnet = Text("Magnetic field", gradient=(BLUE,RED)).to_corner(UR)
+        m_a = Arrow(magnet.get_bottom(), eq3[0][7])
+        current = Text("Current", color=YELLOW_B).to_edge(DOWN).shift(RIGHT)
+        c_a = Arrow(current.get_top(), eq4[0][6])
+        electric = Text("Electric field", color=YELLOW).to_corner(UL)
+        e_a = Arrow(electric.get_bottom(), eq3[0][2])
+
+        arrows = VGroup(magnet, current, electric, m_a, c_a, e_a)
+
+        self.play(
+            Write(arrows)
+        )
+        self.play(
+            Unwrite(arrows)
+        )
+        time_varying_magnetic = VGroup(eq3[0][4:])
+        time_varying_electric = VGroup(eq4[0][8:-1])
+        self.play(
+            Indicate(time_varying_electric),
+        )
+        self.play(
+            Indicate(time_varying_magnetic),
+        )
+        self.play(
+            Indicate(eq3[0][2]),
+        )
+        self.play(
+            Indicate(eq4[0][7]),
+        )
+        self.play(
+            Indicate(eq4[0][2]),
+        )
+        self.play(
+            Wiggle(eq4[0][1]),
+            Wiggle(eq3[0][1]),
+        )
+
+        self.wait()
 
 
 class DeriveWaveFunction(Scene):

@@ -26,46 +26,84 @@ hours with this knowledge and your instrument will be more meaningful than many
 hours without it.
 
 Without further ado, let's introduce the defining characteristic of music:
-sound. 
+sound. But what is sound?
 
 ############### Human physiology/perception of sound and digital/analog/neurological conversions: ###############
 
-Sound is a vibration that travels in a wave through matter like solids, liquids,
-and gasses, but typically the medium is air. These acoustic waves transmit energy
-without transmitting the matter itself; as such, the organized disturbances
-propogate via regions of compression and rarefaction.
+Sound is a vibration that travels as a wave through matter like solids, liquids,
+and gasses, but typically the medium is air. Notice how the particles in yellow
+oscillate back and forth in space to form high and low pressure spots. These
+regions of compression and rarefactions aid the propagation of the wave but the
+particles themselves are not traveling with the wave.
 
-Assuming you can hear the audio from this video, you're currently listening
-in on a loudspeaker, the most common being the dynamic loudspeaker. This type of
-speaker has a voice coil attached to a diaphragm and a permamagnet at the base. This
-speaker converts electrical audio signals into sound waves via alternating 
-electrical current. The resulting oscillations vibrate a
-thin-membrane called a diaphragm which replicates my voice. This conversion of
-one form of energy into another is called transduction and in the world of
-signal processing, tranducers exists in many forms to convert between
-electrical and digital signals, and sound. Perhaps, the less often thought of
-transducer is your psychoacoustic transducer, or brain, which converts sound
-waves to perception.
+If we increase the wave's amplitude, the particles cover more distance in the
+same amount of time and must move more quickly, but the wave still travels the
+same speed.
 
-What our human brains ultimately interpret as sound is the vibration of the
-stereocilia in our inner ears. But we're getting ahead of ourselves. As sound waves propagate and reach our o
+If we hold the wave speed constant and increase the wave's frequency, the
+wavelength shortens as the particles move even faster in order to finish their
+round trips more frequently.
 
-These stereocilia sit atop inner and outer hair
-cells inside a fluid with free floating cations and when the fluid is moved
-alongside the tectorial membrane, the stereocilia are sheared due to fluid
-coupling allowing the flow of cations into the hair cells. This releases
-neurotransmitters which bind to receptors at the neuron termianls and trigger
-action potentials which send an electrical signal to the cochlear nerve. These
-electrical signals are what our brains interpret as sound.
+But what produces these vibrations?
 
-Moving the stereocilia is made possible by the middle and outer ear.
-Stepping beyond the inner ear, the middle ear attaches to the oval window
-of the cochlea, or the swirly snail part of the inner ear, via a set of three
-small bones: the malleus, incus, and stapes. These bones transfer sound
-mechanically and are moved by the ear drum which gathers sound energy from
-pressure differentials in the environment. Fun fact, when you swallow the
-pressure in the middle ear approaches the pressure of the outer ear and
-separates the middle ear from the outer ear through the eustachian tube.
+Well if you're currently listening in on this video, chances are your dynamic loudspeaker.
+
+This variant of loudspeaker has a voice coil attached to a diaphragm and a
+permanent magnet at its base and to figure out how this produces sound, we have 
+19th century scientist, James Maxwell, who published a set of four elegant
+equations, Maxwell's equations, that describe much of classical
+electromagnetism. The details of the equations I'll leave to your high school
+and college physics courses, or perhaps a future series, but the last two are of
+utmost importance to us and describe a beautiful dance. The Maxwell-Faraday
+equation on top describes how time-varying magnetic fields generate electric
+fields, and implicitly electrical currents, whiles Ampere's Law with Maxwell's
+addition, the bottom equation, describes how electrical currents and
+time-varying electric fields produce magnetic fields. 
+
+In practice this means a conductive ring moving around a magnet generates a
+current as indicated by the small moving spheres in the ring which produces a
+magnetic field that opposes the rings motion. Once the ring passes by the
+magnet, the current changes direction in attempts to pull toward the magnet.
+
+It is from these principles that the electrical signals sent through the voice
+coil moves it, and thus the diaphragm, up and down against the permanent magnet.
+
+This conversion of one form of energy or signal into another is called transduction and
+electroacoustic tranducers like your loudspeaker carry out these conversions
+between electrical signal, magnetic fields, motion of the diaphragm, and
+finally air pressure waves... or in the case of my microphone, the same steps
+as the speaker but in reverse.
+
+Now dynamic loudspeakers are incredibly inefficient and lose much of their
+energy in the form heat. In fact, they convert roughly .5 to 2 percent of the
+power they receive into acoustical power! But you know what isn't so
+inefficient? Your hearing!
+
+What we interpret as sound is the vibration of the stereocilia in our inner
+ears... here's a brief anatomy lesson:
+
+As the waves reach the outer ear, the pinna funnels the sound into the ear
+canal to the tympanic membrane, or ear drum. Pressure differences as low as 20
+micro Pa, the threshold of hearing, move the ear drum enough to be audible, but
+when the pressure exceeds the threshold of pain at 20 Pa hearing loss can occur.
+
+On the other side of the ear drum is the middle ear. The eustachian tube
+equalizes the pressure with the outer ear when you swallow, or plug your nose
+and blow, and this equal pressure helps the ear drum move without resistance.
+Attached to the ear drum is the malleus which connects in series to the incus,
+and stapes. If the incoming sound is too loud, a muscle will dampen the sound
+but the muscle can fatigue and its reaction time is too slow for some loud
+sounds. These bones efficiently transfer sound mechanically to the inner ear
+have to because the inner ear is 
+
+These stereocilia sit atop inner and outer hair cells inside a fluid with free
+floating cations and when the fluid is moved alongside the tectorial membrane,
+the stereocilia are sheared due to fluid coupling allowing the flow of cations
+into the hair cells. This releases neurotransmitters which bind to receptors at
+the neuron termianls and trigger action potentials which send an electrical
+signal to the cochlear nerve. These electrical signals are what our brains
+interpret as sound.
+
 
 From what is first a thought processed by my brain's electrical impulses and
 then mechanically sounded by the muscles in my vocal cords and mouth, to the
