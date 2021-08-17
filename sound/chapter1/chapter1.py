@@ -2562,6 +2562,26 @@ class FinishDerivation(Scene):
         fourth_form.submobjects[6][5].set_color(GREEN_A)
         fourth_form.submobjects[6][7].set_color(ORANGE)
         self.add(fourth_form)
+        fifth_form = MathTex(
+            "f(",
+            "x",
+            ",",
+            "t",
+            ")=",
+            "A",
+            r"\cos(\kappa x \pm \omega t + \phi)",
+            tex_to_color_map={"A": RED},
+        ).to_edge(UP)
+        fifth_form.submobjects[0][0].set_color(BLUE)
+        fifth_form.submobjects[0][1].set_color(BLUE)
+        fifth_form.submobjects[1][0].set_color(GREEN_A)
+        fifth_form.submobjects[2][0].set_color(BLUE)
+        fifth_form.submobjects[4][0].set_color(BLUE)
+        fifth_form.submobjects[6][4].set_color(PINK)
+        fifth_form.submobjects[6][5].set_color(GREEN_A)
+        fifth_form.submobjects[6][7].set_color(ORANGE)
+        fifth_form.submobjects[6][10].set_color(RED)
+        self.play(TransformMatchingTex(fourth_form, fifth_form))
         minus_form = MathTex(
             "f(",
             "x",
@@ -2569,7 +2589,7 @@ class FinishDerivation(Scene):
             "t",
             ")=",
             "A",
-            r"\cos(\kappa x - \omega t)",
+            r"\cos(\kappa x - \omega t + \phi)",
             tex_to_color_map={"A": RED},
         ).to_edge(UP)
         minus_form.submobjects[0][0].set_color(BLUE)
@@ -2580,14 +2600,15 @@ class FinishDerivation(Scene):
         minus_form.submobjects[6][4].set_color(PINK)
         minus_form.submobjects[6][5].set_color(GREEN_A)
         minus_form.submobjects[6][7].set_color(ORANGE)
-        self.play(ReplacementTransform(fourth_form, minus_form))
+        minus_form.submobjects[6][10].set_color(RED)
+        self.play(ReplacementTransform(fifth_form, minus_form))
 
         partial_x = (
             MathTex(
                 r"\frac{\partial f}{\partial x}",
                 "=",
                 r"-A \kappa",
-                r"\sin(\kappa x - \omega t)",
+                r"\sin(\kappa x - \omega t + \phi)",
             )
             .next_to(minus_form, DOWN)
             .align_to(7 * LEFT, LEFT)
@@ -2599,12 +2620,13 @@ class FinishDerivation(Scene):
         partial_x.submobjects[3][4].set_color(PINK)
         partial_x.submobjects[3][5].set_color(GREEN_A)
         partial_x.submobjects[3][7].set_color(ORANGE)
+        partial_x.submobjects[3][10].set_color(RED)
         partial_t = (
             MathTex(
                 r"\frac{\partial f}{\partial t}",
                 "=",
                 r"A \omega",
-                r"\sin(\kappa x - \omega t)",
+                r"\sin(\kappa x - \omega t + \phi)",
             )
             .next_to(minus_form, DOWN)
             .align_to(7 * RIGHT, RIGHT)
@@ -2615,6 +2637,7 @@ class FinishDerivation(Scene):
         partial_t.submobjects[3][4].set_color(PINK)
         partial_t.submobjects[3][5].set_color(GREEN_A)
         partial_t.submobjects[3][7].set_color(ORANGE)
+        partial_t.submobjects[3][10].set_color(RED)
 
         partial_x.submobjects[0].save_state()
         partial_t.submobjects[0].save_state()
@@ -2672,7 +2695,7 @@ class FinishDerivation(Scene):
                 r"\frac{\partial^2 f}{\partial x^2}",
                 "=",
                 r"-A \kappa^2",
-                r"\cos(\kappa x - \omega t)",
+                r"\cos(\kappa x - \omega t + \phi)",
             )
             .next_to(partial_x, DOWN)
             .align_to(7 * LEFT, LEFT)
@@ -2686,13 +2709,14 @@ class FinishDerivation(Scene):
         partial_x_2.submobjects[3][4].set_color(PINK)
         partial_x_2.submobjects[3][5].set_color(GREEN_A)
         partial_x_2.submobjects[3][7].set_color(ORANGE)
+        partial_x_2.submobjects[3][10].set_color(RED)
 
         partial_t_2 = (
             MathTex(
                 r"\frac{\partial^2 f}{\partial t^2}",
                 "=",
                 r"-A \omega^2",
-                r"\cos(\kappa x - \omega t)",
+                r"\cos(\kappa x - \omega t + \phi)",
             )
             .next_to(partial_t, DOWN)
             .align_to(7 * RIGHT, RIGHT)
@@ -2704,6 +2728,7 @@ class FinishDerivation(Scene):
         partial_t_2.submobjects[3][4].set_color(PINK)
         partial_t_2.submobjects[3][5].set_color(GREEN_A)
         partial_t_2.submobjects[3][7].set_color(ORANGE)
+        partial_t_2.submobjects[3][10].set_color(RED)
         self.play(
             Write(partial_x_2.submobjects[0]),
             Write(partial_t_2.submobjects[0]),

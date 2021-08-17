@@ -28,7 +28,8 @@ hours without it.
 Without further ado, let's introduce the defining characteristic of music:
 sound. But what is sound?
 
-############### Human physiology/perception of sound and digital/analog/neurological conversions: ###############
+############### Human physiology/perception of sound: ###############
+### What is sound?
 
 Sound is a vibration that travels as a wave through matter like solids, liquids,
 and gasses, but typically the medium is air. Notice how the particles in yellow
@@ -45,6 +46,7 @@ wavelength shortens as the particles move even faster in order to finish their
 round trips more frequently.
 
 But what produces these vibrations?
+### What makes sound?
 
 Well if you're currently listening in on this video, chances are your dynamic loudspeaker.
 
@@ -83,6 +85,8 @@ energy in the form heat. In fact, they convert roughly .5 to 2 percent of the
 power they receive into acoustical power! But you know what isn't so
 inefficient? Your hearing!
 
+### How do we hear sound?
+
 What we interpret as sound is the vibration of the stereocilia in our inner
 ears... here's a brief anatomy lesson:
 
@@ -116,20 +120,119 @@ on top of the thin basilar membrane and span a small gap to connect to the
 thick tectorial membrane. When the fluid of the cochlea vibrates from the
 stapes, the basilar membrane moves and the hair cells are sheared against the
 tectorial membrane allowing cations to enter the hair cells and trigger a
-neurological response which is sent upstream to the brain.
+neurological response which is sent to the brain.
 
-From what is first a thought processed by my brain's electrical impulses and
-then mechanically sounded by the muscles in my vocal cords and mouth, to the
-electrical audio signal received by my microphone digitized by its
-analog-digital converter for this video and back to your ears; I personally find
-these many stages of conversion that go in to sharing knowledge through video highly 
-inspiring. We are, albeit with a few steps, bridging our minds digitally.
-
+We are, albeit with many steps of transduction, bridging our minds
+digitally.  From my mind to yours, to the neurological impulses sounded by my
+vocal cords and heard by your ears, to the signal received by my microphone and
+played by your speakers, and finally the analog-digital and digital-analog
+conversions for this video; I find it both bewildering and awe inspring that
+we're watching this at all. 
 
 ################ The physics and properties of sound as it relates to hearing audio: ###############
+### What is sound's geometric qualities?
 
 Now that we've established some of the core ideas to our perception of sound,
 let's investigate their geometrical properties.
+
+Because sound waves are cyclical, we turn to the circle which is also cyclical
+to understand them. We'll be working with angles theta in radians which are a
+dimensionless unit. One radian is where the radius of the circle equals the
+distance traveled along the circumference of the circle.  After traveling PI
+radians around the circle, we're halfway around, and after TAU radians, or 2
+steps of PI radians, we've come full circle.
+
+Two extremely important relations to the circle are the trigonometry functions,
+cosine and sine. Given an angle theta of PI halves radians, we sit at the top of
+the circle of radius one, cos describes our x coordinate and sin describes the y
+coordinate on a unit circle, but for any other circle, we have to multiply
+these functions by the radius, r. Intuitively, sin is positive on the top half of
+the circle and negative on the bottom half. Cos is negative on the left side,
+and positive on the right side. After completing a round trip, the values of
+cosine and sine on the right are the same as the values on the left. For any
+full rotation of TAU radians, it's as if we never left.
+
+Cosine and sine are very similar to eachother. With greek letter phi, we can
+phase shift the graph of sin. Shifting by PI halves radians, a right angle,
+cosine and sin are exactly the same curve.
+
+When we start to factor in the time it takes to travel around the circle, just
+like we have velocities for cars which describe how fast and which direction, we
+also have angular velocity which describes how fast and which direction around
+the circle. Given by the orange greek letter omega, we define it as theta
+radians around the circle in t seconds. Given any two of the three variables, an
+angular velocity, a angle traveled, or the time elasped, we can figure out the
+third.
+
+We're typically concerned with how many seconds it takes to make a trip of TAU
+radians as this describes the time period that it takes for once full cycle,
+indicated by a capital T. Inverting this time period, we get the frequency that
+full trips are made in a second.
+
+Again, it would seems we never left though time has moved forward.
+
+These sinusoidal curves have some additional geomtrical properties. The
+amplitude adjust the radius of the unit cirle, and it's related to how loud the
+sound wave is. Instead of using theta, let's move to distance x. The wavelength,
+given by the pink, greek letter lambda, describes the distance until a full
+revolution of the circle. Currently it's 2*PI, but to make the math simpler
+we'll instead use the wavenumber given by greek letter kappa. This omits the
+factor of 2 PI and describes how many full revolutions occur in normal span of
+1. The lower the wavenumber the longer the wavelength. The higher the
+wavenumber, the shorter the wavelength.
+
+Since theta is equal to omega times time, we can introduce time as a parameter
+of the function. I write the plus/minus sign here because time only moves
+forward, but waves move both forwards and backwards in space with time. These
+are two separate equations where taking the minus sign variant indicates forward
+moving waves, and taking the positive sign mean backwards moving waves. We'll
+take the forward moving wave with these animations though. With an omega of 1,
+it takes a period of TAU seconds to travel one full trip. To speed the period
+up, we increase omega to TAU radians per second and now the wave makes the trip
+in one second.
+
+You may have noticed the wave moved much quicker. The speed of the wave is
+proportional to the wavelength, and inversely proportional to the time period so
+anything we can do to increase the wavelength, or decrease the period will speed
+up the wave. Doing some algebra using our frequency and wavenumber relation, we
+can that kappa and omega both affect the wavespeed. And that makes sense,
+they're both inside the trig function multiplying our space and time variables.
+
+As a brief aside, we can actually speed up the wave so that it appears not to
+move. Since this video was rendered at sixty frames per second, a wave speed of
+sixty * TAU units per second makes the yellow dot moves one full wave length
+between frames. If we slow the wave down just a bit, it appears to be moving
+backwards but it's actually moving extremely fast forward. If we speed it up
+just a bit, it'll appear to move forward slowly. This is a form of aliasing and
+in a future video we'll talk more in-depth about it, but anyways...
+
+We add in the phase shift term from earlier to account for any intial offset of the
+wave, and we're now describing two function of space and time solutions to a
+very important PDE called the wave equation.
+
+To derive it, we'll use a bit of calculus to take some derivatives and two
+interesting facts about how we appeared not to move after making a full rotation
+around the circle in space and in time.  Taking partial derivates of the input
+variables, one with respect to space and the other with time, tells us their
+story and affect on how the function changes. We hold the other variable
+constant and use the fact that cosine's derivative is negative sine and the
+chain rule to arrive at these two first order partial derivatives. Space's story
+describes the slopiness of the wave of particles and time's story describes the
+velocity of the particles.
+
+Taking a second partial derivative of space and time, we're describing the
+concavity of the wave and the acceleration of the particle at certain positions
+of the wave. We hold the other variable constant again and use the chain rule,
+but this time we use the fact that the derivative of sine is positive cosine.
+
+The two of these 2nd order partial derivatives are nearly identical, differing
+only by factors of kappa squared and omega squared. If you'll recall from
+earlier that the wave speed is related to omega over kappa, we can rewrite this
+in it's final form which states: the 2nd partial derivative w.r.t time is equal
+to the speed of the wave squared times the 2nd partial derivative w.r.t space.
+
+This equation is beautifully simple and describes not only sound waves but other
+wave phenomenon like light, water, seismic, and gravity waves.
 
 A sound wave travel through space and time in all directions,
 with an amplitude, frequency, and wavelength. The frequency and wavelength of a
@@ -290,6 +393,9 @@ produce a variety of scales.
 If you enjoyed this video, consider liking, subscribing, and sharing the
 video with others. Until next time, thanks for watching.
 
+# Sections I didn't get to, for future?
+
+## digital/analog stuff
 
 In much the same way that our stereocilia vibrate due to pressure waves, a
 condenser microphone's (also called a capacitor microphone) diaphram also
@@ -338,4 +444,11 @@ result in indiscernible noise.
 On the subject of sampling, isn't a wonder why we've established a minimum
 sampling rate of 44.1 kHz? It is worth briefly mentioning that human hearing is
 only capable of hearing frequencies between roughly 20Hz and 20000Hz. If we
-undersampled the audio signal, we would experience aliasing ----------- Something about nyquist rate
+undersampled the audio signal, we would experience aliasing -----------
+Talk about nyquist rate
+
+
+Scenes to make:
+levels of hearing range table
+loudspeaker inefficient
+geometric wave (2d or 3d snippet interlude)
