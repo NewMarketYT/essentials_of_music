@@ -23,91 +23,91 @@ from manim_physics.wave import *
 
 
 # Created with Manim v0.8.0
-class NewMarketLogo(GraphScene, MovingCameraScene):
-    def setup(self):
-        GraphScene.setup(self)
-        MovingCameraScene.setup(self)
+# class NewMarketLogo(GraphScene, MovingCameraScene):
+#     def setup(self):
+#         GraphScene.setup(self)
+#         MovingCameraScene.setup(self)
 
-    def construct(self):
-        self.axes_color = BLACK
-        self.x_min = -3
-        self.x_max = 3
-        self.y_min = -3
-        self.y_max = 3
-        self.x_axis_width = 6
-        self.y_axis_height = 6
-        self.graph_origin = np.array([0, 0, 0])
-        self.x_axis_label = ""
-        self.y_axis_label = ""
-        self.camera.frame.save_state()
-        self.setup_axes(animate=False)
+#     def construct(self):
+#         self.axes_color = BLACK
+#         self.x_min = -3
+#         self.x_max = 3
+#         self.y_min = -3
+#         self.y_max = 3
+#         self.x_axis_width = 6
+#         self.y_axis_height = 6
+#         self.graph_origin = np.array([0, 0, 0])
+#         self.x_axis_label = ""
+#         self.y_axis_label = ""
+#         self.camera.frame.save_state()
+#         self.setup_axes(animate=False)
 
-        def stock_curve(x):
-            return (x - 0.125) ** 4 * (x + 1.875)
+#         def stock_curve(x):
+#             return (x - 0.125) ** 4 * (x + 1.875)
 
-        graph = self.get_graph(stock_curve, color=BLUE, x_min=-4, x_max=3)
-        deriv_graph = self.get_derivative_graph(graph)
-        dolly = self.get_graph(stock_curve, color=BLACK, x_min=-3, x_max=0)
+#         graph = self.get_graph(stock_curve, color=BLUE, x_min=-4, x_max=3)
+#         deriv_graph = self.get_derivative_graph(graph)
+#         dolly = self.get_graph(stock_curve, color=BLACK, x_min=-3, x_max=0)
 
-        def candlesticks(x):
-            coord = self.input_to_graph_point(x, graph)
-            before_coord = self.input_to_graph_point(x - 0.45, graph)
-            after_coord = self.input_to_graph_point(x + 0.45, graph)
-            deriv_coord = self.input_to_graph_point(x, deriv_graph)
-            color = GREEN
-            thin_top = after_coord[1]
-            thin_bot = before_coord[1]
-            if deriv_coord[1] < 0:
-                color = RED
-                tmp = thin_top
-                thin_top = thin_bot
-                thin_bot = tmp
-            height = coord[1]
-            if x == -2:
-                height *= 2.5
+#         def candlesticks(x):
+#             coord = self.input_to_graph_point(x, graph)
+#             before_coord = self.input_to_graph_point(x - 0.45, graph)
+#             after_coord = self.input_to_graph_point(x + 0.45, graph)
+#             deriv_coord = self.input_to_graph_point(x, deriv_graph)
+#             color = GREEN
+#             thin_top = after_coord[1]
+#             thin_bot = before_coord[1]
+#             if deriv_coord[1] < 0:
+#                 color = RED
+#                 tmp = thin_top
+#                 thin_top = thin_bot
+#                 thin_bot = tmp
+#             height = coord[1]
+#             if x == -2:
+#                 height *= 2.5
 
-            r = Rectangle(
-                fill_opacity=1, color=color, width=0.1, height=height
-            ).move_to(RIGHT * coord[0] + UP * coord[1])
-            top = Line(color=color, start=coord, end=(coord[0], thin_top, 0))
-            bot = Line(color=color, start=coord, end=(coord[0], thin_bot, 0))
-            return VGroup(r, top, bot)
+#             r = Rectangle(
+#                 fill_opacity=1, color=color, width=0.1, height=height
+#             ).move_to(RIGHT * coord[0] + UP * coord[1])
+#             top = Line(color=color, start=coord, end=(coord[0], thin_top, 0))
+#             bot = Line(color=color, start=coord, end=(coord[0], thin_bot, 0))
+#             return VGroup(r, top, bot)
 
-        sticks = [candlesticks(x) for x in range(-2, 2)]
-        sticks.pop(2)
-        moving_dot = Dot(fill_opacity=0).move_to(dolly.points[0])
-        self.add(moving_dot)
-        self.camera.frame.scale(0.5).move_to(moving_dot)
-        self.add(self.camera.frame)
+#         sticks = [candlesticks(x) for x in range(-2, 2)]
+#         sticks.pop(2)
+#         moving_dot = Dot(fill_opacity=0).move_to(dolly.points[0])
+#         self.add(moving_dot)
+#         self.camera.frame.scale(0.5).move_to(moving_dot)
+#         self.add(self.camera.frame)
 
-        def update_curve(mob):
-            mob.move_to(moving_dot.get_center())
+#         def update_curve(mob):
+#             mob.move_to(moving_dot.get_center())
 
-        self.camera.frame.add_updater(update_curve)
-        candles = VGroup(*sticks)
-        logo = SVGMobject("newmarket.svg").scale(0.5).move_to(0.5 * UP)
-        logo.submobjects[0].set(stroke_width=0)
-        logo.submobjects[1].set(stroke_width=0)
-        self.play(
-            AnimationGroup(
-                MoveAlongPath(moving_dot, dolly, rate_func=ease_out_cubic, run_time=3),
-                Write(graph, run_time=2.5, rate_func=ease_in_out_circ),
-                Write(candles, run_time=4),
-            ),
-            Write(logo, run_time=3, rate_func=rush_into),
-        )
-        self.camera.frame.remove_updater(update_curve)
+#         self.camera.frame.add_updater(update_curve)
+#         candles = VGroup(*sticks)
+#         logo = SVGMobject("newmarket.svg").scale(0.5).move_to(0.5 * UP)
+#         logo.submobjects[0].set(stroke_width=0)
+#         logo.submobjects[1].set(stroke_width=0)
+#         self.play(
+#             AnimationGroup(
+#                 MoveAlongPath(moving_dot, dolly, rate_func=ease_out_cubic, run_time=3),
+#                 Write(graph, run_time=2.5, rate_func=ease_in_out_circ),
+#                 Write(candles, run_time=4),
+#             ),
+#             Write(logo, run_time=3, rate_func=rush_into),
+#         )
+#         self.camera.frame.remove_updater(update_curve)
 
-        self.play(
-            AnimationGroup(
-                Uncreate(graph),
-                Uncreate(candles),
-                logo.animate.shift(0.15 * DOWN),
-                logo.submobjects[2].animate.set_fill(BLACK).shift(0.15 * DOWN),
-            ),
-            self.camera.frame.animate.scale(0.005),
-        )
-        self.wait()
+#         self.play(
+#             AnimationGroup(
+#                 Uncreate(graph),
+#                 Uncreate(candles),
+#                 logo.animate.shift(0.15 * DOWN),
+#                 logo.submobjects[2].animate.set_fill(BLACK).shift(0.15 * DOWN),
+#             ),
+#             self.camera.frame.animate.scale(0.005),
+#         )
+#         self.wait()
 
 
 class Chapter1Opening(Scene):
@@ -960,7 +960,7 @@ class Stereocilia(Scene):
         )
 
         scala_t_label = Tex("Scala tympani", color=BLUE_D).to_edge(DOWN)
-        scala_m_label = Tex("Scala media", color = BLUE_B).to_edge(UP)
+        scala_m_label = Tex("Scala media", color=BLUE_B).to_edge(UP)
         self.play(
             Write(scala_t_label),
             Write(scala_m_label),
@@ -1088,18 +1088,6 @@ class StandingWaveExample(Scene):
             wave.start_wave()
         self.wait()
 
-
-class Speaker(VGroup):
-    def __init__(self):
-        super().__init__()
-        self.width = 1
-        self.height = 2
-        self.frame = Rectangle(color=WHITE, fill_opacity=1, width=1, height=2)
-        self.sub = Circle(radius=0.25).move_to(ORIGIN + DOWN * 0.5)
-        self.tweeter = Circle(radius=0.125).move_to(ORIGIN + UP * 0.33)
-        self.add(self.frame, self.sub, self.tweeter)
-
-
 class ShowSpeaker(Scene):
     def construct(self):
         speaker = SVGMobject("audio.svg").scale(3).to_edge(LEFT)
@@ -1112,7 +1100,12 @@ class ShowSpeaker(Scene):
         loudspeaker.to_edge(LEFT).shift(RIGHT * 1.1)
         self.play(FadeIn(loudspeaker))
         voice_coil = Tex("Voice coil", color=YELLOW).to_corner(DL)
-        vc_arrow = Arrow(voice_coil.get_top(), loudspeaker[0].get_center()+DL*.9+RIGHT*.1, color=YELLOW, buff=0.02)
+        vc_arrow = Arrow(
+            voice_coil.get_top(),
+            loudspeaker[0].get_center() + DL * 0.9 + RIGHT * 0.1,
+            color=YELLOW,
+            buff=0.02,
+        )
         diaphragm = Tex("Diaphragm", color="#ff00ff").next_to(voice_coil)
         d_arrow = Arrow(diaphragm.get_top(), loudspeaker[7], color="#ff00ff")
         magnet = Tex("Magnet", color="#ff0000").to_corner(UL)
@@ -1138,87 +1131,217 @@ class ShowSpeaker(Scene):
 
 class Speaker(Scene):
     def construct(self):
+        self.setup_axes()
+        self.move_speaker()
 
-        self.t = ValueTracker(0)
-        axes = ThreeDAxes(
+    def setup_axes(self):
+
+        self.axes = ThreeDAxes(
             x_range=(-4, 4, 1),
             y_range=(-4, 4, 1),
             z_range=(-4, 4, 1),
-            x_length=config.frame_height - 1.5,
-            y_length=config.frame_height - 1.5,
-            z_length=config.frame_height - 1.5,
+            x_length=8,
+            y_length=8,
+            z_length=8,
             depth_test=True,
         )
+        self.axes.x_axis.set_color(RED)
+        self.axes.y_axis.set_color(GREEN)
+        self.axes.z_axis.set_color(BLUE)
+        self.add(self.axes)
+        self.renderer.camera = OpenGLCamera(center_point=4*OUT)
+        self.renderer.camera.rotate_about_origin(-PI / 2, UP)
+        # self.renderer.camera.rotate_about_origin(PI / 2, OUT)
 
-        self.add(axes)
-
-        def square_torus(u, v):
-            P = np.array([np.cos(u), np.sin(u), 0])
-            stuff = -1
-            if np.sin(v) > 0:
-                stuff = 1
-            return (self.R + self.r * np.cos(v)) * P + self.r * stuff * OUT
-
-        self.R = 2
-        self.r = 0.5
-        magnet = ParametricSurface(
-            square_torus,
-            u_range=[0, TAU],
-            v_range=[0, TAU],
-            resolution=24,
-            depth_test=True,
+    def move_speaker(self):
+        self.t = ValueTracker(0)
+        self.amp = ValueTracker(1)
+        self.kappa = ValueTracker(1)
+        self.omega = ValueTracker(TAU)
+        self.opacity = ValueTracker(0)
+        num_dots = 600
+        self.pf_phase = always_redraw(
+            lambda: ParametricFunction(
+                lambda x: self.axes.c2p(
+                    0,
+                    (
+                        self.amp.get_value()
+                        * np.sin(
+                            self.kappa.get_value() * x
+                            - self.omega.get_value() * self.t.get_value()
+                        )
+                    ),
+                    x,
+                ),
+                t_range=[0, 3*TAU],
+                color=RED,
+                stroke_opacity=self.opacity.get_value(),
+                depth_test=True,
+            )
         )
+        self.pf = always_redraw(
+            lambda: ParametricFunction(
+                lambda x: self.axes.c2p(
+                    0,
+                    (
+                        self.amp.get_value()
+                        * np.cos(
+                            self.kappa.get_value() * x
+                            - self.omega.get_value() * self.t.get_value()
+                        )
+                    ),
+                    x,
+                ),
+                t_range=[0, 3*TAU],
+                stroke_opacity=0,
+            )
+        )
+        self.add(self.pf, self.pf_phase)
+        seed = random.seed(0)
+        dots = []
+        for _ in range(num_dots):
+            angle = TAU*random.uniform(-1,1)
+            z_pos = random.uniform(2,10)
+            scale = .95
+            if z_pos > 3 and z_pos < 4.25:
+                scale = .90 + 2 * (z_pos-3)
+                z_pos += .35
+            elif z_pos > 4.25:
+                scale = 3.25
+            dots.append(
+                OpenGLSphere(
+                    resolution=(51, 51),
+                    radius=.04
+                ).move_to(
+                    self.axes.c2p(
+                        random.uniform(0,scale)*np.sin(TAU*angle),
+                        random.uniform(0,scale)*np.cos(TAU*angle),
+                        z_pos
+                    )
+                )
+            )
+
+        dots = OpenGLGroup(*dots)
+        copy_dots = dots.copy()
+
+        def get_dot_y(mob):
+            for i in range(len(mob)):
+                y = self.pf.get_point_from_function(copy_dots[i].get_z())
+                mob[i].move_to(copy_dots[i].get_center() + IN * y[1])
+
+        dots.add_updater(lambda mob: get_dot_y(mob))
+
+        class SquareTorus(OpenGLSurface):
+            def __init__(self, u_range=None, v_range=None, r1=1.5, r2=0.5, **kwargs):
+                u_range = u_range if u_range is not None else (0, TAU)
+                v_range = v_range if v_range is not None else (0, TAU)
+                self.r1 = r1
+                self.r2 = r2
+                self.color = RED
+                super().__init__(u_range=u_range, v_range=v_range, **kwargs)
+
+            def uv_func(self, u, v):
+                P = np.array([np.cos(u), np.sin(u), 0])
+                stuff = -1
+                if np.sin(v) > 0:
+                    stuff = 1
+                return (self.r1 + self.r2 * np.cos(v)) * P + self.r2 * stuff * OUT
+
+        magnet = SquareTorus(
+            depth_test=True,
+            color=RED,
+        ).shift(1*IN)
 
         coil = ParametricFunction(
-            lambda u: axes.c2p(1.1 * np.cos(2 * u), 1.1 * np.sin(2 * u), u * 0.05),
+            lambda u: self.axes.c2p(1.1 * np.cos(2 * u), 1.1 * np.sin(2 * u), u * 0.0125),
             color=YELLOW,
-            t_range=np.array([-3 * TAU, 20, 0.01]),
+            t_range=[0, 12*TAU-PI/4, 0.01],
+            depth_test=True,
         )
-        cylinder = ParametricSurface(
-            lambda u, v: axes.c2p(np.cos(u), np.sin(u), v),
+        cylinder = OpenGLSurface(
+            lambda u, v: self.axes.c2p(np.cos(u), np.sin(u), v),
             u_range=[0, 2 * PI],
-            v_range=[-1, 1],
-            checkerboard_colors=[ORANGE, ORANGE],
+            v_range=[0, 1],
+            color=YELLOW_B,
             depth_test=True,
         )
 
-        diaphragm = ParametricSurface(
-            lambda u, v: axes.c2p(v * np.sin(u), v * np.cos(u), v),
+        diaphragm = OpenGLSurface(
+            lambda u, v: self.axes.c2p(v * np.sin(u), v * np.cos(u), v),
             u_range=[0, TAU],
             v_range=[1, 3],
             checkerboard_colors=["#ff00ff", "#ee00ee"],
             depth_test=True,
+            color=PINK,
         )
-        moving_parts = VGroup(cylinder, diaphragm, coil)
+        moving_parts = OpenGLGroup(
+            cylinder,
+            diaphragm,
+            coil,
+            depth_test=True,
+        )
         copy_parts = moving_parts.copy()
 
         def get_y(mob: VMobject):
             for i in range(len(mob)):
                 mob[i].move_to(
-                    copy_parts[i].get_center() + OUT * np.sin(self.t.get_value())
+                    copy_parts[i].get_center()
+                    + self.axes.c2p(0,0, self.amp.get_value() * np.sin(-self.omega.get_value() * self.t.get_value()))
                 )
 
         moving_parts.add_updater(lambda mob: get_y(mob))
-        self.add(moving_parts)
-        self.play(self.t.animate.set_value(4), run_time=1, rate_func=linear)
+        self.play(Create(dots), Create(moving_parts), Create(magnet))
+
         self.play(
-            FadeIn(magnet), self.t.animate.set_value(8), run_time=1, rate_func=linear
+            self.t.animate.set_value(4),
+            self.opacity.animate.set_value(1),
+            run_time=4,
+            rate_func=linear,
         )
-        self.play(self.t.animate.set_value(12), run_time=1, rate_func=linear)
+        self.play(
+            self.t.animate.set_value(8),
+            run_time=4,
+            rate_func=linear,
+        )
         self.interactive_embed()
 
 
-class Transduction(Scene):
+class Transducer(Scene):
     def construct(self):
         self.show_definition()
 
     def show_definition(self):
-        definition = Paragraph(
-            "trans·​duc·​tion | \ tran(t)s-ˈdək-shən  , tranz- \\",
-            "the action or process of converting (something,",
-            "such as energy or a message) into another form",
+        word = Text(
+            "transducer noun",
+            t2c={"noun": ORANGE},
+            size=2,
+            disable_ligatures=True,
         )
-        self.play(Write(definition))
+        pronunciation = Text(
+            "trans·​duc·​er | \\ tran(t)s-ˈdü-sər  , tranz-, -ˈdyü- \\",
+            size=0.8,
+        )
+        definition = Text(
+            "a device that receives a signal in the form of one type\nof energy and converts it to a signal in another form",
+            disable_ligatures=True,
+            t2c={
+                "converts": RED_D,
+                "device": GREEN_B,
+                "energy": YELLOW_D,
+                "signal": YELLOW,
+            },
+            t2g={
+                "one type": [BLUE, RED],
+                "another form": [RED, BLUE],
+            },
+            size=0.8,
+        )
+        diction = VGroup(word, pronunciation, definition).arrange(DOWN)
+        word.to_edge(LEFT)
+        pronunciation.to_edge(LEFT)
+        definition.to_edge(LEFT)
+        self.play(Write(diction), run_time=10)
+        self.wait()
 
 
 class DigitalMind(CreatureScene):
@@ -1932,7 +2055,7 @@ class Transmission(Scene):
         self.play(
             self.t.animate.set_value(2),
             self.opacity.animate.set_value(1),
-            run_time=2*self.run_time,
+            run_time=2 * self.run_time,
             rate_func=linear,
         )
 
@@ -2028,25 +2151,33 @@ class Transmission(Scene):
             rate_func=linear,
         )
 
+
 class MaxwellEquations(Scene):
     def construct(self):
         maxwell = ImageMobject("James_Clerk_Maxwell.png").scale(2)
-        label = Text("James C. Maxwell",gradient=(YELLOW, YELLOW, YELLOW,YELLOW,WHITE,BLUE,BLUE, BLUE,RED))
+        label = Text(
+            "James C. Maxwell",
+            gradient=(YELLOW, YELLOW, YELLOW, YELLOW, WHITE, BLUE, BLUE, BLUE, RED),
+        )
         photo = Group(maxwell, label).arrange(DOWN)
 
         eq1 = MathTex(r"\nabla \cdot \mathbf{E} = \frac {\rho} {\varepsilon_0}")
         eq1[0][2].set_color(YELLOW)
         eq2 = MathTex(r"\nabla \cdot \mathbf{B} = 0")
-        eq2[0][2].set_color([RED,BLUE])
-        eq3 = MathTex(r"\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}} {\partial t}")
+        eq2[0][2].set_color([RED, BLUE])
+        eq3 = MathTex(
+            r"\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}} {\partial t}"
+        )
         eq3[0][2].set_color(YELLOW)
-        eq3[0][6].set_color([RED,BLUE])
-        eq4 = MathTex(r"\nabla \times \mathbf{B} = \mu_0\left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}} {\partial t})")
-        eq4[0][2].set_color([RED,BLUE])
+        eq3[0][6].set_color([RED, BLUE])
+        eq4 = MathTex(
+            r"\nabla \times \mathbf{B} = \mu_0\left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}} {\partial t})"
+        )
+        eq4[0][2].set_color([RED, BLUE])
         eq4[0][7].set_color(YELLOW_B)
         eq4[0][12].set_color(YELLOW)
-        equations = VGroup(eq1,eq2,eq3,eq4).arrange(DOWN)
-    
+        equations = VGroup(eq1, eq2, eq3, eq4).arrange(DOWN)
+
         group_of_groups = Group(equations, photo).arrange(RIGHT)
 
         self.play(FadeIn(maxwell), Write(label))
@@ -2055,11 +2186,11 @@ class MaxwellEquations(Scene):
             FadeOut(eq1),
             FadeOut(eq2),
             FadeOut(photo),
-            eq3.animate.move_to(ORIGIN+UP*.5),
-            eq4.animate.move_to(ORIGIN+DOWN*.5)
+            eq3.animate.move_to(ORIGIN + UP * 0.5),
+            eq4.animate.move_to(ORIGIN + DOWN * 0.5),
         )
 
-        magnet = Text("Magnetic field", gradient=(BLUE,RED)).to_corner(UR)
+        magnet = Text("Magnetic field", gradient=(BLUE, RED)).to_corner(UR)
         m_a = Arrow(magnet.get_bottom(), eq3[0][7])
         current = Text("Current", color=YELLOW_B).to_edge(DOWN).shift(RIGHT)
         c_a = Arrow(current.get_top(), eq4[0][6])
@@ -2068,12 +2199,8 @@ class MaxwellEquations(Scene):
 
         arrows = VGroup(magnet, current, electric, m_a, c_a, e_a)
 
-        self.play(
-            Write(arrows)
-        )
-        self.play(
-            Unwrite(arrows)
-        )
+        self.play(Write(arrows))
+        self.play(Unwrite(arrows))
         time_varying_magnetic = VGroup(eq3[0][4:])
         time_varying_electric = VGroup(eq4[0][8:-1])
         self.play(
@@ -2698,5 +2825,6 @@ class RecallWaveSpeed(Scene):
 
 class Test(Scene):
     def construct(self):
-        ear = SVGMobject("human_ear.svg", height=config.frame_height)
-        self.add(*ear[49:50])
+        self.renderer.camera = OpenGLCamera(center_point=2*OUT)
+        self.add(OpenGLTorus())
+        self.interactive_embed()

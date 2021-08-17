@@ -61,9 +61,13 @@ addition, the bottom equation, describes how electrical currents and
 time-varying electric fields produce magnetic fields. 
 
 In practice this means a conductive ring moving around a magnet generates a
-current as indicated by the small moving spheres in the ring which produces a
-magnetic field that opposes the rings motion. Once the ring passes by the
-magnet, the current changes direction in attempts to pull toward the magnet.
+current as indicated by the small moving spheres in the ring. This produces a
+magnetic field that opposes the magnets slowing the ring down. Once the ring
+passes by the magnet, the current changes direction in attempts to pull toward
+the magnet.
+
+In the case of a solenoid where there is no magnet, a current by itself produces
+a magnetic field.
 
 It is from these principles that the electrical signals sent through the voice
 coil moves it, and thus the diaphragm, up and down against the permanent magnet.
@@ -88,22 +92,31 @@ micro Pa, the threshold of hearing, move the ear drum enough to be audible, but
 when the pressure exceeds the threshold of pain at 20 Pa hearing loss can occur.
 
 On the other side of the ear drum is the middle ear. The eustachian tube
-equalizes the pressure with the outer ear when you swallow, or plug your nose
-and blow, and this equal pressure helps the ear drum move without resistance.
+equalizes the pressure with the outer ear so the ear drum can efficiently move.
+When you swallow, or plug your nose and blow, you're opening your eustachian
+tube.
 Attached to the ear drum is the malleus which connects in series to the incus,
-and stapes. If the incoming sound is too loud, a muscle will dampen the sound
-but the muscle can fatigue and its reaction time is too slow for some loud
-sounds. These bones efficiently transfer sound mechanically to the inner ear
-have to because the inner ear is 
+and finally the smallest bone in the body, the stapes. These bones transfer
+sound mechanically to the inner ear. If the incoming sound is too loud, a muscle
+will react and dampen the sound but since the muscle can fatigue and is
+sometimes too slow to react it's best to us hearing protection in loud places.
 
-These stereocilia sit atop inner and outer hair cells inside a fluid with free
-floating cations and when the fluid is moved alongside the tectorial membrane,
-the stereocilia are sheared due to fluid coupling allowing the flow of cations
-into the hair cells. This releases neurotransmitters which bind to receptors at
-the neuron termianls and trigger action potentials which send an electrical
-signal to the cochlear nerve. These electrical signals are what our brains
-interpret as sound.
+The inner ear is the last stop before the brain processes sound signal sent to
+the cochlear nerve. The snail-looking cochlea is a fluid-filled tube which
+connects to the cochlear nerve. The stapes from the middle ear connects to the
+oval window at one end of the tube which coils up the snail to a narrow
+passageway called the helicotrema before doubling back to the round window at
+the other end of the tube. As the stapes vibrates the oval window, the round
+window moves in a complementary motion where higher frequencies are heard closer
+to the oval window and low frequencies are heard closer to the helicotrema.
 
+Along the length of the cochlea, down the center of the tube, are roughly 30,000
+hair cells with stereocilia which sit in a fluid filled with cations. They sit
+on top of the thin basilar membrane and span a small gap to connect to the
+thick tectorial membrane. When the fluid of the cochlea vibrates from the
+stapes, the basilar membrane moves and the hair cells are sheared against the
+tectorial membrane allowing cations to enter the hair cells and trigger a
+neurological response which is sent upstream to the brain.
 
 From what is first a thought processed by my brain's electrical impulses and
 then mechanically sounded by the muscles in my vocal cords and mouth, to the
