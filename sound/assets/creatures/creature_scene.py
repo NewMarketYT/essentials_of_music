@@ -118,10 +118,10 @@ class CreatureScene(Scene):
         ]
         anims += added_anims
 
-        self.play(*anims, **kwargs)
+        return anims
 
     def creature_says(self, *args, **kwargs):
-        self.introduce_bubble(*args, bubble_class=SpeechBubble, **kwargs)
+        return self.introduce_bubble(*args, bubble_class=SpeechBubble, **kwargs)
 
     def creature_thinks(self, *args, **kwargs):
         self.introduce_bubble(*args, bubble_class=ThoughtBubble, **kwargs)
@@ -298,7 +298,7 @@ class ClassScene(CreatureScene):
         anims = [Transform(s, t) for s, t in zip(start, target)]
         return LaggedStart(
             *anims,
-            lag_ratio=kwargs.get("lag_ratio", 0.25),
+            lag_ratio=kwargs.get("lag_ratio", 0.15),
             run_time=1,
         )
 

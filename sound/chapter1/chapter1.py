@@ -997,16 +997,24 @@ class Stereocilia(Scene):
 
 class StandingWaveExample(Scene):
     def construct(self):
-        wave1 = StandingWave(1.5)
-        wave2 = StandingWave(2)
-        wave3 = StandingWave(3)
-        wave4 = StandingWave(4)
-        waves = VGroup(wave1, wave2, wave3, wave4)
-        waves.arrange(DOWN).move_to(ORIGIN)
-        self.add(waves)
-        for wave in waves:
+        wave1 = StandingWave(1, color=RED)
+        wave2 = StandingWave(2, color=ORANGE)
+        wave3 = StandingWave(3, color=YELLOW)
+        wave4 = StandingWave(4, color=GREEN)
+        wave5 = StandingWave(5, color=BLUE)
+        wave6 = StandingWave(6, color=PURPLE)
+        waves_odd = VGroup(wave1, wave3, wave5).arrange().to_edge(UP)
+        waves_even = VGroup(wave2, wave4, wave6).arrange().to_edge(DOWN)
+        for wave in waves_odd:
             wave.start_wave()
-        self.wait()
+        for wave in waves_even:
+            wave.start_wave()
+        self.play(
+            Create(waves_odd),
+            Create(waves_even),
+            lag_ratio=.6
+        )
+        self.wait(1)
 
 class ShowSpeaker(Scene):
     def construct(self):
@@ -2904,3 +2912,47 @@ class Musimathics(Scene):
         bub.content.shift(.25*DR)
         self.play(Write(bub.content))
         self.wait()
+
+class Inefficient(MusicScene):
+    def construct(self):
+        self.teacher.make_eye_contact(self.creatures[0])
+        self.wait()
+        self.teacher.make_eye_contact(self.creatures[0])
+        anim1 = self.teacher_says("Inefficient!", target_mode="giddy")
+        self.change_student_modes(
+            "jawdrop",
+            "puzzled",
+            "pondering",
+            "erm",
+            "jawdrop",
+            added_anims=anim1
+        )
+        self.joint_blink()
+        self.play(
+            self.teacher.animate.make_eye_contact(self.creatures[4])
+        )
+        self.play(Uncreate(self.teacher.bubble), Unwrite(self.teacher.bubble.content))
+        self.wait()
+        anim2 = self.teacher_says("You!", target_mode="hooray")
+        self.change_student_modes(
+            "hooray",
+            "happy",
+            "happy",
+            "happy",
+            "hooray",
+            added_anims=anim2
+        )
+        self.wait()
+        self.joint_blink()
+        self.wait()
+        self.wait()
+
+class Takeaway(Scene):
+    def construct(self):
+        student = Quarter(mode="pondering", color=PINK).to_corner(DR)
+        b = ThoughtBubble()
+        small_bub = Circle(color=WHITE).scale(.25).next_to(student.get_center() + LEFT)
+        c = b[-1].scale(2).shift(UL)
+        self.add(student,small_bub, c)
+        self.wait()
+        self.play(student.animate.blink(), rate_func=there_and_back)

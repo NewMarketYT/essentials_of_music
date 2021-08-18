@@ -12,7 +12,7 @@
    viewBox="-57 180.9 480 480"
    y="0px"
    x="0px"
-   sodipodi:docname="TrebleCreature_plain.svg"
+   sodipodi:docname="TrebleCreature_giddy.svg"
    inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
    id="Layer_1"
    version="1.1">
@@ -28,7 +28,7 @@
    rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
 
 
-      <dc:title />
+      <dc:title></dc:title>
 </cc:Work>
 
 
@@ -77,10 +77,10 @@
    borderopacity="1"
    objecttolerance="10"
    bordercolor="#666666"
-   inkscape:cx="240.54963"
+   inkscape:cx="239.6275"
    inkscape:zoom="11.01461"
    id="namedview17"
-   inkscape:cy="78.916784" />
+   inkscape:cy="82.099759" />
 
 
   <g
@@ -116,13 +116,15 @@
 <path
    id="path148"
    style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stop-color:#000000;stop-opacity:1"
-   d="m 190.28025,247.24672 a 12.374369,12.374369 0 0 1 -12.37437,12.37437 12.374369,12.374369 0 0 1 -12.37436,-12.37437 12.374369,12.374369 0 0 1 12.37436,-12.37437 12.374369,12.374369 0 0 1 12.37437,12.37437 z" />
+   d="m 190.28025,247.24672 c 0,6.83418 -6.97493,4.50211 -11.28491,4.47577 -4.30998,-0.0263 -9.46913,6.89783 -12.0112,-3.4771 -1.62641,-6.63782 4.08757,-13.37304 10.92174,-13.37304 6.83418,0 12.37437,5.54019 12.37437,12.37437 z"
+   sodipodi:nodetypes="scsss" />
 
 
   <path
    id="circle150"
    style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stop-color:#000000;stop-opacity:1"
-   d="m 215.05932,247.18607 a 12.374369,12.374369 0 0 1 -12.37437,12.37436 12.374369,12.374369 0 0 1 -12.37437,-12.37436 12.374369,12.374369 0 0 1 12.37437,-12.37437 12.374369,12.374369 0 0 1 12.37437,12.37437 z" />
+   d="m 213.42513,248.36632 c -0.27237,8.01442 -9.2647,3.56788 -13.82699,3.65866 -5.83333,0 -9.28756,1.99526 -9.28756,-4.83891 0,-6.83418 5.54019,-12.37437 12.37437,-12.37437 6.83418,0 10.9723,6.72439 10.74018,13.55462 z"
+   sodipodi:nodetypes="scsss" />
 
 
   <path
@@ -140,10 +142,11 @@
   
   <path
    style="fill:#000000"
-   d="m 176.46066,266.77157 c 4.4,0 1.5,0.1 10.9,0 8.3,-0.1 10,-0.1 12.6,-0.3 l -0.2,-3.9 c -3,0.1 -7.5,0.3 -11.8,0.3 -3.1,0 -6.8,0 -11.8,0"
+   d="m 176.82381,263.95713 c 0,0 1.68158,2.64207 11.08158,2.54207 8.3,-0.1 6.86039,0.82958 9.51319,-0.93552 1.68771,-1.12294 2.88681,-5.35261 2.88681,-5.35261 -7.81179,1.28025 -8.64782,1.28676 -12.98025,1.02631 -3.82038,-0.22966 -5.17243,-0.63552 -11.25527,-2.26972"
    class="st0"
    inkscape:connector-curvature="0"
-   id="path14" />
+   id="path14"
+   sodipodi:nodetypes="ccacac" />
 
 
 <rect

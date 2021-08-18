@@ -80,15 +80,14 @@ between electrical signal, magnetic fields, motion of the diaphragm, and
 finally air pressure waves... or in the case of my microphone, the same steps
 as the speaker but in reverse.
 
-Now dynamic loudspeakers are incredibly inefficient and lose much of their
-energy in the form heat. In fact, they convert roughly .5 to 2 percent of the
-power they receive into acoustical power! But you know what isn't so
-inefficient? Your hearing!
+Now loudspeakers are incredibly inefficient and convert only .5 to 2 percent of
+their energy into acoustical waves! You actually have more efficient transducers
+on your person and they're called ears.
 
 ### How do we hear sound?
 
-What we interpret as sound is the vibration of the stereocilia in our inner
-ears... here's a brief anatomy lesson:
+Ultimately our perception of sound is the vibration of the stereocilia in our inner
+ears... but let's back up a bit:
 
 As the waves reach the outer ear, the pinna funnels the sound into the ear
 canal to the tympanic membrane, or ear drum. Pressure differences as low as 20
@@ -109,10 +108,10 @@ The inner ear is the last stop before the brain processes sound signal sent to
 the cochlear nerve. The snail-looking cochlea is a fluid-filled tube which
 connects to the cochlear nerve. The stapes from the middle ear connects to the
 oval window at one end of the tube which coils up the snail to a narrow
-passageway called the helicotrema before doubling back to the round window at
-the other end of the tube. As the stapes vibrates the oval window, the round
-window moves in a complementary motion where higher frequencies are heard closer
-to the oval window and low frequencies are heard closer to the helicotrema.
+passageway called the helicotrema before doubling back to the round window. When
+the stapes vibrates the oval window, the round window moves in a complementary
+fashion. The human range of hearing is around 20,000 Hz towards the start of the
+oval window and 20 Hz towards the helicotrema. 
 
 Along the length of the cochlea, down the center of the tube, are roughly 30,000
 hair cells with stereocilia which sit in a fluid filled with cations. They sit
@@ -153,8 +152,8 @@ cosine and sine on the right are the same as the values on the left. For any
 full rotation of TAU radians, it's as if we never left.
 
 Cosine and sine are very similar to eachother. With greek letter phi, we can
-phase shift the graph of sin. Shifting by PI halves radians, a right angle,
-cosine and sin are exactly the same curve.
+phase shift the graph of sin. If we shift by PI halves radians, we can see that
+cosine and sin behave the same.
 
 When we start to factor in the time it takes to travel around the circle, just
 like we have velocities for cars which describe how fast and which direction, we
@@ -235,18 +234,18 @@ in it's final form which states: the 2nd partial derivative w.r.t space times
 the speed of the wave squared is equal to the 2nd partial derivative w.r.t time.
 
 This equation is incredibly short and sweet yet it describes so much about sound 
-and other wave phenomenon as well.
+and other wave phenomenon.
 Despite sticking to waves traveling in a single dimension this video, the wave 
 equation does provide insights into 2D and 3D waves like those you might
 experience with water, seismic, and light waves.
 
 Conclusion:
 Before signing off, I want to pay tribute to Gareth Loy who wrote two volumes to
-a series that I truly believe you would enjoy titled Musimathics. This isn't a
+a series titled Musimathics that I truly believe you would enjoy. This isn't a
 sponsored message, I just really think you'd like the book especially if you're
 interested in the intersection of music and math. It was a great resource as a
 student and continues to be a resource as a musician, engineer, and even now in
-this video. I've left a link in the description for those interested.
+this video.
 https://amzn.to/37UATbm vol 1
 https://amzn.to/3suFv1u vol 2
 
