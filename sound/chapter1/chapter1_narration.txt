@@ -166,37 +166,37 @@ third.
 
 We're typically concerned with how many seconds it takes to make a trip of TAU
 radians as this describes the time period that it takes for once full cycle,
-indicated by a capital T. Inverting this time period, we get the frequency that
-full trips are made in a second.
+indicated by a capital T. Inverting this time period, we get a frequency of full
+revolutions made each second.
 
-Again, it would seems we never left though time has moved forward.
+Despite time moving forward, each round trip is as if we never moved.
 
 These sinusoidal curves have some additional geomtrical properties. The
 amplitude adjust the radius of the unit cirle, and it's related to how loud the
-sound wave is. Instead of using theta, let's move to distance x. The wavelength,
-given by the pink, greek letter lambda, describes the distance until a full
-revolution of the circle. Currently it's 2*PI, but to make the math simpler
-we'll instead use the wavenumber given by greek letter kappa. This omits the
-factor of 2 PI and describes how many full revolutions occur in normal span of
-1. The lower the wavenumber the longer the wavelength. The higher the
-wavenumber, the shorter the wavelength.
+sound wave is. Moving from angle theta to distance x. The wavelength, given by
+the pink, greek letter lambda, describes the distance until a full revolution of
+the circle. Currently the wavelength is 2 PI, but to make the math simpler we'll
+omit the factor of 2 PI and use the wavenumber given by greek letter kappa. This
+describes how many revolutions occur in normal span of 2 PI. The lower the
+wavenumber the longer the wavelength. The higher the wavenumber, the shorter the
+wavelength.
 
 Since theta is equal to omega times time, we can introduce time as a parameter
-of the function. I write the plus/minus sign here because time only moves
-forward, but waves move both forwards and backwards in space with time. These
-are two separate equations where taking the minus sign variant indicates forward
-moving waves, and taking the positive sign mean backwards moving waves. We'll
-take the forward moving wave with these animations though. With an omega of 1,
-it takes a period of TAU seconds to travel one full trip. To speed the period
-up, we increase omega to TAU radians per second and now the wave makes the trip
-in one second.
+of the function. I write the plus/minus sign here since time can only move
+forward, but waves move both forwards and backwards. These are two separate
+equations where the minus sign variant indicates forward wave propogation, and
+taking the positive sign means backwards wave propogation. We'll use the forward
+propogation wave with these upcoming animations though. At an omega of 1, it
+takes a period of TAU seconds to make one revolution. To speed the period up,
+we increase omega to TAU radians per second and now the wave makes the trip in
+one second.
 
 You may have noticed the wave moved much quicker. The speed of the wave is
-proportional to the wavelength, and inversely proportional to the time period so
+proportional to the wavelength, and inversely proportional to the period so
 anything we can do to increase the wavelength, or decrease the period will speed
 up the wave. Doing some algebra using our frequency and wavenumber relation, we
-can that kappa and omega both affect the wavespeed. And that makes sense,
-they're both inside the trig function multiplying our space and time variables.
+can that kappa and omega both affect the wavespeed. That makes sense,
+they're both inside the trig function affecting our space and time variables.
 
 As a brief aside, we can actually speed up the wave so that it appears not to
 move. Since this video was rendered at sixty frames per second, a wave speed of
@@ -206,38 +206,112 @@ backwards but it's actually moving extremely fast forward. If we speed it up
 just a bit, it'll appear to move forward slowly. This is a form of aliasing and
 in a future video we'll talk more in-depth about it, but anyways...
 
-We add in the phase shift term from earlier to account for any intial offset of the
-wave, and we're now describing two function of space and time solutions to a
-very important PDE called the wave equation.
+We add in the phase shift term from earlier to account for any intial offsets of the
+wave and now we're describing two solutions to a very important PDE called the
+wave equation.
 
-To derive it, we'll use a bit of calculus to take some derivatives and two
-interesting facts about how we appeared not to move after making a full rotation
-around the circle in space and in time.  Taking partial derivates of the input
-variables, one with respect to space and the other with time, tells us their
-story and affect on how the function changes. We hold the other variable
-constant and use the fact that cosine's derivative is negative sine and the
-chain rule to arrive at these two first order partial derivatives. Space's story
-describes the slopiness of the wave of particles and time's story describes the
-velocity of the particles.
+To derive it, we'll use a bit of calculus and our intuition that space and time
+are somehow related because they both exhibit a cyclical behavior of having zero
+displacements at wavelength intervals and time periods.
 
-Taking a second partial derivative of space and time, we're describing the
-concavity of the wave and the acceleration of the particle at certain positions
-of the wave. We hold the other variable constant again and use the chain rule,
-but this time we use the fact that the derivative of sine is positive cosine.
+Taking partial derivatives, one with respect to space and the other with time,
+will tell us the input variable's affect on the displacement output. We
+use the fact that cosine's derivative is negative sine and the chain rule whiles
+treating the other variable as a constant to arrive at these two first order
+partial derivatives. Space's story describes the slope of the wave and time's
+story describes the velocity of the particles.
+
+Taking a second partial derivative of space and time, we use the fact that the
+derivative of sine is cosine and the chain rule while treating the other input
+variable constant.
+The second partial derivative w.r.t space describing the how the slope changes,
+or its concavity and the second partial derivative w.r.t time describes the
+acceleration of the particle.
 
 The two of these 2nd order partial derivatives are nearly identical, differing
 only by factors of kappa squared and omega squared. If you'll recall from
 earlier that the wave speed is related to omega over kappa, we can rewrite this
-in it's final form which states: the 2nd partial derivative w.r.t time is equal
-to the speed of the wave squared times the 2nd partial derivative w.r.t space.
+in it's final form which states: the 2nd partial derivative w.r.t space times
+the speed of the wave squared is equal to the 2nd partial derivative w.r.t time.
 
-This equation is beautifully simple and describes not only sound waves but other
-wave phenomenon like light, water, seismic, and gravity waves.
+This equation is incredibly short and sweet yet it describes so much about sound 
+and other wave phenomenon as well.
+Despite sticking to waves traveling in a single dimension this video, the wave 
+equation does provide insights into 2D and 3D waves like those you might
+experience with water, seismic, and light waves.
 
-A sound wave travel through space and time in all directions,
-with an amplitude, frequency, and wavelength. The frequency and wavelength of a
-sound, together determine the speed of the sound; however, knowing any two of
-these properties allow us to determine the third. 
+Conclusion:
+Before signing off, I want to pay tribute to Gareth Loy who wrote two volumes to
+a series that I truly believe you would enjoy titled Musimathics. This isn't a
+sponsored message, I just really think you'd like the book especially if you're
+interested in the intersection of music and math. It was a great resource as a
+student and continues to be a resource as a musician, engineer, and even now in
+this video. I've left a link in the description for those interested.
+https://amzn.to/37UATbm vol 1
+https://amzn.to/3suFv1u vol 2
+
+Hopefully you now have a deeper understanding of the fundamental building block
+of music. In the coming videos, we'll discuss the finer details about sound
+manipulation and more complicated wave shapes.
+
+If you made it this far, consider liking, subscribing, and even sharing the
+video with others. Til' next time, thanks for watching.
+
+# Sections I didn't get to, for future?
+
+## digital/analog stuff
+
+In much the same way that our stereocilia vibrate due to pressure waves, a
+condenser microphone's (also called a capacitor microphone) diaphram also
+vibrates due to pressure waves (note there many types of microphones that
+function a bit differently). The diaphragm in a microphone acts as one of the
+two plates of a capacitor and stores a relatively constant electric charge; when
+vibrations move the diaphragm, the distance between the diaphragm and other
+plate in the capacitor changes which ultimately results in changes to
+capacitance and voltage in the circuit.
+
+From the laws surrounding electromagnetism, this displacement of charge in an
+electric field acts as an instantaneous change in voltage with closer distances
+equating to negative voltage change, and further distances being more positive.
+It is this voltage which changes with time that we are measuring when recording
+audio signals. When we talk about other electrical instruments, the voltage is
+ultimately still being measured with time, but sometimes in a
+different manner. For instance, an electric bass doesn't use a diaphragm and
+capacitance to measure voltage; but instead relies on magnetism and
+inductance to generate alternating current. This current relates to voltage
+through Ohm's law, where a majority of the resitance comes from the variable
+resistance in the potentiometer, or volume knob. As the volume knob is turned
+up, so too does the voltage in the circuit; and as the amplitude of the string
+vibration increase with stronger strums, the current increases as with the
+voltage. This allows us to consistently use voltages to represent audio signal
+which is helpful when storing the signal's information for playback.
+
+The voltage information present in audio signals can be sent to other analog
+devices, or converted to a digital representation of the signal through an
+audio interface. In contrast to analog signals, digital signals do not retain
+as much of the information within an audio signal as they sample voltages from
+the continous version of the signal at a set rate. The faster the sampling rate
+of the signal, the more accurate the digital copy can represent its analog
+counterpart, but it isn't all sampling rate. The bit depth is the quality of
+information stored at each sample; with low bit depth, the digital signal
+produces a noisy copy of the analog signal and with higher bit depths the noise
+added to signal decreases. The true signal may be best represented when it is
+visualized directly from the source, but as soon as we attempt to store this
+information with analog physical copies like: vinyl discs, or even digital
+copies like: WAV or MP3 files, we lose definition in the audio source. One
+might imagine that like biological cells performing mitosis over a lifetime and
+undergoing mutations that eventually lead to nonfunctional cells, or
+photocopying an original document again and again until it's no longer
+readable; so too does constant resampling and conversion of an audio signal
+result in indiscernible noise.
+
+On the subject of sampling, isn't a wonder why we've established a minimum
+sampling rate of 44.1 kHz? It is worth briefly mentioning that human hearing is
+only capable of hearing frequencies between roughly 20Hz and 20000Hz. If we
+undersampled the audio signal, we would experience aliasing -----------
+Talk about nyquist rate
+
+# Revisit next chapter
 
 Sound propogates through all states of matter in two specific types of wave forms:
 Longitudinal waves and transverse waves (put up animations next to eachother)
@@ -376,79 +450,5 @@ sound of an alto saxophone in the orchestra and determine with certainty the
 distance from the source as well as its placement vertically and horizontally
 from the listener.
 
-Conclusion:
-This video is only an introduction to sound and its properties which allow
-music to exist, and what follows are the details for scales, harmony, rhythm,
-and more. Remember, I encourage you to apply what you've learned as if you had
-first discovered it... and perhaps the next time you hear the humming of a
-refrigerator, the screech of a tire burning rubber, or whatever soundscape you
-come across in life, you'll think about what is producing the timbre and pitch of
-the sound you're hearing, among its other characteristics, and perceive the
-musical qualities in what would normally just be considered noise.
-
-In the next video, we'll jump into detail about the frequency range of human
-hearing and discuss how this frequency range is used by different cultures to
-produce a variety of scales.
-
-If you enjoyed this video, consider liking, subscribing, and sharing the
-video with others. Until next time, thanks for watching.
-
-# Sections I didn't get to, for future?
-
-## digital/analog stuff
-
-In much the same way that our stereocilia vibrate due to pressure waves, a
-condenser microphone's (also called a capacitor microphone) diaphram also
-vibrates due to pressure waves (note there many types of microphones that
-function a bit differently). The diaphragm in a microphone acts as one of the
-two plates of a capacitor and stores a relatively constant electric charge; when
-vibrations move the diaphragm, the distance between the diaphragm and other
-plate in the capacitor changes which ultimately results in changes to
-capacitance and voltage in the circuit.
-
-From the laws surrounding electromagnetism, this displacement of charge in an
-electric field acts as an instantaneous change in voltage with closer distances
-equating to negative voltage change, and further distances being more positive.
-It is this voltage which changes with time that we are measuring when recording
-audio signals. When we talk about other electrical instruments, the voltage is
-ultimately still being measured with time, but sometimes in a
-different manner. For instance, an electric bass doesn't use a diaphragm and
-capacitance to measure voltage; but instead relies on magnetism and
-inductance to generate alternating current. This current relates to voltage
-through Ohm's law, where a majority of the resitance comes from the variable
-resistance in the potentiometer, or volume knob. As the volume knob is turned
-up, so too does the voltage in the circuit; and as the amplitude of the string
-vibration increase with stronger strums, the current increases as with the
-voltage. This allows us to consistently use voltages to represent audio signal
-which is helpful when storing the signal's information for playback.
-
-The voltage information present in audio signals can be sent to other analog
-devices, or converted to a digital representation of the signal through an
-audio interface. In contrast to analog signals, digital signals do not retain
-as much of the information within an audio signal as they sample voltages from
-the continous version of the signal at a set rate. The faster the sampling rate
-of the signal, the more accurate the digital copy can represent its analog
-counterpart, but it isn't all sampling rate. The bit depth is the quality of
-information stored at each sample; with low bit depth, the digital signal
-produces a noisy copy of the analog signal and with higher bit depths the noise
-added to signal decreases. The true signal may be best represented when it is
-visualized directly from the source, but as soon as we attempt to store this
-information with analog physical copies like: vinyl discs, or even digital
-copies like: WAV or MP3 files, we lose definition in the audio source. One
-might imagine that like biological cells performing mitosis over a lifetime and
-undergoing mutations that eventually lead to nonfunctional cells, or
-photocopying an original document again and again until it's no longer
-readable; so too does constant resampling and conversion of an audio signal
-result in indiscernible noise.
-
-On the subject of sampling, isn't a wonder why we've established a minimum
-sampling rate of 44.1 kHz? It is worth briefly mentioning that human hearing is
-only capable of hearing frequencies between roughly 20Hz and 20000Hz. If we
-undersampled the audio signal, we would experience aliasing -----------
-Talk about nyquist rate
-
-
 Scenes to make:
-levels of hearing range table
 loudspeaker inefficient
-geometric wave (2d or 3d snippet interlude)

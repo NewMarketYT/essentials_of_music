@@ -1,5 +1,0 @@
-Issues I faced in creating chapter1:
-- ArrowLabel needed
-- Add_tip with color
-- Double Arrow with gradient
-- Angle should be able to start at 0 radians without error

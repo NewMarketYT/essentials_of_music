@@ -995,86 +995,6 @@ class Stereocilia(Scene):
         self.clear()
         self.wait()
 
-
-class RadialWaveExampleScene(ThreeDScene):
-    def construct(self):
-        self.set_camera_orientation(60 * DEGREES, -45 * DEGREES)
-        wave = RadialWave(
-            RIGHT * 5 + UP * 5,
-            LEFT * 5 + DOWN * 5,
-            checkerboard_colors=[GREEN],
-            stroke_width=0,
-        )
-        self.add(wave)
-        wave.start_wave()
-        self.wait(2)
-        wave.stop_wave()
-
-
-class RadialWave(ParametricSurface):
-    def __init__(
-        self,
-        *sources,
-        wavelength=1,
-        period=1,
-        amplitude=0.3,
-        x_range=[-5, 5],
-        y_range=[-5, 5],
-        **kwargs,
-    ):
-        self.wavelength = wavelength
-        self.period = period
-        self.amplitude = amplitude
-        self.dampening = 1
-        self.time = 0
-        self.extra = {**kwargs}
-        self.sources = sources
-        self.u_range = x_range
-        self.v_range = y_range
-        super().__init__(
-            lambda u, v: np.array([u, v, self.wave_z(u, v, *sources)]),
-            u_range=self.u_range,
-            v_range=self.v_range,
-            **kwargs,
-        )
-
-    def wave_z(self, u, v, *sources):
-        z = 0
-        for source in sources:
-            x0, y0, z0 = source
-            distance_from_source = ((u - x0) ** 2 + (v - y0) ** 2) ** 0.5
-
-            decay = np.exp(-self.dampening * self.time)
-            phi = 2 * PI * self.time / self.period
-            wavelength = 2 * PI / self.wavelength
-            if distance_from_source < 0.001:
-                distance_from_source = 0.001
-            z += (
-                self.amplitude
-                * decay
-                / (distance_from_source ** 2)
-                * np.cos(wavelength * distance_from_source - phi)
-            )
-        return z
-
-    def update_wave(self, mob, dt):
-        self.time += dt
-        mob.become(
-            ParametricSurface(
-                lambda u, v: np.array([u, v, self.wave_z(u, v, *self.sources)]),
-                u_range=self.u_range,
-                v_range=self.v_range,
-                **self.extra,
-            )
-        )
-
-    def start_wave(self):
-        self.add_updater(self.update_wave)
-
-    def stop_wave(self):
-        self.remove_updater(self.update_wave)
-
-
 class StandingWaveExample(Scene):
     def construct(self):
         wave1 = StandingWave(1.5)
@@ -2853,3 +2773,134 @@ class Test(Scene):
         self.renderer.camera = OpenGLCamera(center_point=2*OUT)
         self.add(OpenGLTorus())
         self.interactive_embed()
+
+class ThresholdHearing(Scene):
+    def construct(self):
+        t1 = Table(
+            [
+                ["Source", "Distance", "Pa"],
+                ["Hearing begins", "At ear", "0.0000200"],
+                ["Calm breathing", "Ambient", "0.0000632"],
+                ["Calm room", "Ambient", "0.000632"],
+                ["Whispering", "1 m", "0.002-0.02"],
+                ["Talking", "1 m", "0.002-0.02"],
+                ["Ticking watch", "1 m", ".0002"],
+                ["Hearing damage", "At ear", ".36"],
+                ["Busy traffic", "10 m", "0.2-0.63"],
+                ["Car stereo", "1 m", "2.0"],
+                ["Jackhammer", "1 m", "2.0"],
+                ["Chainsaw", "1 m", "6.32"],
+                ["Pain", "At ear", "20+"]
+            ],
+            include_outer_lines=True,
+            arrange_in_grid_config={"cell_alignment": RIGHT}
+        )
+        t1.scale(0.3).to_edge(LEFT)
+        self.add(t1)
+
+class RadialWaves(OpenGLSurface):
+    def __init__(
+        self,
+        *sources,
+        wavelength=1,
+        period=1,
+        amplitude=0.3,
+        x_range=[-5, 5],
+        y_range=[-5, 5],
+        **kwargs,
+    ):
+        self.wavelength = wavelength
+        self.period = period
+        self.amplitude = amplitude
+        self.dampening = 1
+        self.time = 0
+        self.extra = {**kwargs}
+        self.sources = sources
+        self.u_range = x_range
+        self.v_range = y_range
+        super().__init__(
+            lambda u, v: np.array([u, v, self.wave_z(u, v, *sources)]),
+            u_range=self.u_range,
+            v_range=self.v_range,
+            **kwargs,
+        )
+
+    def wave_z(self, u, v, *sources):
+        z = 0
+        for source in sources:
+            x0, y0, z0 = source
+            distance_from_source = ((u - x0) ** 2 + (v - y0) ** 2) ** 0.5
+
+            decay = np.exp(-self.dampening * self.time)
+            phi = 0
+            wavelength = self.wavelength
+            if distance_from_source < 0.001:
+                distance_from_source = 0.001
+            z += (
+                self.amplitude
+                # * decay
+                # / (distance_from_source ** 2)
+                * np.cos(2*PI/wavelength * distance_from_source - self.time * PI + phi)
+            )
+        return z
+
+    def update_wave(self, mob, dt):
+        self.time += dt
+        mob.become(
+            OpenGLSurface(
+                lambda u, v: np.array([u, v, self.wave_z(u, v, *self.sources)]),
+                u_range=self.u_range,
+                v_range=self.v_range,
+                **self.extra,
+            )
+        )
+
+    def start_wave(self):
+        self.add_updater(self.update_wave)
+
+    def stop_wave(self):
+        self.remove_updater(self.update_wave)
+
+class SignOff(Scene):
+    def construct(self):
+        l8r = Json(mode="happy").look_at(ORIGIN+2*UP+RIGHT*.5)
+        homies = Text("Thanks for watching!",gradient=(RED,GREEN)).to_edge(UP)
+        self.add(l8r)
+        self.play(l8r.animate.blink(), rate_func=there_and_back_with_pause)
+        self.play(Write(homies), l8r.animate.look_at(homies))
+        self.play(l8r.animate.change_mode("hooray"))
+        self.play(l8r.animate.blink(), rate_func=there_and_back_with_pause)
+        self.wait()
+class TwoDWave(Scene):
+    def construct(self):
+        self.renderer.camera = OpenGLCamera()
+        self.renderer.camera.rotate_about_origin(3/8*PI, RIGHT)
+        self.renderer.camera.rotate_about_origin(3/8*PI, OUT)
+        self.renderer.camera.scale(2)
+        s = RadialWaves(ORIGIN, color=BLUE_B)
+        self.add(s)
+        s.start_wave()
+        self.wait(8)
+        self.interactive_embed()
+
+class Musimathics(Scene):
+    def construct(self):
+        loy = ImageMobject("GarethLoyHeadShotWeb")
+        label= Tex("Gareth Loy")
+        group_l = Group(loy, label).scale(1).arrange(DOWN)
+
+        me = Json(mode="happy").to_corner(DL) # *grunting noises*
+        me.look_at(loy)
+
+        m1 = ImageMobject("musimathics1").scale_to_fit_width(2.6).to_edge(DR)
+        m2 = ImageMobject("musimathics2").scale_to_fit_width(2.6).to_corner(UR)
+        self.play(FadeIn(group_l), FadeIn(me))
+        self.play(FadeIn(m1), FadeIn(m2), lag_ratio=.6)
+
+        self.wait()
+        self.play(FadeOut(group_l))
+        bub= me.get_bubble("Interesting!").shift(.25*DR)
+        self.play(me.animate.change_mode("pondering"), FadeIn(bub))
+        bub.content.shift(.25*DR)
+        self.play(Write(bub.content))
+        self.wait()

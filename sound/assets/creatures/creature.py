@@ -163,7 +163,7 @@ class Creature(SVGMobject):
         bubble = bubble_class()
         if len(content) > 0:
             if isinstance(content[0], str):
-                content_mob = Text(*content)
+                content_mob = Tex(*content, color=YELLOW)
             else:
                 content_mob = content[0]
             bubble.add_content(content_mob)
