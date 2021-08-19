@@ -63,10 +63,10 @@
    borderopacity="1"
    objecttolerance="10"
    bordercolor="#666666"
-   inkscape:cx="221.78852"
-   inkscape:zoom="11.014611"
+   inkscape:cx="286.40157"
+   inkscape:zoom="22.029222"
    id="namedview17"
-   inkscape:cy="299.14189"
+   inkscape:cy="281.76133"
    inkscape:snap-grids="true" />
   <path
    id="path83"
@@ -96,7 +96,7 @@
    style="fill:#0000ff">
       <path
    inkscape:connector-curvature="0"
-   d="m 51.2,0 h 1.5 c 0,0 0,20.984609 0,31.476913 C 52.7,42.984609 52.7,66 52.7,66 H 51.2 V 31.304404 Z"
+   d="m 51.144627,0 h 1.5 c 0,0 0,20.984609 0,31.476913 0,11.507696 0,34.523087 0,34.523087 h -1.5 V 31.304404 Z"
    id="path1314"
    sodipodi:nodetypes="ccsccsc"
    style="fill:#0000ff" />

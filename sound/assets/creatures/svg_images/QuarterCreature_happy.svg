@@ -63,10 +63,10 @@
    borderopacity="1"
    objecttolerance="10"
    bordercolor="#666666"
-   inkscape:cx="238.08472"
-   inkscape:zoom="5.5073052"
+   inkscape:cx="284.30206"
+   inkscape:zoom="15.577011"
    id="namedview17"
-   inkscape:cy="297.56755"
+   inkscape:cy="289.29784"
    inkscape:snap-grids="true" />
   <ellipse
    cy="433.14999"
@@ -102,7 +102,7 @@
    style="fill:#0000ff">
       <path
    inkscape:connector-curvature="0"
-   d="M 50.164948,0 H 53.30378 L 52.7,31.476913 V 66 H 51.2 V 31.304404 Z"
+   d="m 50.117963,-0.0156618 h 3.138832 l -0.60378,31.4769128 v 34.523087 h -1.5 V 31.288742 Z"
    id="path1314"
    sodipodi:nodetypes="ccsccsc"
    style="fill:#0000ff" />

@@ -193,14 +193,17 @@ class Introduction(MusicScene):
 
     def show_series(self):
         self.staff.set_color(WHITE)
-        series = VideoSeries(num_videos=5)
-        series.to_edge(UP)
-        this_video = series[0]
+        self.series = VideoSeries(num_videos=5)
+        self.series.to_edge(UP)
+        this_video = self.series[0]
         this_video.set_color(YELLOW)
         this_video.save_state()
-        series.save_state()
-        series[1:].shift(RIGHT * 14)
-        self.add(series)
+        elip = MathTex(r"\cdots").set(width=self.series[-1].width*.9).move_to(self.series[-1])
+        self.series[-1] = elip
+        for v in self.series[1:]:
+            v.save_state()
+        self.series[1:].shift(RIGHT * 14)
+        self.add(self.series)
         this_video.animate.restore()
         words = Tex("Welcome to \\\\", "Essentials of Music")
         words.set_color_by_tex("Essentials of Music", YELLOW)
@@ -223,13 +226,12 @@ class Introduction(MusicScene):
             lag_ratio=0.2,
         )
         self.play(
-            series.animate.restore(),
+            AnimationGroup(*[v.animate.restore() for v in self.series[1:]], lag_ratio=.2),
             run_time=2,
-            lag_ratio=0.3,
         )
         self.change_student_modes(
             *["pondering", "hooray", "plain", "happy", "hooray"],
-            look_at_arg=series[1].get_left(),
+            look_at_arg=self.series[1].get_left(),
             lag_ratio=0.04,
         )
         self.play(
@@ -240,7 +242,7 @@ class Introduction(MusicScene):
                     run_time=3,
                     rate_func=squish_rate_func(there_and_back, alpha, alpha + 0.3),
                 )
-                for video, alpha in zip(series, np.linspace(0, 0.7, len(series)))
+                for video, alpha in zip(self.series, np.linspace(0, 0.7, len(self.series)))
             ],
             self.teacher.animate.change_mode("happy"),
         )
@@ -276,8 +278,16 @@ class Introduction(MusicScene):
             self.students[0].animate.change_mode("happy"),
         )
         self.wait()
+        self.play(
+            self.students[2].animate.change_mode("erm"),
+            self.students[3].animate.change_mode("erm"),
+        )
+        self.play(
+            self.students[2].animate.look_at(7*RIGHT),
+            self.students[3].animate.look_at(7*RIGHT),
+            rate_func=there_and_back
+        )
 
-        self.series = series
         self.essence_words = essence_words
 
     def show_ideas(self):
@@ -298,9 +308,9 @@ class Introduction(MusicScene):
             video = self.series[video_index]
             last_rule.move_to(video)
             if last_rule.width <= last_rule.height:
-                last_rule.set(height=video.height * 0.95)
+                last_rule.set(height=video.height * 0.85)
             else:
-                last_rule.set(width=video.width * 0.95)
+                last_rule.set(width=video.width * 0.85)
             last_rule.save_state()
         audio.scale(1.5).next_to(self.teacher, RIGHT)
         timesig.scale(2).next_to(self.teacher, RIGHT)
@@ -310,13 +320,22 @@ class Introduction(MusicScene):
             self.teacher.animate.change_mode("pondering"),
         )
         for last_rule, rule, video_index in zip(rules, alt_rules_list, video_indices):
+            video = self.series[video_index]
             if type(last_rule) == Tex:
-                self.play(Write(last_rule))
+                self.play(
+                    Write(last_rule),
+                    *[s.animate.look_at(last_rule) for s in self.students]
+                    )
             else:
-                self.play(FadeIn(last_rule))
+                self.play(
+                    FadeIn(last_rule),
+                    *[s.animate.look_at(last_rule) for s in self.students]
+                )
             self.wait()
             self.play(
                 last_rule.animate.restore(),
+                FadeOut(self.series[video_index].submobjects[0]),
+                *[s.animate.look_at(video) for s in self.students]
             )
             self.change_student_modes(*["pondering"] * 5, look_at_arg=last_rule)
         self.wait(2)
