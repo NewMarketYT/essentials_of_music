@@ -783,7 +783,7 @@ class Stereocilia(Scene):
             malleus.get_bottom(), middle_ear[2][0].get_bottom(), buff=0.02
         )
 
-        incus = Tex("Inucs", color="#e6e6e6").to_edge(UP)
+        incus = Tex("Incus", color="#e6e6e6").to_edge(UP)
         incus_arrow = Arrow(
             incus.get_bottom(), middle_ear[4][2].get_top() + LEFT * 0.2, buff=0.02
         )
@@ -797,6 +797,15 @@ class Stereocilia(Scene):
             Create(incus_arrow),
             Write(malleus),
             Create(malleus_arrow),
+        )
+        self.play(
+            Wiggle(malleus),
+        )
+        self.play(
+            Wiggle(incus),
+        )
+        self.play(
+            Wiggle(stapes),
         )
         self.play(
             Unwrite(malleus, reverse=False),
@@ -2795,12 +2804,6 @@ class RecallWaveSpeed(Scene):
         self.wait()
 
 
-class Test(Scene):
-    def construct(self):
-        self.renderer.camera = OpenGLCamera(center_point=2*OUT)
-        self.add(OpenGLTorus())
-        self.interactive_embed()
-
 class ThresholdHearing(Scene):
     def construct(self):
         t1 = Table(
@@ -2975,3 +2978,123 @@ class Takeaway(Scene):
         self.add(student,small_bub, c)
         self.wait()
         self.play(student.animate.blink(), rate_func=there_and_back)
+class WaveEquation(Scene):
+    def construct(self):
+        self.setup_axes()
+        self.show_3d()
+
+    def setup_axes(self):
+        self.axes = ThreeDAxes(
+            x_range=(-4, 4, 1),
+            y_range=(-4, 4, 1),
+            z_range=(-4, 4, 1),
+            x_length=config.frame_height - 1.5,
+            y_length=config.frame_height - 1.5,
+            z_length=config.frame_height - 1.5,
+            depth_test=True,
+        )
+        # self.axes.add_coordinates(
+        #     dict(
+        #         zip(
+        #             [x for x in np.arange(-TAU, TAU, PI)],
+        #             [
+        #                 MathTex(f"{x}\\pi")
+        #                 if abs(x) > 1
+        #                 else MathTex("\\pi")
+        #                 if x == 1
+        #                 else MathTex("-\\pi")
+        #                 if x == -1
+        #                 else ""
+        #                 for x in range(-4, 5)
+        #             ],
+        #         )
+        #     ),
+        #     range(-2, 3, 1),
+        #     None
+        # )
+        x_axis = self.axes.x_axis
+        x_numbers = x_axis.get_number_mobjects(*range(1,11))
+        x_axis_label = Tex("x")
+        x_axis_label.next_to(x_axis.get_right(), UP)
+        self.add(self.axes)
+        self.add(x_axis_label, x_numbers)
+        # time_label = Tex("Time").rotate(PI/2, about_point=ORIGIN,axis=RIGHT).rotate(PI/2, about_point=ORIGIN,axis=OUT).shift(self.axes.c2p(0,2,2))
+        # self.add(time_label)
+
+    def show_3d(self):
+        self.amp = ValueTracker(1)
+        self.omega = ValueTracker(TAU)
+        self.kappa = ValueTracker(1)
+        self.time = ValueTracker(1)
+
+        self.pf = always_redraw(
+            lambda: ParametricSurface(
+                lambda u,v: self.axes.c2p(
+                    u,
+                    v,
+                    self.amp.get_value()
+                    * np.cos(
+                        self.kappa.get_value()*u
+                        - self.omega.get_value() * v
+                    ),
+                ),
+                u_range=[-TAU,TAU],
+                v_range=[0,3],
+                fill_opacity=.5,
+                checkerboard_colors=[DARK_GRAY,LIGHT_GRAY]
+            )
+        )
+        # self.add(self.pf)
+
+        self.plane = always_redraw(
+            lambda: Rectangle(
+                width=self.axes.c2p(TAU,0,0)[0],
+                height=self.axes.c2p(0,2,0)[1],
+                fill_opacity=.5,
+                fill_color=LIGHT_GRAY
+            ).rotate(PI/2, about_point=ORIGIN,axis=RIGHT).shift(self.axes.c2p(PI,self.time.get_value(),0))
+        )
+        # self.add(self.plane)
+        self.cos = always_redraw(
+            lambda: ParametricFunction(
+                lambda x: self.axes.c2p(
+                    x,
+                    self.time.get_value(),
+                    (
+                        self.amp.get_value()
+                        * np.cos(
+                            self.kappa.get_value()* x - self.omega.get_value() * self.time.get_value()
+                        )
+                    ),
+                ),
+                t_range=[-TAU, TAU],
+                color=BLUE,
+            )
+        )
+        # self.add(self.cos)
+        self.renderer.camera = OpenGLCamera(euler_angles=[0,PI/2,0],center_point=self.axes.c2p(PI, 1, 0))
+        # self.play(
+        #     self.time.animate.set_value(3),
+        #     run_time=3,
+        #     rate_func=linear,
+        # )
+        # self.play(
+        #     self.time.animate.set_value(0),
+        #     run_time=1,
+        #     rate_func=linear,
+        # )
+        # self.play(
+        #     self.kappa.animate.set_value(2),
+        #     rate_func=linear,
+        # )
+        # Plane = Axes(x_range =[-5,5,1],y_range =[-5,5,1])
+        # Graph = Plane.get_graph(lambda x : x**2)
+        # Secant = Plane.get_secant_slope_group(graph=Graph,x=0.4,dx=0.1)
+
+        
+        # self.add(Graph,Plane,Secant)
+        dot_x = Dot().shift(self.axes.c2p(1,0,0))
+        dot_y = Dot().shift(self.axes.c2p(0,2,0))
+        dot_z = Dot().shift(self.axes.c2p(0,0,3))
+        self.add(dot_x, dot_y, dot_z)
+        self.interactive_embed()

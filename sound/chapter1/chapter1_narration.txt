@@ -8,17 +8,18 @@ but foremost the musician in you... whether you're just picking up a musical
 instrument or already have ten thousand hours; there should be something in store
 for you.
 
-Now, my objective with this series is to empower you to rediscover and create
+Now, my objective with this series is to empower you to discover and create
 music by offering both a conceptual and practical understanding of its
-fundamentals; however, music encompasses an endless variety of sounds with
-different cultures creating vastly different musical genres, there's lots of
-ground to cover.
+fundamentals; however, since music encompasses an endless variety of sounds with
+different cultures around the world producing their own genres,
+there's a lot of ground I couldn't possibly cover... so here's a what I have in
+mind for this series:
 
-Ideas are typically presented to developing musicians as things to simply
-practice and commit to muscle memory. Ideas like rhythm and time signatures;
-scales, keys and tuning systems; chords and musical circles, among others...
-while incredibly useful, are often discussed without enough context to allow
-these musicians to take artistic liberties. 
+Typically musicians are told to simply practice and commit certain musical ideas
+to muscle memory. Ideas like rhythm and time signatures; scales and keys;
+musical circles and chords, among others things...  and my goal is for you walk
+away from this series feeling like you could have created much of the music that
+exists today.
 
 I am a firm believer in mind and hand, or in learning by doing. This series is
 largely meant to supplement your practice, the expectation being that a few
@@ -63,10 +64,11 @@ addition, the bottom equation, describes how electrical currents and
 time-varying electric fields produce magnetic fields. 
 
 In practice this means a conductive ring moving around a magnet generates a
-current as indicated by the small moving spheres in the ring. This produces a
-magnetic field that opposes the magnets slowing the ring down. Once the ring
-passes by the magnet, the current changes direction in attempts to pull toward
-the magnet.
+current as indicated by the small moving spheres in the ring. This current then
+produces a magnetic field that opposes the magnet's and pull it back towards the
+magnet. If the ring the ring passes by the magnet, the current changes direction
+in attempts to oppose the magnet's field. The magnetic flux wants to stay
+constant.
 
 In the case of a solenoid where there is no magnet, a current by itself produces
 a magnetic field.
@@ -116,7 +118,7 @@ oval window and 20 Hz towards the helicotrema.
 Along the length of the cochlea, down the center of the tube, are roughly 30,000
 hair cells with stereocilia which sit in a fluid filled with cations. They sit
 on top of the thin basilar membrane and span a small gap to connect to the
-thick tectorial membrane. When the fluid of the cochlea vibrates from the
+tectorial membrane. When the fluid of the cochlea vibrates from the
 stapes, the basilar membrane moves and the hair cells are sheared against the
 tectorial membrane allowing cations to enter the hair cells and trigger a
 neurological response which is sent to the brain.
@@ -211,10 +213,10 @@ wave equation.
 
 To derive it, we'll use a bit of calculus and our intuition that space and time
 are somehow related because they both exhibit a cyclical behavior of having zero
-displacements at wavelength intervals and time periods.
+displacements at certain wavelength distances and time periods.
 
 Taking partial derivatives, one with respect to space and the other with time,
-will tell us the input variable's affect on the displacement output. We
+tells us the input variable's affect on the wave displacement. We
 use the fact that cosine's derivative is negative sine and the chain rule whiles
 treating the other variable as a constant to arrive at these two first order
 partial derivatives. Space's story describes the slope of the wave and time's
@@ -241,7 +243,7 @@ experience with water, seismic, and light waves.
 
 Conclusion:
 Before signing off, I want to pay tribute to Gareth Loy who wrote two volumes to
-a series titled Musimathics that I truly believe you would enjoy. This isn't a
+a series titled Musimathics that I truly believe youd enjoy. This isn't a
 sponsored message, I just really think you'd like the book especially if you're
 interested in the intersection of music and math. It was a great resource as a
 student and continues to be a resource as a musician, engineer, and even now in
