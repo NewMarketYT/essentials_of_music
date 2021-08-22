@@ -182,7 +182,7 @@ class Chapter1Opening(Scene):
         self.wait()
 
 
-class Introduction(MusicScene):
+class Introduction2(MusicScene):
     def __init__(self):
         super().__init__(GREY_BROWN)
 
@@ -190,6 +190,7 @@ class Introduction(MusicScene):
         self.show_series()
         self.empower_audience()
         self.show_ideas()
+        self.show_outline()
 
     def show_series(self):
         self.staff.set_color(WHITE)
@@ -293,18 +294,18 @@ class Introduction(MusicScene):
     def show_ideas(self):
         myTemplate = TexTemplate()
         myTemplate.add_to_preamble(r"\usepackage{musicography}")
-        cof = ImageMobject("Circle_of_fifths_deluxe_4.png")
-        timesig = Tex(r"\musMeter{15}{16}", tex_template=myTemplate)
-        doremi = Tex("Do", ", ", "Re", ", ", "Mi...")
-        audio = SVGMobject("Audio.svg", color=YELLOW)
-        audio[0].set_color(GRAY)
-        audio[1].set_color(YELLOW)
-        rules = [timesig, doremi, cof, audio]
+        self.cof = ImageMobject("Circle_of_fifths_deluxe_4.png")
+        self.timesig = Tex(r"\musMeter{15}{16}", tex_template=myTemplate)
+        self.doremi = Tex("Do", ", ", "Re", ", ", "Mi...")
+        self.audio = SVGMobject("Audio.svg", color=YELLOW)
+        self.audio[0].set_color(GRAY)
+        self.audio[1].set_color(YELLOW)
+        self.rules = [self.timesig, self.doremi, self.cof, self.audio]
         video_indices = [3, 1, 2, 0]
-        alt_rules_list = list(rules[1:]) + [
+        alt_rules_list = list(self.rules[1:]) + [
             VectorizedPoint(self.teacher.eyes.get_top())
         ]
-        for last_rule, rule, video_index in zip(rules, alt_rules_list, video_indices):
+        for last_rule, rule, video_index in zip(self.rules, alt_rules_list, video_indices):
             video = self.series[video_index]
             last_rule.move_to(video)
             if last_rule.width <= last_rule.height:
@@ -312,14 +313,14 @@ class Introduction(MusicScene):
             else:
                 last_rule.set(width=video.width * 0.85)
             last_rule.save_state()
-        audio.scale(1.5).next_to(self.teacher, RIGHT)
-        timesig.scale(2).next_to(self.teacher, RIGHT)
-        doremi.scale(3.5).next_to(self.teacher, RIGHT)
-        cof.scale(3.5).next_to(self.teacher, RIGHT)
+        self.audio.scale(1.5).next_to(self.teacher, RIGHT)
+        self.timesig.scale(2).next_to(self.teacher, RIGHT)
+        self.doremi.scale(3.5).next_to(self.teacher, RIGHT)
+        self.cof.scale(3.5).next_to(self.teacher, RIGHT)
         self.play(
             self.teacher.animate.change_mode("pondering"),
         )
-        for last_rule, rule, video_index in zip(rules, alt_rules_list, video_indices):
+        for last_rule, rule, video_index in zip(self.rules, alt_rules_list, video_indices):
             video = self.series[video_index]
             if type(last_rule) == Tex:
                 self.play(
@@ -339,6 +340,8 @@ class Introduction(MusicScene):
             )
             self.change_student_modes(*["pondering"] * 5, look_at_arg=last_rule)
         self.wait(2)
+        self.joint_blink()
+        self.wait()
 
     def empower_audience(self):
         you = self.students[3]
@@ -376,6 +379,36 @@ class Introduction(MusicScene):
         self.play(Uncreate(arrow), Unwrite(create), Unwrite(music), FadeOut(fader))
         self.students.add(you)
         self.add(self.students)
+
+    def show_outline(self):
+        self.play(
+            FadeOut(self.staff),
+            FadeOut(self.creatures),
+            *[FadeOut(self.series[i][1]) for i in range(1,len(self.series)-1)],
+            FadeOut(self.series[-1]),
+            *[FadeOut(self.rules[i]) for i in range(len(self.rules))]
+        )
+        this_video = self.series[0]
+        this_video[0].set_opacity(0)
+        self.play(this_video.animate.move_to(ORIGIN).set(width=config.frame_width-1))
+        section1 = Tex("What is sound?")
+        section2 = Tex("How is sound made?").next_to(section1,DOWN).align_to(section1, LEFT)
+        section3= Tex("Auditory perception").next_to(section2,DOWN).align_to(section1, LEFT)
+        section4= Tex("Geometric basis of sound").next_to(section3,DOWN).align_to(section1, LEFT)
+        section5= Tex("The wave equation").next_to(section4, DOWN).align_to(section1, LEFT)
+        sections = VGroup(section1,section2, section3, section4, section5).move_to(ORIGIN)
+        physics_b = BraceBetweenPoints(section1.get_corner(UL), section2.get_corner(DL), LEFT)
+        bio_b = Brace(section3,LEFT)
+        math_b = BraceBetweenPoints(section4.get_corner(UL), section5.get_corner(DL), LEFT)
+        physics = Text("Physics", gradient=(RED,BLUE)).next_to(physics_b, LEFT)
+        biology = Text("Biology", color=GREEN).next_to(bio_b, LEFT)
+        math = Text("Math", color=WHITE).next_to(math_b, LEFT)
+        braces = VGroup(VGroup(physics, physics_b), VGroup(biology, bio_b), VGroup(math, math_b))
+        whole = VGroup(braces, sections).arrange()
+        self.play(Write(sections))
+        self.play(Write(braces))
+        self.wait()
+
 
 
 class WhatsInStore(Scene):
@@ -3098,3 +3131,47 @@ class WaveEquation(Scene):
         dot_z = Dot().shift(self.axes.c2p(0,0,3))
         self.add(dot_x, dot_y, dot_z)
         self.interactive_embed()
+
+class Section2(Scene):
+    def construct(self):
+        title = Tex("How is sound made?")
+        self.play(
+            Write(title)
+        )
+        self.play(
+            Unwrite(title, reverse=False)
+        )
+        self.wait()
+
+class Section3(Scene):
+    def construct(self):
+        title = Tex("Auditory perception")
+        self.play(
+            Write(title)
+        )
+        self.play(
+            Unwrite(title, reverse=False)
+        )
+        self.wait()
+
+class Section4(Scene):
+    def construct(self):
+        title = Tex("Geometric basis of sound")
+        self.play(
+            Write(title)
+        )
+        self.play(
+            Unwrite(title, reverse=False)
+        )
+        self.wait()
+
+class Section5(Scene):
+    def construct(self):
+        title = Tex("The wave equation")
+        self.play(
+            Write(title)
+        )
+        self.play(
+            Unwrite(title, reverse=False)
+        )
+        self.wait()
