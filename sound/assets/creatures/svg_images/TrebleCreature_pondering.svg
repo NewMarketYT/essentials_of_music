@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    id="Layer_1"
-   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
    sodipodi:docname="TrebleCreature_pondering.svg"
    x="0px"
    y="0px"
    viewBox="-57 180.9 480 480"
    style="enable-background:new -57 180.9 480 480;"
-   xml:space="preserve">
+   xml:space="preserve"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata
    id="metadata5312">
     <rdf:RDF>
@@ -59,10 +59,10 @@
 
 
   <sodipodi:namedview
-   inkscape:cy="48.872832"
+   inkscape:cy="330.22961"
    id="namedview17"
-   inkscape:zoom="10.72342"
-   inkscape:cx="222.28251"
+   inkscape:zoom="0.94782538"
+   inkscape:cx="245.29835"
    bordercolor="#666666"
    objecttolerance="10"
    borderopacity="1"
@@ -79,7 +79,7 @@
    inkscape:snap-global="true"
    inkscape:snap-bbox="true"
    inkscape:pageopacity="0"
-   inkscape:current-layer="Layer_1"
+   inkscape:current-layer="g1876"
    inkscape:window-y="-8"
    inkscape:window-width="1920"
    inkscape:window-height="1017"
@@ -88,14 +88,15 @@
    inkscape:window-x="-8"
    inkscape:snap-bbox-edge-midpoints="false"
    showguides="true"
-   inkscape:document-rotation="0" />
+   inkscape:document-rotation="0"
+   inkscape:pagecheckerboard="0" />
 
 
 
   <g
    id="page1"
    transform="matrix(6.2810622,0,0,6.2810622,31.904535,215.82942)"
-   style="fill:#0000ff">
+   style="fill:#736357">
     <g
    id="g1876"
    transform="matrix(1.010278,0,0,1.010278,-24.38602,-0.986803)"
@@ -104,7 +105,7 @@
    sodipodi:nodetypes="csssssssssczasssssssc"
    id="path1947"
    d="m 39.708992,63.702118 c -0.391843,2.094519 1.790687,6.444229 6.181699,6.586322 5.308376,0.171784 8.699803,-3.893818 7.119803,-10.528929 L 45.086638,23.145564 c -0.943264,-4.358566 -0.235259,-6.722608 0.268404,-8.131475 1.343746,-3.758774 4.700919,-5.3091064 5.518237,-4.105737 0.466633,0.687042 1.594921,3.899547 -1.616872,9.653369 -2.504916,4.487479 -14.159399,10.371948 -15.014691,20.902645 -0.740424,9.15739 8.834057,15.92068 17.097698,13.261879 5.486463,-1.76525 6.285815,-9.379582 4.695963,-14.625428 -2.053033,-6.774142 -4.864493,-2.654816 -4.202067,-14.520438 -5.414132,6.505628 -4.581751,7.23962 -4.019566,9.334579 0.562185,2.094958 9.306642,10.523949 6.480921,15.279379 -2.297761,3.866921 -9.214224,5.116205 -13.420328,1.291657 C 37.350893,48.282179 35.787415,42.110373 39.708386,37.679634 45.01893,31.678661 51.511796,29.303878 53.177091,21.08895 55.146356,11.374533 52.670183,2.2713078 45.654886,7.7782247 42.494769,10.258876 42.557097,16.769356 43.863096,22.937327 l 7.917605,37.39322 c 0.566842,2.677072 0.187363,6.360948 -2.308193,8.054064 -1.236197,0.838702 -5.610634,1.41592 -6.680851,-0.586092"
-   style="fill-opacity:1;fill-rule:nonzero;fill:#0000ff"
+   style="fill-opacity:1;fill-rule:nonzero;fill:#736357"
    inkscape:connector-curvature="0" />
 
 
@@ -112,7 +113,7 @@
       <ellipse
    transform="matrix(-1.08512,-0.02036848,0.02036848,-1.08512,90.68868,135.0572)"
    id="path4608"
-   style="fill:#0000ff;fill-opacity:1"
+   style="fill:#736357;fill-opacity:1"
    cx="44.809425"
    cy="64.584198"
    rx="3.439605"

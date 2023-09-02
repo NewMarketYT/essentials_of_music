@@ -7,7 +7,7 @@
    viewBox="0 0 480 480"
    style="enable-background:new 0 0 480 480;"
    xml:space="preserve"
-   sodipodi:docname="Bubbles_thought.svg"
+   sodipodi:docname="Bubbles_thought_high.svg"
    inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -18,7 +18,7 @@
    xmlns:dc="http://purl.org/dc/elements/1.1/"><metadata
    id="metadata862"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
    id="defs860" /><sodipodi:namedview
    pagecolor="#000000"
    bordercolor="#666666"
@@ -48,28 +48,28 @@
 </style>
 <circle
    class="st1"
-   cx="143.8"
-   cy="268"
+   cx="98.82196"
+   cy="76.140564"
    r="22.6"
    id="circle849"
    style="stroke:#ffffff" />
 <circle
    class="st1"
-   cx="111.8"
-   cy="313.2"
+   cx="51.360764"
+   cy="55.981876"
    r="13.2"
    id="circle851"
    style="stroke:#ffffff" />
 <circle
    class="st1"
-   cx="80.7"
-   cy="334.2"
+   cx="19.557978"
+   cy="62.926228"
    r="7"
    id="circle853"
-   style="stroke:#ffffff;fill:none" />
+   style="fill:none;stroke:#ffffff" />
 <path
    class="st1"
-   d="M293.8,49.9c3-1,6.4-1.9,9.7-1.9c16.8,0,30.4,13.6,30.4,30.4c0,1.9-0.2,3.7-0.5,5.5l0,0  c10.8,4.5,21,16.2,20.5,28.6c-0.4,9.1-1.2,18.8-11.3,27.7l0,0c8.5,6.8,8.7,29.6,4.7,39c-4.1,9.7-11.8,19.6-33.4,27.2  c-8.2,19.4-30.1,35.7-52.4,35.7c-9.6,0-18.9-2.5-26.7-6.9l0,0c-8.1,5.6-17.7,8.8-28.3,8.8c-18.9,0-35.8-10.6-44.4-26l0,0  c-22.5,0-45.3-15.3-49.5-36.6l0,0c-19.2-5.7-33.1-23.4-33.1-44.5c0-9.7,2.9-18.7,8-26.2l0,0c-2.7-5.5-4.2-11.8-4.2-18.3  c0-21.9,17.3-40,38.8-41.6l0,0c7.3-14.6,22.4-24.7,39.9-24.7c4.8,0,9.3,0.7,13.6,2.1l0,0c7.6-8.3,18.7-13.5,30.9-13.5  c12.8,0,24.2,5.7,31.9,14.8l0,0c6-4.7,13.6-7.6,21.7-7.6C277,22.1,290.5,33.9,293.8,49.9L293.8,49.9z"
+   d="m 339.48082,48.494436 c 3,-1 6.4,-1.9 9.7,-1.9 16.8,0 30.4,13.6 30.4,30.4 0,1.9 -0.2,3.7 -0.5,5.5 v 0 c 10.8,4.5 21,16.2 20.5,28.600004 -0.4,9.1 -1.2,18.8 -11.3,27.7 v 0 c 8.5,6.8 8.7,29.6 4.7,39 -4.1,9.7 -11.8,19.6 -33.4,27.2 -8.2,19.4 -30.1,35.7 -52.4,35.7 -9.6,0 -18.9,-2.5 -26.7,-6.9 v 0 c -8.1,5.6 -17.7,8.8 -28.3,8.8 -18.9,0 -35.8,-10.6 -44.4,-26 v 0 c -22.5,0 -45.3,-15.3 -49.5,-36.6 v 0 c -19.2,-5.7 -33.1,-23.4 -33.1,-44.5 0,-9.7 2.9,-18.7 8,-26.2 v 0 c -2.7,-5.5 -4.2,-11.800004 -4.2,-18.300004 0,-21.9 17.3,-40 38.8,-41.6 v 0 c 7.3,-14.6 22.4,-24.7 39.9,-24.7 4.8,0 9.3,0.7 13.6,2.1 v 0 c 7.6,-8.3 18.7,-13.5 30.9,-13.5 12.8,0 24.2,5.7 31.9,14.8 v 0 c 6,-4.7 13.6,-7.6 21.7,-7.6 16.9,0.2 30.4,12 33.7,28 z"
    id="path855"
-   style="stroke:#ffffff;fill:none" />
+   style="fill:none;stroke:#ffffff" />
 </svg>

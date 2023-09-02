@@ -11,14 +11,18 @@ classifiers= [
     "Topic :: Scientific/Engineering",
     "Topic :: Multimedia :: Video",
     "Topic :: Multimedia :: Graphics",
-    "Programming Language :: Python :: 3.6",
-    "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
     "Natural Language :: English",
     ]
 
 [tool.poetry.dependencies]
-python = "^3.6.2"
+python = ">=3.8,<3.12"
+matplotlib="*"
+manim = {path="../manim", develop=true, extras = ["matplotlib", "jupyterlab"]}
+ipython = "*"
 
 
 [build-system]

@@ -10,7 +10,7 @@ from manim.utils.color import *
 from manim.mobject.mobject import Group
 from manim.utils.rate_functions import squish_rate_func
 from manim.utils.rate_functions import there_and_back
-from .bubbles import SpeechBubble
+from .bubbles import SpeechBubble, ThoughtBubble
 from .creature import *
 
 
@@ -21,12 +21,12 @@ class Blink(ApplyMethod):
 
 class CreatureBubbleIntroduction(AnimationGroup):
     def __init__(self, creature, *content, **kwargs):
-        self.target_mode = kwargs["target_mode"]
-        self.bubble_class = SpeechBubble
+        self.target_mode = kwargs.pop("target_mode", "plain")
+        self.bubble_class = kwargs.pop("bubble_class", SpeechBubble)
+        self.bubble_kwargs = kwargs.pop("bubble_kwargs", {})
         self.change_mode_kwargs = {}
         self.bubble_creation_class = Create
         self.bubble_creation_kwargs = {}
-        self.bubble_kwargs = {}
         self.content_introduction_class = DrawBorderThenFill
         self.content_introduction_kwargs = {}
         self.look_at_arg = None

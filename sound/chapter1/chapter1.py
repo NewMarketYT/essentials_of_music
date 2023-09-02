@@ -1,22 +1,10 @@
 from math import cos
 from operator import index, sub
 from typing_extensions import runtime
-from PIL.Image import Image
 from manim import *
 from manim.mobject.geometry import ArrowTriangleFilledTip
 from manim.opengl import *
-from manim.mobject.opengl_mobject import OpenGLMobject
 from manim.renderer.opengl_renderer import OpenGLCamera
-from manim.utils import tex
-from manim.utils.rate_functions import (
-    ease_in_circ,
-    ease_in_expo,
-    ease_in_out_circ,
-    ease_out_bounce,
-    ease_out_cubic,
-    ease_out_quad,
-)
-from numpy import inner, positive, square
 from numpy.lib.function_base import select
 from sound import *
 from manim_physics.wave import *
@@ -381,6 +369,7 @@ class Introduction2(MusicScene):
         self.add(self.students)
 
     def show_outline(self):
+        prev_video = self.series[0]
         self.play(
             FadeOut(self.staff),
             FadeOut(self.creatures),

@@ -4,8 +4,6 @@ import warnings
 import numpy as np
 
 from manim import *
-from .bubbles import ThoughtBubble
-from .bubbles import SpeechBubble
 from .creature import Creature
 from sound.constants import CREATURE_DIR
 
@@ -23,9 +21,7 @@ class TrebleCreature(Creature):
 
     def __init__(self, mode="plain", color=GREY_BROWN, **kwargs):
         self.mode = mode
-        self.color = color
-        self.stroke_width = 0
-        self.stroke_color = BLACK
+        self.stroke_width = 1
         self.fill_opacity = 1.0
         self.corner_scale_factor = 0.75
         self.flip_at_start = False
@@ -35,7 +31,7 @@ class TrebleCreature(Creature):
         self.pupil_dot_to_pupil_width_ratio = 0.3
         self.parts_named = False
 
-        super().__init__(TrebleCreature.PREFIX, self.mode, color=self.color, **kwargs)
+        super().__init__(TrebleCreature.PREFIX, mode=self.mode, color=color, **kwargs)
         self.set(height=6)
         if self.flip_at_start:
             self.flip()

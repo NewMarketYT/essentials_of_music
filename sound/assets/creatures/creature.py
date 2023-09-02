@@ -22,22 +22,22 @@ class Creature(SVGMobject):
     ):
         self.prefix = prefix
         self.mode = mode
-        self.color = color
         svg_file = str(CREATURE_DIR / f"{prefix}_{mode}")
         super().__init__(
             file_name=svg_file,
-            color=self.color,
+            color=color,
             stroke_width=stroke_width,
             stroke_opacity=stroke_opacity,
+            **kwargs
         )
+        self.init_body()
 
-    def align_data(self, mobject):
+    def align_data(self, mobject, skip_point_alignment=False):
         SVGMobject.align_data(self, mobject)
         if isinstance(mobject, Creature):
             self.mode = mobject.get_mode()
 
-    def init_colors(self):
-        super().init_colors()
+    def init_body(self):
         if not self.parts_named:
             self.name_parts()
         self.boundingbox.set_fill(WHITE, opacity=0)
@@ -72,7 +72,8 @@ class Creature(SVGMobject):
 
     def copy(self):
         copy_mobject = super().copy()
-        copy_mobject.name_parts()
+        if self.parts_named:
+            copy_mobject.name_parts()
         return copy_mobject
 
     def set_color(self, color):
@@ -159,16 +160,17 @@ class Creature(SVGMobject):
         return self
 
     def get_bubble(self, *content, **kwargs):
-        bubble_class = kwargs.get("bubble_class", ThoughtBubble)
-        bubble = bubble_class()
+        bubble_class = kwargs.pop("bubble_class", SpeechBubble)
+        bubble = bubble_class(**kwargs)
+        bubble.set_fill(BLACK, .5)
         if len(content) > 0:
             if isinstance(content[0], str):
-                content_mob = Tex(*content, color=YELLOW)
+                content_mob = Text(*content, color=YELLOW)
             else:
                 content_mob = content[0]
-            bubble.add_content(content_mob)
             if "height" not in kwargs and "width" not in kwargs:
-                bubble.resize_to_content()
+                bubble.resize_to_content(content_mob)
+            bubble.add_content(content_mob)
         bubble.pin_to(self)
         self.bubble = bubble
         return bubble

@@ -72,7 +72,7 @@ class CreatureScene(Scene):
 
         bubble_class = kwargs.pop("bubble_class", SpeechBubble)
         target_mode = kwargs.pop(
-            "target_mode", "thinking" if bubble_class is ThoughtBubble else "speaking"
+            "target_mode", "pondering" if bubble_class is ThoughtBubble else "speaking"
         )
         bubble_kwargs = kwargs.pop("bubble_kwargs", {})
         bubble_removal_kwargs = kwargs.pop("bubble_removal_kwargs", {})
@@ -87,7 +87,6 @@ class CreatureScene(Scene):
                 and creature.bubble is not None
                 and creature.bubble in on_screen_mobjects
             )
-
         creatures_with_bubbles = list(filter(has_bubble, self.get_creatures()))
         if creature in creatures_with_bubbles:
             creatures_with_bubbles.remove(creature)
@@ -124,7 +123,7 @@ class CreatureScene(Scene):
         return self.introduce_bubble(*args, bubble_class=SpeechBubble, **kwargs)
 
     def creature_thinks(self, *args, **kwargs):
-        self.introduce_bubble(*args, bubble_class=ThoughtBubble, **kwargs)
+        return self.introduce_bubble(*args, bubble_class=ThoughtBubble, **kwargs)
 
     def say(self, *content, **kwargs):
         self.creature_says(self.get_primary_creature(), *content, **kwargs)
